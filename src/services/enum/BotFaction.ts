@@ -1,7 +1,7 @@
 /**
  * Automa Faction
  */
-enum AutomaFaction {
+enum BotFaction {
   SIMPLETONS = 'simpletons',
   KUDDLERS = 'kuddlers',
   DRUIDS = 'druids',
@@ -13,4 +13,4 @@ enum AutomaFaction {
   BLIGHT = 'blight',
   GOGNOMES = 'gognomes'
 }
-export default AutomaFaction
+export default BotFaction
