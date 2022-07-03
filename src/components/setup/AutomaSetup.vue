@@ -44,6 +44,7 @@
     <li>
       <img src="@/assets/icons/structure/structure-unmarked.jpg" class="icon"/>&nbsp;<span v-html="t('setupGameAutoma.initialDwellingUnmarked', {character:randomCard.initialDwellingUnmarked})"></span>
     </li>
+    <li v-html="t('setupGameAutoma.initialDwellingPlayerSecond')"></li>
   </ol>
 </template>
 
