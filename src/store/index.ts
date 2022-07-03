@@ -22,15 +22,15 @@ export interface PlayerSetup {
 }
 export interface Round {
   round: number
-  botRound: BotRound[]
+  turns: RoundTurn[]
 }
-export interface BotRound {
+export interface RoundTurn {
   round: number
-  bot: number
-  slotNumber: number
-  tokenScoringCardCount: number
-  tokenNotepadCount: number
-  appealCount?: number
+  turn: number
+  player?: number
+  bot?: number
+  startPlayer?: boolean
+  pass?: boolean
 }
 
 declare module '@vue/runtime-core' {
@@ -73,16 +73,16 @@ export const store = createStore<State>({
     setupDifficultyLevel(state : State, level: number) {
       state.setup.difficultyLevel = level
     },
-    round(state : State, botRound : BotRound) {
-      let round = state.rounds[botRound.round - 1]
+    roundTurn(state : State, roundTurn : RoundTurn) {
+      let round = state.rounds[roundTurn.round - 1]
       if (!round) {
         round = {
-          round : botRound.round,
-          botRound: []
+          round : roundTurn.round,
+          turns: []
         }
       }
-      round.botRound[botRound.bot - 1] = botRound
-      state.rounds[botRound.round - 1] = round
+      round.turns[roundTurn.turn - 1] = roundTurn
+      state.rounds[roundTurn.round - 1] = round
     },
     endGame(state : State) {
       state.rounds = []

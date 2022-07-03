@@ -48,6 +48,11 @@
     "initialDwellingUnmarked": "Setze ein Automa-Wohnhaus auf ein Heimandlandschafts-Feld mit dem Buchstaben <b>{character}</b>.",
     "initialDwellingPlayerSecond": "Setze dein zweites Wohnhaus ein."
   },
+  "roundTurn": {
+    "turnInfo": "Runde {round}, Zug {turn}",
+    "titlePlayer": "Spieler | Spieler {player}",
+    "titleBot": "Automa: {faction} | Automa {player}: {faction}"
+  },
   "difficultyLevel": {
     "1": "Automalein",
     "2": "Automa",

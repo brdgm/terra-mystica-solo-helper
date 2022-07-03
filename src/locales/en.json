@@ -48,6 +48,11 @@
     "initialDwellingUnmarked": "Place an Automa Dwelling on a Home Terrain space with letter <b>{character}</b>.",
     "initialDwellingPlayerSecond": "Place your second Dwelling."
   },
+  "roundTurn": {
+    "turnInfo": "Round {round}, Turn {turn}",
+    "titlePlayer": "Player | Player {player}",
+    "titleBot": "Automa: {faction} | Automa {player}: {faction}"
+  },
   "difficultyLevel": {
     "1": "Automalein",
     "2": "Automa",
