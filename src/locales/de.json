@@ -12,21 +12,35 @@
       "title": "Spieler",
       "playerCount": "Menschliche Spieler",
       "playerCountItem": "{count} Spieler",
-      "playerColor": "Spieler-Farbe | Spieler {index} Farbe",
-      "botCount": "ARNO Bots",
-      "botCountItem": "{count} ARNO Bot | {count} ARNO Bots",
-      "botColor": "ARNO-Farbe | ARNO {index} Farbe"
+      "botCount": "Automa",
+      "botCountItem": "{count} Automa | {count} Automas (Experimentell)",
+      "botFaction": "Automa Volk | Automa {bot} Volk",
+      "twoPlayerBotFaction": "Beim Spiel mit zwei Spielern erlauben die offziellen Regeln nur die Wahl von <i>Die Unscheinbaren</i>."
     },
     "difficultyLevel": {
       "title": "Schwierigkeitsgrad",
       "easy": "Leicht",
       "hard": "Schwer"
-    },
-    "actionCardDistribution": {
-      "title": "Aktionskarten-Verteilung",
-      "schema": "Wahrscheinlichkeit (%)",
-      "text": "Experimentelle Option. Die Auswahl '0-25-25-25-25' entspricht den ARNO-Regeln."
     }
+  },
+  "difficultyLevel": {
+    "1": "Automalein",
+    "2": "Automa",
+    "3": "Automächtig",
+    "4": "Ultoma",
+    "5": "Alptrauma"
+  },
+  "faction": {
+    "simpletons": "Die Unscheinbaren",
+    "kuddlers": "Kuschler",
+    "druids": "Druiden",
+    "racelings": "Sprinter",
+    "wanderers": "Wanderers",
+    "mimics": "Die Nachahmer",
+    "powermongers": "Machthändler",
+    "symbionts": "Symbionten",
+    "blight": "Verwüster",
+    "gognomes": "Gognomes"
   },
   "notfound": {
     "title": "Nicht Gefunden"

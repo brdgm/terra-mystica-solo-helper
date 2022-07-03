@@ -5,23 +5,37 @@
     <div class="col-5 col-md-3">
       <label for="playerCount" class="form-label">{{t('setup.players.playerCount')}}</label>
     </div>
-    <div class="col-5 col-md-3">
-      <select class="form-select" id="playerCount" v-model="playerCount">
+    <div class="col-7 col-md-4">
+      <select class="form-select" v-model="playerCount">
         <option v-for="i in maxPlayerCount" :key="i" :value="i">{{t('setup.players.playerCountItem', {count:i}, i)}}</option>
       </select>
     </div>
-  </div>  
+  </div>
 
   <div class="row mt-3">
     <div class="col-5 col-md-3">
       <label for="botCount" class="form-label">{{t('setup.players.botCount')}}</label>
     </div>
-    <div class="col-5 col-md-3">
-      <select class="form-select" id="botCount" v-model="botCount">
+    <div class="col-7 col-md-4">
+      <select class="form-select" v-model="botCount">
         <option v-for="i in maxBotCount" :key="i" :value="i">{{t('setup.players.botCountItem', {count:i}, i)}}</option>
       </select>
     </div>
-  </div>  
+  </div>
+
+  <div class="row mt-3" v-for="bot in botCount" :key="bot">
+    <div class="col-5 col-md-3">
+      <label for="botCount" class="form-label">{{t('setup.players.botFaction', {bot:bot}, botCount)}}</label>
+    </div>
+    <div class="col-7 col-md-4">
+      <select class="form-select" v-model="botFaction[bot-1]">
+        <option v-for="faction of factions" :key="faction" :value="faction">{{t('faction.' + faction)}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row mt-3" v-if="playerCount > 1">
+    <div class="offset-5 offset-md-3 col-5 col-md-7 text-muted" v-html="t('setup.players.twoPlayerBotFaction')"></div>
+  </div>
 
 </template>
 
@@ -29,6 +43,7 @@
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useStore } from '@/store'
+import AutomaFaction from '@/services/enum/AutomaFaction'
 
 export default defineComponent({
   name: 'Players',
@@ -39,16 +54,18 @@ export default defineComponent({
   },
   data() {
     return {
-      playerCount: this.$store.state.setup.playerSetup?.playerCount || 1,
-      botCount: this.$store.state.setup.playerSetup?.botCount || 1
+      playerCount: this.$store.state.setup.playerSetup.playerCount,
+      botCount: this.$store.state.setup.playerSetup.botCount,
+      botFaction: this.$store.state.setup.playerSetup.botFaction,
+      factions: Object.values(AutomaFaction)
     }
   },
   computed: {
     maxPlayerCount() : number {
-      return 4 - this.botCount
+      return 3 - this.botCount
     },
     maxBotCount() : number {
-      return 4 - this.playerCount
+      return 3 - this.playerCount
     }
   },
   watch: {
@@ -63,13 +80,25 @@ export default defineComponent({
         this.playerCount = this.maxPlayerCount
       }
       this.storePlayerSetup()
+    },
+    botFaction: {
+      handler() {
+        this.storePlayerSetup()
+      },
+      deep: true
     }
   },
   methods: {
     storePlayerSetup() {
+      for (let bot=1; bot<=this.botCount; bot++) {
+        if (!this.botFaction[bot-1]) {
+          this.botFaction[bot-1] = AutomaFaction.SIMPLETONS
+        }
+      }
       this.$store.commit('setupPlayer', {
         playerCount: this.playerCount,
-        botCount: this.botCount
+        botCount: this.botCount,
+        botFaction: this.botFaction
       })
     }
   }

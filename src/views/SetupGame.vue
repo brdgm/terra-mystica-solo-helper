@@ -4,8 +4,8 @@
   <Players/>
   <DifficultyLevel/>
 
-  <router-link to="/setupARNO" class="btn btn-primary btn-lg mt-4">
-    {{t('setupARNO.title')}}
+  <router-link to="/round/1" class="btn btn-primary btn-lg mt-4">
+    {{t('action.startGame')}}
   </router-link>
 
   <FooterButtons endGameButtonType="abortGame"/>

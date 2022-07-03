@@ -6,13 +6,19 @@
       <label for="difficultyLevel" class="form-label">{{t('setup.difficultyLevel.easy')}}</label>
     </div>
     <div class="col-8 col-md-4">
-      <input type="range" class="form-range" min="1" max="3" id="difficultyLevel"
-          :value="$store.state.setup.difficultyLevel" @input="updateDifficultyLevel($event)">
+      <input type="range" class="form-range" min="1" max="5" id="difficultyLevel"
+          :value="difficultyLevel" @input="updateDifficultyLevel($event)">
     </div>
     <div class="col-1">
       <label for="difficultyLevel" class="form-label">{{t('setup.difficultyLevel.hard')}}</label>
     </div>
   </div>  
+  <div class="row">
+    <div class="col-11 offset-1">
+      <img src="@/assets/icons/difficulty-level.png" class="difficultyLevelIcon" v-for="level in difficultyLevel" :key="level"/>
+      &nbsp;<i>{{t('difficultyLevel.' + difficultyLevel)}}</i>
+    </div>
+  </div>
 
 </template>
 
@@ -28,11 +34,22 @@ export default defineComponent({
     useStore()
     return { t }
   },
+  data() {
+    return {
+      difficultyLevel: this.$store.state.setup.difficultyLevel
+    }
+  },
   methods: {
     updateDifficultyLevel(event: Event) {
-      let level = parseInt((event.target as HTMLInputElement).value)
-      this.$store.commit('setupDifficultyLevel', level)
+      this.difficultyLevel = parseInt((event.target as HTMLInputElement).value)
+      this.$store.commit('setupDifficultyLevel', this.difficultyLevel)
     }
   }
 })
 </script>
+
+<style lang="scss" scoped>
+.difficultyLevelIcon {
+  height: 1.5rem;
+}
+</style>
