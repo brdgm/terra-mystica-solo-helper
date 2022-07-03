@@ -22,6 +22,30 @@
       "easy": "Leicht",
       "hard": "Schwer"
     }
+  }, 
+  "setupGameAutoma": {
+    "title": "Automa Spielaufbau",
+    "generalSetup": "Allgemeiner Aufbau",
+    "generalSetupIntro": "Baue das Spiel wie gewohnt, aber mit diesen Änderungen auf:",
+    "step1": "Verwende die Automa-Wertungsplättchen anstelle der Plättchen des Grundspiels. Lege die Plättchen mit der Seite nach oben ab, deren helle Markierung (links) dem Rundenfeld entspricht. Wie im Grundspiel darf das Plättchen mit dem Spaten nicht auf den Feldern für Runde 5 oder 6 liegen.",
+    "step1-mots": "Verwende stattdessen die MotS Automa-Wertungsplättchen.",
+    "step2": "Verdecke den rechten oberen Bereich des Wertungsplättchens für Runde 6 mit der Automa-Spielendemarke.",
+    "step3": "Du bist Startspieler. Nimm dir die Startspielerfigur.",
+    "step4": "Wähle eine Heimatlandschaft für Automa, die anders ist als deine, und lege die entsprechende Landschaftstyp-Priorisierungskarte in Automas Bereich (LTP). Automas Heimatlandschaft wird auf der Karte oben und unten sowie im ersten Kreis von links angezeigt.",
+    "step5": "Verteile Automas Spielsteine wie folgt:",
+    "step5a": "Give her all Structures of her color.",
+    "step5b": "Return 2 Automa Dwellings to the box. They will not be used.",
+    "step5c-mots": "Return 2 Automa Trading houses to the box. They will not be used.",
+    "step5d": "Give her all Priests of her color.",
+    "step5e": "Place her Markers on the Cult track. For each Cult symbol in the upper left of her Faction card, advance the corresponding Marker.",
+    "step5f": "Follow any additional setup instructions on the Automa Faction card and familiarize yourself with any special rules for her faction.",
+    "step5g": "Place a Marker of Automa’s color on space 20 of the Victory point track (as normal).",
+    "step5h-mots": "Give her all Trade markers and the Shipyard in her color.",
+    "initialDwelling": "Initial Dwelling Placement",
+    "initialDwellingIntro": "Automa places her initial Dwellings after you place your first Dwelling. Select the Automa <b>Initial Dwelling map card</b> for the map you are using and refer to it as you:",
+    "initialDwellingPlayer": "Place your first Dwelling.",
+    "initialDwellingMarked": "Place an Automa Dwelling on space with letter <b>{character}</b> together with a power token.",
+    "initialDwellingUnmarked": "Place an Automa Dwelling on space with letter <b>{character}</b>."
   },
   "difficultyLevel": {
     "1": "Automalein",
