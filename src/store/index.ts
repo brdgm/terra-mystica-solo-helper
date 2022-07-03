@@ -1,4 +1,3 @@
-import CardName from '@/services/enum/CardName'
 import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import { InjectionKey } from 'vue'
 import { createStore, useStore as baseUseStore, Store } from 'vuex'
@@ -26,15 +25,10 @@ export interface Round {
 export interface BotRound {
   round: number
   bot: number
-  cardSlots: CardSlotsPersistence
   slotNumber: number
   tokenScoringCardCount: number
   tokenNotepadCount: number
   appealCount?: number
-}
-export interface CardSlotsPersistence {
-  slots: CardName[]
-  upgradedCards: CardName[]
 }
 
 declare module '@vue/runtime-core' {
@@ -55,7 +49,7 @@ export const store = createStore<State>({
         playerCount: 1,
         botCount: 1
       },
-      difficultyLevel: DifficultyLevel.EASY
+      difficultyLevel: DifficultyLevel.AUTOMALEIN
     },
     rounds: []
   },

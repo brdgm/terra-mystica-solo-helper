@@ -1,297 +1,298 @@
 import findMandatory from "brdgm-commons/src/util/map/findMandatory";
 import Card from "./Card";
 import Action from "./enum/Action";
-import CardName from "./enum/CardName";
-import DifficultyLevel from "./enum/DifficultyLevel";
+import BonusCardSelection from "./enum/BonusCardSelection";
+import CultTrackSelection from "./enum/CultTrackSelection";
+import DirectionalSelection from "./enum/DirectionalSelection";
+import InitialDwelling from "./enum/InitialDwelling";
+import Structure from "./enum/Structure";
+import TerrainPriority from "./enum/TerrainPriority";
 
 const cards = [
   {
-    name: CardName.ANIMALS,
-    standardActions: [
-      {
-        action: Action.APPEAL,
-        slotAmount: true,
-        difficultyLevelFilter: DifficultyLevel.EASY
-      },
-      {
-        action: Action.APPEAL,
-        slotAmount: true,
-        amount: 1,
-        difficultyLevelFilter: DifficultyLevel.MEDIUM
-      },
-      {
-        action: Action.APPEAL,
-        slotAmount: true,
-        amount: 2,
-        difficultyLevelFilter: DifficultyLevel.HARD
-      },
+    id: '*1',
+    starter: true,
+    actions: [
+      Action.UPGRADE,
+      Action.TAKE_FAVOR_TILE,
+      Action.GAIN_VICTORY_POINTS
     ],
-    upgradedActions: [
-      {
-        action: Action.APPEAL,
-        slotAmount: true,
-        amount: 1,
-        difficultyLevelFilter: DifficultyLevel.EASY
-      },
-      {
-        action: Action.APPEAL,
-        slotAmount: true,
-        amount: 2,
-        difficultyLevelFilter: DifficultyLevel.MEDIUM
-      },
-      {
-        action: Action.APPEAL,
-        slotAmount: true,
-        amount: 3,
-        difficultyLevelFilter: DifficultyLevel.HARD
-      },
-    ]
+    victoryPointsDifficultyLevel: true,
+    structure: Structure.STRUCTURE_MARKED,
+    terrainPriority: TerrainPriority.A,
+    directionalSelection: DirectionalSelection.RIGHT_DOWN,
+    directionalSelectionCount: 2,
+    cultTrackSelection: CultTrackSelection.SCORING_TILE,
+    bonusCardSelection: BonusCardSelection.LEFT,
+    initialDwellingMarked: InitialDwelling.A,
+    initialDwellingUnmarked: InitialDwelling.B
   },
   {
-    name: CardName.ASSOCIATION,
-    standardActions: [
-      {
-        action: Action.REPUTATION,
-        amount: 2,
-        slotFilter: 2
-      },
-      {
-        action: Action.GAIN_PARTNER_ZOO,
-        slotFilter: 3
-      },
-      {
-        action: Action.GAIN_PARTNER_UNIVERSITY,
-        slotFilter: 4
-      },
-      {
-        action: Action.CONSERVATION_PROJECT_WORK,
-        slotFilter: 5
-      },
-      {
-        action: Action.CONSERVATION,
-        amount: 2,
-        fallback: true
-      },
-      {
-        action: Action.BREAK,
-        amount: 2,
-        fallback: true
-      },
+    id: '*2',
+    starter: true,
+    actions: [
+      Action.BLOCK_POWER_ACTION,
+      Action.GAIN_VICTORY_POINTS
     ],
-    upgradedActions: [
-      {
-        action: Action.REPUTATION,
-        amount: 2,
-        slotFilter: 2
-      },
-      {
-        action: Action.GAIN_PARTNER_ZOO,
-        slotFilter: 3
-      },
-      {
-        action: Action.GAIN_PARTNER_UNIVERSITY,
-        slotFilter: 4
-      },
-      {
-        action: Action.CONSERVATION_PROJECT_WORK,
-        slotFilter: 5
-      },
-      {
-        action: Action.DONATE
-      },
-      {
-        action: Action.CONSERVATION,
-        amount: 2,
-        fallback: true
-      },
-      {
-        action: Action.BREAK,
-        amount: 2,
-        fallback: true
-      },
-    ]
+    victoryPointsDifficultyLevel: true,
+    structure: Structure.STRUCTURE_MARKED,
+    terrainPriority: TerrainPriority.B,
+    directionalSelection: DirectionalSelection.LEFT_UP,
+    directionalSelectionCount: 1,
+    cultTrackSelection: CultTrackSelection.CATCH_UP,
+    bonusCardSelection: BonusCardSelection.MIDDLE,
+    initialDwellingMarked: InitialDwelling.A,
+    initialDwellingUnmarked: InitialDwelling.B
   },
   {
-    name: CardName.SPONSORS,
-    standardActions: [
-      {
-        action: Action.BREAK,
-        slotAmount: true
-      },
-      {
-        action: Action.TOKEN_SCORING_CARD,
-        amount: 1
-      },
+    id: '*3',
+    starter: true,
+    actions: [
+      Action.ADVANCE_CULT_TRACK
     ],
-    upgradedActions: [
-      {
-        action: Action.BREAK,
-        slotAmount: true
-      },
-      {
-        action: Action.APPEAL,
-        slotAmount: true
-      },
-      {
-        action: Action.TOKEN_NOTEPAD,
-        amount: 1
-      },
-    ]
+    structure: Structure.STRUCTURE_UNMARKED_REACHING,
+    terrainPriority: TerrainPriority.B,
+    directionalSelection: DirectionalSelection.RIGHT_DOWN,
+    directionalSelectionCount: 3,
+    cultTrackSelection: CultTrackSelection.SCORING_TILE,
+    bonusCardSelection: BonusCardSelection.RIGHT,
+    initialDwellingMarked: InitialDwelling.D,
+    initialDwellingUnmarked: InitialDwelling.E
   },
   {
-    name: CardName.BUILD,
-    standardActions: [
-      {
-        action: Action.REPUTATION,
-        amount: 1,
-        slotFilter: 2
-      },
-      {
-        action: Action.APPEAL,
-        amount: 2,
-        slotFilter: 3,
-        difficultyLevelFilter: DifficultyLevel.EASY
-      },
-      {
-        action: Action.APPEAL,
-        amount: 3,
-        slotFilter: 3,
-        difficultyLevelFilter: DifficultyLevel.MEDIUM
-      },
-      {
-        action: Action.APPEAL,
-        amount: 4,
-        slotFilter: 3,
-        difficultyLevelFilter: DifficultyLevel.HARD
-      },
-      {
-        action: Action.TAKE_CARD_DISPLAY,
-        slotFilter: 4
-      },
-      {
-        action: Action.CONSERVATION,
-        amount: 2,
-        slotFilter: 5,
-        difficultyLevelFilter: DifficultyLevel.EASY
-      },
-      {
-        action: Action.CONSERVATION,
-        amount: 3,
-        slotFilter: 5,
-        difficultyLevelFilter: DifficultyLevel.MEDIUM
-      },
-      {
-        action: Action.CONSERVATION,
-        amount: 4,
-        slotFilter: 5,
-        difficultyLevelFilter: DifficultyLevel.HARD
-      },
+    id: '*4',
+    starter: true,
+    actions: [
+      Action.TRANSFORM_AND_BUILD,
+      Action.GAIN_VICTORY_POINTS
     ],
-    upgradedActions: [
-      {
-        action: Action.REPUTATION,
-        amount: 2,
-        slotFilter: 2
-      },
-      {
-        action: Action.APPEAL,
-        amount: 3,
-        slotFilter: 3,
-        difficultyLevelFilter: DifficultyLevel.EASY
-      },
-      {
-        action: Action.APPEAL,
-        amount: 4,
-        slotFilter: 3,
-        difficultyLevelFilter: DifficultyLevel.MEDIUM
-      },
-      {
-        action: Action.APPEAL,
-        amount: 5,
-        slotFilter: 3,
-        difficultyLevelFilter: DifficultyLevel.HARD
-      },
-      {
-        action: Action.TOKEN_NOTEPAD,
-        amount: 1,
-        slotFilter: 4,
-        difficultyLevelFilter: DifficultyLevel.EASY
-      },
-      {
-        action: Action.TOKEN_NOTEPAD,
-        amount: 2,
-        slotFilter: 4,
-        difficultyLevelFilter: DifficultyLevel.MEDIUM
-      },
-      {
-        action: Action.TOKEN_NOTEPAD,
-        amount: 3,
-        slotFilter: 4,
-        difficultyLevelFilter: DifficultyLevel.HARD
-      },
-      {
-        action: Action.CONSERVATION,
-        amount: 3,
-        slotFilter: 5,
-        difficultyLevelFilter: DifficultyLevel.EASY
-      },
-      {
-        action: Action.CONSERVATION,
-        amount: 4,
-        slotFilter: 5,
-        difficultyLevelFilter: DifficultyLevel.MEDIUM
-      },
-      {
-        action: Action.CONSERVATION,
-        amount: 5,
-        slotFilter: 5,
-        difficultyLevelFilter: DifficultyLevel.HARD
-      },
-    ]
+    victoryPoints: 1,
+    structure: Structure.STRUCTURE_UNMARKED,
+    terrainPriority: TerrainPriority.B,
+    directionalSelection: DirectionalSelection.LEFT_UP,
+    directionalSelectionCount: 3,
+    cultTrackSelection: CultTrackSelection.CATCH_UP,
+    bonusCardSelection: BonusCardSelection.LEFT,
+    initialDwellingMarked: InitialDwelling.D,
+    initialDwellingUnmarked: InitialDwelling.F,
+    pass: true
   },
   {
-    name: CardName.CARDS,
-    standardActions: [
-      {
-        action: Action.BREAK,
-        amount: 1
-      },
-      {
-        action: Action.TAKE_CARD_DISPLAY
-      },
-      {
-        action: Action.APPEAL,
-        amount: 2
-      },
+    id: '*5',
+    starter: true,
+    actions: [
+      Action.FACTION_ACTION
     ],
-    upgradedActions: [
-      {
-        action: Action.BREAK,
-        amount: 1
-      },
-      {
-        action: Action.TAKE_CARD_DISPLAY
-      },
-      {
-        action: Action.CONSERVATION,
-        amount: 2
-      },
-    ]
+    structure: Structure.STRUCTURE_MARKED_REACHING,
+    terrainPriority: TerrainPriority.A,
+    directionalSelection: DirectionalSelection.LEFT_UP,
+    directionalSelectionCount: 2,
+    cultTrackSelection: CultTrackSelection.SCORING_TILE,
+    bonusCardSelection: BonusCardSelection.RIGHT,
+    initialDwellingMarked: InitialDwelling.A,
+    initialDwellingUnmarked: InitialDwelling.C
+  },
+  {
+    id: '6',
+    actions: [
+      Action.BLOCK_POWER_ACTION,
+      Action.GAIN_VICTORY_POINTS
+    ],
+    victoryPointsDifficultyLevel: true,
+    structure: Structure.STRUCTURE_MARKED_REACHING,
+    terrainPriority: TerrainPriority.B,
+    directionalSelection: DirectionalSelection.RIGHT_DOWN,
+    directionalSelectionCount: 3,
+    cultTrackSelection: CultTrackSelection.CATCH_UP,
+    bonusCardSelection: BonusCardSelection.MIDDLE,
+    initialDwellingMarked: InitialDwelling.A,
+    initialDwellingUnmarked: InitialDwelling.C,
+    pass: true
+  },
+  {
+    id: '7',
+    actions: [
+      Action.FACTION_ACTION
+    ],
+    structure: Structure.STRUCTURE_UNMARKED_REACHING,
+    terrainPriority: TerrainPriority.B,
+    directionalSelection: DirectionalSelection.RIGHT_DOWN,
+    directionalSelectionCount: 4,
+    cultTrackSelection: CultTrackSelection.CATCH_UP,
+    bonusCardSelection: BonusCardSelection.LEFT,
+    initialDwellingMarked: InitialDwelling.D,
+    initialDwellingUnmarked: InitialDwelling.F,
+    pass: true
+  },
+  {
+    id: '8',
+    actions: [
+      Action.ADVANCE_CULT_TRACK,
+      Action.GAIN_VICTORY_POINTS
+    ],
+    victoryPoints: 2,
+    structure: Structure.STRUCTURE_MARKED_REACHING,
+    terrainPriority: TerrainPriority.A,
+    directionalSelection: DirectionalSelection.RIGHT_DOWN,
+    directionalSelectionCount: 1,
+    cultTrackSelection: CultTrackSelection.CATCH_UP,
+    bonusCardSelection: BonusCardSelection.RIGHT,
+    initialDwellingMarked: InitialDwelling.D,
+    initialDwellingUnmarked: InitialDwelling.E,
+    pass: true
+  },
+  {
+    id: '9',
+    actions: [
+      Action.ADVANCE_CULT_TRACK,
+      Action.GAIN_VICTORY_POINTS
+    ],
+    victoryPoints: 2,
+    structure: Structure.STRUCTURE_MARKED_REACHING,
+    terrainPriority: TerrainPriority.A,
+    directionalSelection: DirectionalSelection.LEFT_UP,
+    directionalSelectionCount: 2,
+    cultTrackSelection: CultTrackSelection.CATCH_UP,
+    bonusCardSelection: BonusCardSelection.LEFT,
+    initialDwellingMarked: InitialDwelling.A,
+    initialDwellingUnmarked: InitialDwelling.B,
+    pass: true
+  },
+  {
+    id: '10',
+    actions: [
+      Action.UPGRADE,
+      Action.GAIN_VICTORY_POINTS
+    ],
+    victoryPoints: 1,
+    structure: Structure.STRUCTURE_UNMARKED_REACHING,
+    terrainPriority: TerrainPriority.B,
+    directionalSelection: DirectionalSelection.LEFT_UP,
+    directionalSelectionCount: 4,
+    cultTrackSelection: CultTrackSelection.CATCH_UP,
+    bonusCardSelection: BonusCardSelection.LEFT,
+    initialDwellingMarked: InitialDwelling.A,
+    initialDwellingUnmarked: InitialDwelling.C,
+    pass: true
+  },
+  {
+    id: '11',
+    actions: [
+      Action.UPGRADE,
+      Action.GAIN_VICTORY_POINTS
+    ],
+    victoryPointsDifficultyLevel: true,
+    structure: Structure.STRUCTURE_UNMARKED_REACHING,
+    terrainPriority: TerrainPriority.A,
+    directionalSelection: DirectionalSelection.LEFT_UP,
+    directionalSelectionCount: 2,
+    cultTrackSelection: CultTrackSelection.CATCH_UP,
+    bonusCardSelection: BonusCardSelection.MIDDLE,
+    initialDwellingMarked: InitialDwelling.D,
+    initialDwellingUnmarked: InitialDwelling.E,
+    pass: true
+  },
+  {
+    id: '12',
+    actions: [
+      Action.BLOCK_POWER_ACTION,
+      Action.GAIN_VICTORY_POINTS
+    ],
+    victoryPointsDifficultyLevel: true,
+    structure: Structure.STRUCTURE_UNMARKED_REACHING,
+    terrainPriority: TerrainPriority.A,
+    directionalSelection: DirectionalSelection.LEFT_UP,
+    directionalSelectionCount: 3,
+    cultTrackSelection: CultTrackSelection.CATCH_UP,
+    bonusCardSelection: BonusCardSelection.RIGHT,
+    initialDwellingMarked: InitialDwelling.D,
+    initialDwellingUnmarked: InitialDwelling.F,
+    pass: true
+  },
+  {
+    id: '13',
+    actions: [
+      Action.TRANSFORM_AND_BUILD,
+      Action.GAIN_VICTORY_POINTS
+    ],
+    victoryPoints: 2,
+    structure: Structure.STRUCTURE_MARKED_REACHING,
+    terrainPriority: TerrainPriority.B,
+    directionalSelection: DirectionalSelection.RIGHT_DOWN,
+    directionalSelectionCount: 1,
+    cultTrackSelection: CultTrackSelection.CATCH_UP,
+    bonusCardSelection: BonusCardSelection.RIGHT,
+    initialDwellingMarked: InitialDwelling.A,
+    initialDwellingUnmarked: InitialDwelling.C,
+    pass: true
+  },
+  {
+    id: '*2-mots',
+    starter: true,
+    merchantsOfTheSea: true,
+    actions: [
+      Action.BLOCK_POWER_ACTION,
+      Action.BLOCK_POWER_ACTION,
+      Action.TRADE
+    ],
+    structure: Structure.STRUCTURE_MARKED,
+    terrainPriority: TerrainPriority.B,
+    directionalSelection: DirectionalSelection.LEFT_UP,
+    directionalSelectionCount: 1,
+    cultTrackSelection: CultTrackSelection.CATCH_UP,
+    bonusCardSelection: BonusCardSelection.MIDDLE,
+    initialDwellingMarked: InitialDwelling.A,
+    initialDwellingUnmarked: InitialDwelling.B
+  },
+  {
+    id: '*4-mots',
+    starter: true,
+    merchantsOfTheSea: true,
+    actions: [
+      Action.TRANSFORM_AND_BUILD,
+      Action.GAIN_VICTORY_POINTS
+    ],
+    shipLevel: 2,
+    victoryPoints: 1,
+    structure: Structure.STRUCTURE_UNMARKED,
+    terrainPriority: TerrainPriority.B,
+    directionalSelection: DirectionalSelection.LEFT_UP,
+    directionalSelectionCount: 3,
+    cultTrackSelection: CultTrackSelection.CATCH_UP,
+    bonusCardSelection: BonusCardSelection.LEFT,
+    initialDwellingMarked: InitialDwelling.D,
+    initialDwellingUnmarked: InitialDwelling.F,
+    pass: true
+  },
+  {
+    id: 'mots-special',
+    actions: [
+      Action.TRADE
+    ],
+    structure: Structure.STRUCTURE_UNMARKED,
+    terrainPriority: TerrainPriority.B,
+    directionalSelection: DirectionalSelection.RIGHT_DOWN,
+    directionalSelectionCount: 4,
+    cultTrackSelection: CultTrackSelection.CATCH_UP,
+    bonusCardSelection: BonusCardSelection.RIGHT,
+    initialDwellingMarked: InitialDwelling.D,
+    initialDwellingUnmarked: InitialDwelling.E,
+    pass: true
   },
 ]
 
-const cardsMap = new Map<CardName,Card>()
-cards.forEach(card => cardsMap.set(card.name, card))
+const cardsMap = new Map<string,Card>()
+cards.forEach(card => cardsMap.set(card.id, card))
 
 export default {
 
   /**
-   * Get card by name
-   * @param name name
+   * Get card by ID
+   * @param id ID
    * @returns Card
    */
-  get(name: CardName) : Card {
-    return findMandatory(cardsMap, name)
+  get(id: string) : Card {
+    return findMandatory(cardsMap, id)
   },
 
   /**

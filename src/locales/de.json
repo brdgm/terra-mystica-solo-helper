@@ -2,8 +2,8 @@
   "gameTitle": "Terra Mystica",
   "home": {
     "title": "Terra Mystica Solo Helper",
-    "play1": "Spiele den <a href='https://boardgamegeek.com/thread/2823056/rno-alternative-solo-mode' target='_blank' rel='noopener'><b>A.R.N.O. Solo-Modus</b></a> (inoffiziell) von <a href='https://boardgamegeek.com/boardgame/342942/ark-nova' target='_blank' rel='noopener'><b>Arche Nova</b></a>. Im Unterschied zum offiziellen Solo-Modus werden ein oder mehrere zusätzliche Gegner simuliert wie in einem Mehrspieler-Spiel.",
-    "play2": "Um den Solo-Modus zu spielen benötigst Du nur das Basis-Spiel. Diese Applikation ersetzt das ARNO Karten-Deck und die Würfel und kontrolliert den Fortschritt von ARNO.",
+    "play1": "Spiele den Automa Solo-Modus von <a href='https://boardgamegeek.com/boardgame/120677/terra-mystica' target='_blank' rel='noopener'><b>Terra Mystica</b></a>. Die Erweiterungen <i>Feuer & Eis</i> und <i>Die Händler</i> werden unterstützt.",
+    "play2": "Um den Solo-Modus zu spielen wird das Basis-Spiel und die <a href='https://boardgamegeek.com/boardgameexpansion/349169/terra-mystica-automa-solo-box' target='_blank' rel='noopener'><b>Automa Solo Box</b></a> benötigt. Diese Applikation ersetzt die Automa-Karten.",
     "feedback": "Discussion and Feedback:"
   },
   "setup": {

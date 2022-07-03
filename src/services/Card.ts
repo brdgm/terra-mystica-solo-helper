@@ -1,18 +1,26 @@
-import Action from "./enum/Action"
-import CardName from "./enum/CardName"
-import DifficultyLevel from "./enum/DifficultyLevel"
+import Action from "./enum/Action";
+import BonusCardSelection from "./enum/BonusCardSelection";
+import CultTrackSelection from "./enum/CultTrackSelection";
+import DirectionalSelection from "./enum/DirectionalSelection";
+import InitialDwelling from "./enum/InitialDwelling";
+import Structure from "./enum/Structure";
+import TerrainPriority from "./enum/TerrainPriority";
 
 export default interface Card {
-  name: CardName
-  standardActions: CardAction[]
-  upgradedActions: CardAction[]
-}
-
-export interface CardAction {
-  action: Action
-  slotAmount?: boolean
-  amount?: number
-  slotFilter?: number
-  difficultyLevelFilter?: DifficultyLevel
-  fallback?: boolean
+  id: string
+  starter?: boolean
+  merchantsOfTheSea?: boolean
+  actions: Action[]
+  shipLevel?: number,
+  victoryPoints?: number
+  victoryPointsDifficultyLevel?: boolean
+  structure: Structure
+  terrainPriority: TerrainPriority
+  directionalSelection: DirectionalSelection
+  directionalSelectionCount: number
+  cultTrackSelection: CultTrackSelection
+  bonusCardSelection: BonusCardSelection
+  initialDwellingMarked: InitialDwelling
+  initialDwellingUnmarked: InitialDwelling
+  pass?: boolean
 }
