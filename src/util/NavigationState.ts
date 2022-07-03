@@ -1,6 +1,7 @@
+import BotFaction from "@/services/enum/BotFaction"
 import DifficultyLevel from "@/services/enum/DifficultyLevel"
 import PlayerOrder from "@/services/PlayerOrder"
-import { Round, RoundTurn, Setup, State } from "@/store"
+import { Round, RoundTurn, State } from "@/store"
 import { RouteLocation } from "vue-router"
 import { Store } from "vuex"
 
@@ -13,6 +14,7 @@ export default class NavigationState {
   readonly round : number
   readonly turn : number
   readonly roundTurn? : RoundTurn
+  readonly botFaction? : BotFaction
 
   constructor(route : RouteLocation, store : Store<State>) {    
     const setup = store.state.setup
@@ -24,9 +26,12 @@ export default class NavigationState {
     this.turn = parseInt(route.params['turn'] as string)
 
     const roundData = this.getRound(this.round, store)
-    this.playerOrder = new PlayerOrder(roundData.turns, setup.playerSetup.playerCount, setup.playerSetup.botCount)
+    this.playerOrder = new PlayerOrder(roundData.turns.slice(0, this.turn), setup.playerSetup.playerCount, setup.playerSetup.botCount)
 
     this.roundTurn = this.getRoundTurn(roundData, this.turn, store)
+    if (this.roundTurn?.bot) {
+      this.botFaction = setup.playerSetup.botFaction[this.roundTurn?.bot - 1]
+    }
   }
 
   private getRound(round : number, store : Store<State>) : Round {

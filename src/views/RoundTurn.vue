@@ -1,7 +1,7 @@
 <template>
   <h4>{{t('roundTurn.turnInfo', {round:round, turn:turn})}}</h4>
   <h1 v-if="roundTurn?.player">{{t('roundTurn.titlePlayer', {player:roundTurn?.player}, playerCount)}}</h1>
-  <h1 v-if="roundTurn?.bot">{{t('roundTurn.titleBot', {bot:roundTurn?.bot}, botCount)}}</h1>
+  <h1 v-if="roundTurn?.bot">{{t('roundTurn.titleBot', {bot:roundTurn?.bot, faction:t('botFaction.'+botFaction)}, botCount)}}</h1>
 
   <router-link :to="nextButtonRouteTo" class="btn btn-primary btn-lg mt-4">
     {{t('action.next')}}
@@ -34,8 +34,9 @@ export default defineComponent({
     const round = navigationState.round
     const turn = navigationState.turn
     const roundTurn = navigationState.roundTurn
+    const botFaction = navigationState.botFaction
 
-    return { t, playerCount, botCount, round, turn, roundTurn }
+    return { t, playerCount, botCount, round, turn, roundTurn, botFaction }
   },
   computed: {
     backButtonRouteTo() : string {

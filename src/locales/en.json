@@ -51,7 +51,7 @@
   "roundTurn": {
     "turnInfo": "Round {round}, Turn {turn}",
     "titlePlayer": "Player | Player {player}",
-    "titleBot": "Automa: {faction} | Automa {player}: {faction}"
+    "titleBot": "Automa: {faction} | Automa {bot}: {faction}"
   },
   "difficultyLevel": {
     "1": "Automalein",
@@ -60,7 +60,7 @@
     "4": "Ultoma",
     "5": "Alptrauma"
   },
-  "faction": {
+  "botFaction": {
     "simpletons": "The Simpletons",
     "kuddlers": "The Kuddlers",
     "druids": "Druids",

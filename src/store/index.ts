@@ -1,4 +1,4 @@
-import AutomaFaction from '@/services/enum/AutomaFaction'
+import BotFaction from '@/services/enum/BotFaction'
 import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import { InjectionKey } from 'vue'
 import { createStore, useStore as baseUseStore, Store } from 'vuex'
@@ -18,7 +18,7 @@ export interface Setup {
 export interface PlayerSetup {
   playerCount: number
   botCount: number
-  botFaction: AutomaFaction[]
+  botFaction: BotFaction[]
 }
 export interface Round {
   round: number
@@ -50,7 +50,7 @@ export const store = createStore<State>({
       playerSetup: {
         playerCount: 1,
         botCount: 1,
-        botFaction: [AutomaFaction.SIMPLETONS]
+        botFaction: [BotFaction.SIMPLETONS]
       },
       difficultyLevel: DifficultyLevel.AUTOMALEIN
     },

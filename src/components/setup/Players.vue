@@ -29,7 +29,7 @@
     </div>
     <div class="col-7 col-md-4">
       <select class="form-select" v-model="botFaction[bot-1]">
-        <option v-for="faction of factions" :key="faction" :value="faction">{{t('faction.' + faction)}}</option>
+        <option v-for="faction of factions" :key="faction" :value="faction">{{t('botFaction.' + faction)}}</option>
       </select>
     </div>
   </div>
@@ -43,7 +43,7 @@
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useStore } from '@/store'
-import AutomaFaction from '@/services/enum/AutomaFaction'
+import BotFaction from '@/services/enum/BotFaction'
 
 export default defineComponent({
   name: 'Players',
@@ -57,7 +57,7 @@ export default defineComponent({
       playerCount: this.$store.state.setup.playerSetup.playerCount,
       botCount: this.$store.state.setup.playerSetup.botCount,
       botFaction: this.$store.state.setup.playerSetup.botFaction,
-      factions: Object.values(AutomaFaction)
+      factions: Object.values(BotFaction)
     }
   },
   computed: {
@@ -92,7 +92,7 @@ export default defineComponent({
     storePlayerSetup() {
       for (let bot=1; bot<=this.botCount; bot++) {
         if (!this.botFaction[bot-1]) {
-          this.botFaction[bot-1] = AutomaFaction.SIMPLETONS
+          this.botFaction[bot-1] = BotFaction.SIMPLETONS
         }
       }
       this.$store.commit('setupPlayer', {
