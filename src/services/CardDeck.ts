@@ -5,6 +5,9 @@ import Cards from "./Cards"
 import DifficultyLevel from "./enum/DifficultyLevel"
 import rollDice from 'brdgm-commons/src/util/random/rollDice'
 
+/**
+ * Deck of cards with action/support cards and reserve.
+ */
 export default class CardDeck {
 
   private static readonly CARD_3 = '*3'

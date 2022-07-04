@@ -9,6 +9,6 @@ enum Action {
   UPGRADE = 'upgrade',
   TAKE_FAVOR_TILE = 'take-favor-tile',
   TRANSFORM_AND_BUILD = 'transform-and-build',
-  TRADE = 'TRADE'
+  TRADE = 'trade'
 }
 export default Action

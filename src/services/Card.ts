@@ -11,7 +11,8 @@ export default interface Card {
   starter?: boolean
   merchantsOfTheSeas?: boolean
   actions: Action[]
-  shipLevel?: number,
+  shipLevel?: number
+  tradeMinRound?: number
   victoryPoints?: number
   victoryPointsDifficultyLevel?: boolean
   structure: Structure

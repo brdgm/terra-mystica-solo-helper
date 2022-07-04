@@ -237,6 +237,7 @@ const cards = [
       Action.BLOCK_POWER_ACTION,
       Action.TRADE
     ],
+    tradeMinRound: 5,
     structure: Structure.STRUCTURE_MARKED,
     terrainPriority: TerrainPriority.B,
     directionalSelection: DirectionalSelection.LEFT_UP,
@@ -272,6 +273,7 @@ const cards = [
     actions: [
       Action.TRADE
     ],
+    tradeMinRound: 3,
     structure: Structure.STRUCTURE_UNMARKED,
     terrainPriority: TerrainPriority.B,
     directionalSelection: DirectionalSelection.RIGHT_DOWN,
