@@ -3,6 +3,7 @@
   <p v-html="t('setupGameAutoma.generalSetupIntro')"></p>
   <ol>
     <li>
+      <img src="@/assets/icons/scoring-tile-setup.png" class="scoring-tile-icon"/>
       <span v-html="t('setupGameAutoma.step1')"></span>
       <div class="mots" v-if="hasMerchantsOfTheSeas">
         <img src="@/assets/icons/expansion/merchants-of-the-seas.png" class="icon"/>
@@ -10,7 +11,10 @@
         <img src="@/assets/icons/scoring-tile-mots-icon.png" class="icon"/>
       </div>
     </li>
-    <li v-html="t('setupGameAutoma.step2')"></li>
+    <li>
+      <img src="@/assets/icons/scoring-tile-game-end-token.png" class="scoring-tile-icon"/>
+      <span v-html="t('setupGameAutoma.step2')"></span>
+    </li>
     <li v-html="t('setupGameAutoma.step3')"></li>
     <li v-html="t('setupGameAutoma.step4')"></li>
     <li>
@@ -78,6 +82,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 li {
   margin-top: 0.5rem;
+  clear: both;
   li {
     margin-top: 0rem;
   }
@@ -87,5 +92,11 @@ li {
 }
 .mots {
   color: #007f93;
+}
+.scoring-tile-icon {
+  float: right;
+  height: 6rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 </style>
