@@ -21,6 +21,9 @@
       "title": "Difficulty Level",
       "easy": "Easy",
       "hard": "Hard"
+    },
+    "expansions": {
+      "title": "Expansions"
     }
   }, 
   "setupGameAutoma": {
@@ -53,12 +56,24 @@
     "titlePlayer": "Player | Player {player}",
     "titleBot": "Automa: {faction} | Automa {bot}: {faction}"
   },
+  "playerTurn": {
+    "text": "Please make your turn - or pass.",
+    "passConfirm": "Do you want to pass?",
+    "passInfo": "Collect your round bonus victory points (if any) and take a new Bonus card."
+  },
+  "botTurn:": {
+    
+  },
   "difficultyLevel": {
     "1": "Automalein",
     "2": "Automa",
     "3": "Automächtig",
     "4": "Ultoma",
     "5": "Alptrauma"
+  },
+  "expansion": {
+    "fire-and-ice": "Fire & Ice",
+    "merchants-of-the-seas": "Merchants of the Seas"
   },
   "botFaction": {
     "simpletons": "The Simpletons",
@@ -89,7 +104,8 @@
     "backToHome": "Back to Home",
     "back": "Back",
     "close": "Close",
-    "reset": "Reset"
+    "reset": "Reset",
+    "pass": "Pass"
   },
   "footer": {
     "credits": "Credits"

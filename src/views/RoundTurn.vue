@@ -1,11 +1,13 @@
 <template>
   <h4>{{t('roundTurn.turnInfo', {round:round, turn:turn})}}</h4>
-  <h1 v-if="roundTurn?.player">{{t('roundTurn.titlePlayer', {player:roundTurn?.player}, playerCount)}}</h1>
-  <h1 v-if="roundTurn?.bot">{{t('roundTurn.titleBot', {bot:roundTurn?.bot, faction:t('botFaction.'+botFaction)}, botCount)}}</h1>
+  <h1>
+    <template v-if="roundTurn?.player">{{t('roundTurn.titlePlayer', {player:roundTurn?.player}, playerCount)}}</template>
+    <template v-if="roundTurn?.bot">{{t('roundTurn.titleBot', {bot:roundTurn?.bot, faction:t('botFaction.'+botFaction)}, botCount)}}</template>
+    <img v-if="startPlayer" src="@/assets/icons/start-player-token.png" class="startPlayerIcon"/>
+  </h1>
 
-  <router-link :to="nextButtonRouteTo" class="btn btn-primary btn-lg mt-4">
-    {{t('action.next')}}
-  </router-link>
+  <PlayerTurn v-if="roundTurn?.player" :navigationState="navigationState" :nextButtonRouteTo="nextButtonRouteTo"/>
+  <BotTurn v-if="roundTurn?.bot" :navigationState="navigationState" :nextButtonRouteTo="nextButtonRouteTo"/>
 
   <FooterButtons :backButtonRouteTo="backButtonRouteTo"  endGameButtonType="abortGame"/>
 </template>
@@ -16,11 +18,15 @@ import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
 import { useStore } from '@/store'
 import NavigationState from '@/util/NavigationState'
+import PlayerTurn from '@/components/turn/PlayerTurn.vue'
+import BotTurn from '@/components/turn/BotTurn.vue'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
 
 export default defineComponent({
   name: 'RoundTurn',
   components: {
+    PlayerTurn,
+    BotTurn,
     FooterButtons
   },
   setup() {
@@ -35,8 +41,9 @@ export default defineComponent({
     const turn = navigationState.turn
     const roundTurn = navigationState.roundTurn
     const botFaction = navigationState.botFaction
+    const startPlayer = navigationState.roundTurn?.startPlayer
 
-    return { t, playerCount, botCount, round, turn, roundTurn, botFaction }
+    return { t, navigationState, playerCount, botCount, round, turn, roundTurn, botFaction, startPlayer }
   },
   computed: {
     backButtonRouteTo() : string {
@@ -53,3 +60,11 @@ export default defineComponent({
   }
 })
 </script>
+
+<style lang="scss" scoped>
+.startPlayerIcon {
+  height: 2.8rem;
+  margin-left: 0.75rem;
+  margin-top: -0.5rem;
+}
+</style>

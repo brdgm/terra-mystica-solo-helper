@@ -4,7 +4,7 @@
   <ol>
     <li>
       <span v-html="t('setupGameAutoma.step1')"></span>
-      <div class="mots">
+      <div class="mots" v-if="hasMerchantsOfTheSeas">
         <img src="@/assets/icons/expansion/merchants-of-the-seas.png" class="icon"/>
         <span v-html="t('setupGameAutoma.step1-mots')"></span>
         <img src="@/assets/icons/scoring-tile-mots-icon.png" class="icon"/>
@@ -18,7 +18,7 @@
       <ol type="a">
         <li v-html="t('setupGameAutoma.step5a')"></li>
         <li v-html="t('setupGameAutoma.step5b')"></li>
-        <li class="mots">
+        <li class="mots" v-if="hasMerchantsOfTheSeas">
           <img src="@/assets/icons/expansion/merchants-of-the-seas.png" class="icon"/>
           <span v-html="t('setupGameAutoma.step5c-mots')"></span>
         </li>
@@ -26,7 +26,7 @@
         <li v-html="t('setupGameAutoma.step5e')"></li>
         <li v-html="t('setupGameAutoma.step5f')"></li>
         <li v-html="t('setupGameAutoma.step5g')"></li>
-        <li class="mots">
+        <li class="mots" v-if="hasMerchantsOfTheSeas">
           <img src="@/assets/icons/expansion/merchants-of-the-seas.png" class="icon"/>
           <span v-html="t('setupGameAutoma.step5h-mots')"></span>
         </li>
@@ -54,6 +54,7 @@ import Cards from '@/services/Cards'
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import rollDice from 'brdgm-commons/src/util/random/rollDice'
+import Expansion from '@/services/enum/Expansion'
 
 export default defineComponent({
   name: 'AutomaSetup',
@@ -62,6 +63,9 @@ export default defineComponent({
     return { t }
   },
   computed: {
+    hasMerchantsOfTheSeas() : boolean {
+      return this.$store.state.setup.expansions.includes(Expansion.MERCHANTS_OF_THE_SEAS)
+    },
     randomCard() : Card {
       const allCards = Cards.getAll()
       const index = rollDice(allCards.length)

@@ -6,7 +6,7 @@
       <label for="playerCount" class="form-label">{{t('setup.players.playerCount')}}</label>
     </div>
     <div class="col-7 col-md-4">
-      <select class="form-select" v-model="playerCount">
+      <select class="form-select" id="playerCount" v-model="playerCount">
         <option v-for="i in maxPlayerCount" :key="i" :value="i">{{t('setup.players.playerCountItem', {count:i}, i)}}</option>
       </select>
     </div>
@@ -17,7 +17,7 @@
       <label for="botCount" class="form-label">{{t('setup.players.botCount')}}</label>
     </div>
     <div class="col-7 col-md-4">
-      <select class="form-select" v-model="botCount">
+      <select class="form-select" id="botCount" v-model="botCount">
         <option v-for="i in maxBotCount" :key="i" :value="i">{{t('setup.players.botCountItem', {count:i}, i)}}</option>
       </select>
     </div>
@@ -25,10 +25,10 @@
 
   <div class="row mt-3" v-for="bot in botCount" :key="bot">
     <div class="col-5 col-md-3">
-      <label for="botCount" class="form-label">{{t('setup.players.botFaction', {bot:bot}, botCount)}}</label>
+      <label :for="`botFaction${bot}`" class="form-label">{{t('setup.players.botFaction', {bot:bot}, botCount)}}</label>
     </div>
     <div class="col-7 col-md-4">
-      <select class="form-select" v-model="botFaction[bot-1]">
+      <select class="form-select" :id="`botFaction${bot}`" v-model="botFaction[bot-1]">
         <option v-for="faction of factions" :key="faction" :value="faction">{{t('botFaction.' + faction)}}</option>
       </select>
     </div>

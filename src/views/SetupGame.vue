@@ -3,6 +3,7 @@
 
   <Players/>
   <DifficultyLevel/>
+  <Expansions/>
 
   <router-link to="/setupGameAutoma" class="btn btn-primary btn-lg mt-4">
     {{t('setupGameAutoma.title')}}
@@ -16,6 +17,7 @@ import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import Players from '@/components/setup/Players.vue'
 import DifficultyLevel from '@/components/setup/DifficultyLevel.vue'
+import Expansions from '@/components/setup/Expansions.vue'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
 
 export default defineComponent({
@@ -23,6 +25,7 @@ export default defineComponent({
   components: {
     Players,
     DifficultyLevel,
+    Expansions,
     FooterButtons
   },
   setup() {

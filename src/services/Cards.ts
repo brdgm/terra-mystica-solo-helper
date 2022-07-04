@@ -30,6 +30,7 @@ const cards = [
   {
     id: '*2',
     starter: true,
+    merchantsOfTheSeas: false,
     actions: [
       Action.BLOCK_POWER_ACTION,
       Action.GAIN_VICTORY_POINTS
@@ -62,6 +63,7 @@ const cards = [
   {
     id: '*4',
     starter: true,
+    merchantsOfTheSeas: false,
     actions: [
       Action.TRANSFORM_AND_BUILD,
       Action.GAIN_VICTORY_POINTS
@@ -229,7 +231,7 @@ const cards = [
   {
     id: '*2-mots',
     starter: true,
-    merchantsOfTheSea: true,
+    merchantsOfTheSeas: true,
     actions: [
       Action.BLOCK_POWER_ACTION,
       Action.BLOCK_POWER_ACTION,
@@ -247,7 +249,7 @@ const cards = [
   {
     id: '*4-mots',
     starter: true,
-    merchantsOfTheSea: true,
+    merchantsOfTheSeas: true,
     actions: [
       Action.TRANSFORM_AND_BUILD,
       Action.GAIN_VICTORY_POINTS
@@ -266,6 +268,7 @@ const cards = [
   },
   {
     id: 'mots-special',
+    merchantsOfTheSeas: true,
     actions: [
       Action.TRADE
     ],

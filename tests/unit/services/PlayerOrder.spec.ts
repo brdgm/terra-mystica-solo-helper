@@ -8,6 +8,7 @@ describe('PlayerOrder', () => {
 
     expect(playerOrder.getStartPlayer()).to.eql(Player.player(1))
     expect(playerOrder.getNextPlayer()).to.eql(Player.player(1))
+    expect(playerOrder.hasAnyonePassed()).to.false
   })
 
   it('next11-bot', () => {
@@ -16,6 +17,7 @@ describe('PlayerOrder', () => {
     ],1,1)
 
     expect(playerOrder.getNextPlayer()).to.eql(Player.bot(1))
+    expect(playerOrder.hasAnyonePassed()).to.false
   })
 
   it('next11-player', () => {
@@ -25,6 +27,7 @@ describe('PlayerOrder', () => {
     ],1,1)
 
     expect(playerOrder.getNextPlayer()).to.eql(Player.player(1))
+    expect(playerOrder.hasAnyonePassed()).to.false
   })
 
   it('next22-bot2', () => {
@@ -42,6 +45,7 @@ describe('PlayerOrder', () => {
 
     expect(playerOrder.getNextPlayer()).to.eql(Player.bot(2))
     expect(playerOrder.getStartPlayer()).to.eql(Player.player(1))
+    expect(playerOrder.hasAnyonePassed()).to.true
   })
 
   it('next22-none', () => {
@@ -57,5 +61,6 @@ describe('PlayerOrder', () => {
 
     expect(playerOrder.getNextPlayer()).to.undefined
     expect(playerOrder.getStartPlayer()).to.eql(Player.player(2))
+    expect(playerOrder.hasAnyonePassed()).to.true
   })
 })

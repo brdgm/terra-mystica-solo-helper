@@ -21,6 +21,9 @@
       "title": "Schwierigkeitsgrad",
       "easy": "Leicht",
       "hard": "Schwer"
+    },
+    "expansions": {
+      "title": "Erweiterungen"
     }
   }, 
   "setupGameAutoma": {
@@ -53,12 +56,24 @@
     "titlePlayer": "Spieler | Spieler {player}",
     "titleBot": "Automa: {faction} | Automa {bot}: {faction}"
   },
+  "playerTurn": {
+    "text": "Bitte führe deinen Zug durch - oder passe.",
+    "passConfirm": "Möchtest du passen?",
+    "passInfo": "Erhalte Siegpunkte von deiner Rundenbonuskarte (falls vorhanden) und nimm eine neue Rundenbonuskarte."
+  },
+  "botTurn:": {
+    
+  },
   "difficultyLevel": {
     "1": "Automalein",
     "2": "Automa",
     "3": "Automächtig",
     "4": "Ultoma",
     "5": "Alptrauma"
+  },
+  "expansion": {
+    "fire-and-ice": "Feuer & Eis",
+    "merchants-of-the-seas": "Die Händler"
   },
   "botFaction": {
     "simpletons": "Die Unscheinbaren",
@@ -89,7 +104,8 @@
     "backToHome": "Zurück zum Anfang",
     "back": "Zurück",
     "close": "Schließen",
-    "reset": "Zurücksetzen"
+    "reset": "Zurücksetzen",
+    "pass": "Passen"
   },
   "footer": {
     "credits": "Credits"

@@ -17,9 +17,12 @@ export default class PlayerOrder {
    * Get starting player from this round (may have changed during round).
    */
   public getStartPlayer() : Player {
-    const startPlayers = this.turns.filter(item => item.startPlayer)
-    if (startPlayers.length > 0) {
-      return Player.fromTurn(startPlayers[startPlayers.length -1])
+    const startPlayerTurns = this.turns.filter(item => item.startPlayer)
+    if (startPlayerTurns.length > 0) {
+      return Player.fromTurn(startPlayerTurns[startPlayerTurns.length -1])
+    }
+    if (this.turns.length > 0) {
+      return Player.fromTurn(this.turns[0])
     }
     return this.allPlayers[0]
   }
@@ -27,8 +30,15 @@ export default class PlayerOrder {
   /**
    * Get next player in player order (that has not yet passed)
    */
-   public getNextPlayer() : Player|undefined {
+  public getNextPlayer() : Player|undefined {
     return this.getNextPlayerRecursively(this.getLastPlayer(), 0)
+  }
+
+  /**
+   * Checks if anyone has already passed this round.
+   */
+  public hasAnyonePassed() : boolean {
+    return this.turns.find(item => item.pass) != undefined
   }
 
   private getLastPlayer() : Player|undefined {

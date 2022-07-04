@@ -1,7 +1,9 @@
 import BotFaction from '@/services/enum/BotFaction'
 import DifficultyLevel from '@/services/enum/DifficultyLevel'
+import Expansion from '@/services/enum/Expansion'
 import { InjectionKey } from 'vue'
 import { createStore, useStore as baseUseStore, Store } from 'vuex'
+import toggleArrayItem from "brdgm-commons/src/util/array/toggleArrayItem"
 
 const LOCALSTORAGE_KEY = process.env.VUE_APP_LOCALSTORAGE_KEY_PREFIX + "store"
 
@@ -12,8 +14,9 @@ export interface State {
   rounds: Round[]
 }
 export interface Setup {
-  playerSetup: PlayerSetup
   difficultyLevel: DifficultyLevel
+  expansions: Expansion[]
+  playerSetup: PlayerSetup
 }
 export interface PlayerSetup {
   playerCount: number
@@ -31,6 +34,12 @@ export interface RoundTurn {
   bot?: number
   startPlayer?: boolean
   pass?: boolean
+  cardDeck?: CardDeckPersistence
+}
+export interface CardDeckPersistence {
+  deck: string[]
+  reserve: string[]
+  discard: string[]
 }
 
 declare module '@vue/runtime-core' {
@@ -47,12 +56,13 @@ export const store = createStore<State>({
     language: "en",
     baseFontSize: 1.0,
     setup: {
+      difficultyLevel: DifficultyLevel.AUTOMALEIN,
+      expansions: [],
       playerSetup: {
         playerCount: 1,
         botCount: 1,
         botFaction: [BotFaction.SIMPLETONS]
-      },
-      difficultyLevel: DifficultyLevel.AUTOMALEIN
+      }
     },
     rounds: []
   },
@@ -66,6 +76,12 @@ export const store = createStore<State>({
     },
     language(state : State, language: string) {
       state.language = language
+    },
+    setupToggleExpansionFireAndIce(state : State) {
+      toggleArrayItem(state.setup.expansions, Expansion.FIRE_AND_ICE)
+    },
+    setupToggleExpansionMerchantsOfTheSeas(state : State) {
+      toggleArrayItem(state.setup.expansions, Expansion.MERCHANTS_OF_THE_SEAS)
     },
     setupPlayer(state : State, playerSetup: PlayerSetup) {
       state.setup.playerSetup = playerSetup
