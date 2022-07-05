@@ -44,6 +44,19 @@ export default class PlayerOrder {
     return this.turns.find(item => item.pass) != undefined
   }
 
+  /**
+   * Get last turn in this round of given player.
+   */
+  public getLastTurn(player : Player) : RoundTurn|undefined {
+    const playerTurns = this.turns.filter(item => player.is(item) && item.cardDeck)
+    if (playerTurns.length > 0) {
+      return playerTurns[playerTurns.length - 1]
+    }
+    else {
+      return undefined
+    }
+  }
+
   private getLastPlayer() : Player|undefined {
     if (this.turns.length > 0) {
       const lastTurn = this.turns[this.turns.length-1]

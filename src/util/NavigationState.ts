@@ -5,6 +5,9 @@ import PlayerOrder from "@/services/PlayerOrder"
 import { Round, RoundTurn, State } from "@/store"
 import { RouteLocation } from "vue-router"
 import { Store } from "vuex"
+import CardDeck from "@/services/CardDeck"
+import Player from "@/services/Player"
+import Expansion from "@/services/enum/Expansion"
 
 export default class NavigationState {
 
@@ -17,6 +20,7 @@ export default class NavigationState {
   readonly turn : number
   readonly roundTurn? : RoundTurn
   readonly botFaction? : BotFaction
+  readonly cardDeck? : CardDeck
 
   constructor(route : RouteLocation, store : Store<State>) {    
     const setup = store.state.setup
@@ -34,6 +38,9 @@ export default class NavigationState {
     this.roundTurn = _.cloneDeep(this.getRoundTurn(roundData, this.turn, store))
     if (this.roundTurn?.bot) {
       this.botFaction = setup.playerSetup.botFaction[this.roundTurn?.bot - 1]
+    }
+    if (this.roundTurn?.cardDeck) {
+      this.cardDeck = CardDeck.fromPersistence(this.roundTurn?.cardDeck)
     }
   }
 
@@ -83,10 +90,49 @@ export default class NavigationState {
       if (startPlayer) {
         turnData.startPlayer = startPlayer
       }
+      if (turnData.bot) {
+        const cardDeck = this.createCardDeck(round, nextPlayer, store);
+        if (cardDeck.isPass()) {
+          turnData.pass = true
+        }
+        turnData.cardDeck = cardDeck.toPersistence()
+      }
       store.commit('roundTurn', turnData)
       return turnData
     }
     return undefined
+  }
+
+  private createCardDeck(round : number, player : Player, store : Store<State>) : CardDeck {
+    let cardDeck
+
+    // get card deck from last turn in current round and draw a new card
+    let turnData = this.playerOrder.getLastTurn(player)
+    if (turnData && turnData.cardDeck) {
+      cardDeck = CardDeck.fromPersistence(turnData.cardDeck)
+      cardDeck.draw()
+      return cardDeck
+    }
+
+    // get card deck from previous round and prepare for new round
+    const hasMerchantsOfTheSeas = store.state.setup.expansions.includes(Expansion.MERCHANTS_OF_THE_SEAS)
+    if (round > 1) {
+      const previousRound = store.state.rounds[round-2]
+      if (previousRound) {
+        const playerOrderPreviousRound = new PlayerOrder(previousRound.turns, this.playerCount, this.botCount)
+        turnData = playerOrderPreviousRound.getLastTurn(player)
+        if (turnData && turnData.cardDeck) {
+          cardDeck = CardDeck.fromPersistence(turnData.cardDeck)
+          cardDeck.prepareForNextRound(round, hasMerchantsOfTheSeas)
+          return cardDeck
+        }
+      }
+    }
+
+    // prepare new card deck
+    cardDeck = CardDeck.new(store.state.setup.difficultyLevel, hasMerchantsOfTheSeas)
+    cardDeck.draw()
+    return cardDeck
   }
 
 }

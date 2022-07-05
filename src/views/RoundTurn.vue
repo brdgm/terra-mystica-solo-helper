@@ -1,5 +1,7 @@
 <template>
-  <h4>{{t('roundTurn.turnInfo', {round:round, turn:turn})}}</h4>
+  <div class="float-end">
+    {{t('roundTurn.turnInfo', {round:round, turn:turn})}}
+  </div>
   <h1>
     <template v-if="roundTurn?.player">{{t('roundTurn.titlePlayer', {player:roundTurn?.player}, playerCount)}}</template>
     <template v-if="roundTurn?.bot">{{t('roundTurn.titleBot', {bot:roundTurn?.bot, faction:t('botFaction.'+botFaction)}, botCount)}}</template>

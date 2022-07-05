@@ -63,4 +63,19 @@ describe('PlayerOrder', () => {
     expect(playerOrder.getStartPlayer()).to.eql(Player.player(2))
     expect(playerOrder.hasAnyonePassed()).to.true
   })
+
+  it('getLastTurn', () => {
+    const playerOrder = new PlayerOrder([
+      {round:1,turn:1,player:1},
+      {round:1,turn:2,player:2,pass:true,startPlayer:true},
+      {round:1,turn:3,bot:1,cardDeck:{deck:[],discard:[],reserve:[]}},
+      {round:1,turn:4,bot:2,cardDeck:{deck:[],discard:[],reserve:[]}},
+      {round:1,turn:5,player:1,pass:true},
+      {round:1,turn:6,bot:1,pass:true},
+      {round:1,turn:7,bot:2,pass:true}
+    ],2,2)
+
+    expect(playerOrder.getLastTurn(Player.bot(1))?.turn).to.eq(3)
+    expect(playerOrder.getLastTurn(Player.bot(2))?.turn).to.eq(4)
+  })
 })
