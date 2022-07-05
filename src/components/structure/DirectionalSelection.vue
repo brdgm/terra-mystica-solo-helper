@@ -49,7 +49,7 @@ export default defineComponent({
     margin-top: -0.1rem;
   }
   &.rightDown {
-
+    margin-top: 0.1rem;
   }
 }
 </style>
