@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="count" :class="{leftUp: isLeftUp, rightDown: !isLeftUp}">{{count}}</div>
-    <Icon type="directional-selection" :name="type" extension="jpg" class="icon"/>
+    <Icon type="directional-selection" :name="type" class="icon"/>
   </div>
 </template>
 

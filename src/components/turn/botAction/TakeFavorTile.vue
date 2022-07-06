@@ -1,10 +1,10 @@
 <template>
-  <div class="col-auto">
+  <td>
     <Icon type="action" :name="botAction.action" class="actionIcon"/>
-  </div>
-  <div class="col-auto">
+  </td>
+  <td>
     <SupportInfo :bot-action="botAction" :directional-selection="true" :cult-track-selection="true"/>
-  </div>
+  </td>
 </template>
 
 <script lang="ts">

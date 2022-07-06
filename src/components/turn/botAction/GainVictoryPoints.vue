@@ -1,10 +1,11 @@
 <template>
-  <div class="col-auto">
+  <td>
     <Icon type="action" :name="botAction.action" class="actionIcon"/>
-  </div>
-  <div class="col-auto">
+  </td>
+  <td></td>
+  <td>
     !! Gain <b>{{botAction.victoryPoints}}</b> victory points.
-  </div>
+  </td>
 </template>
 
 <script lang="ts">

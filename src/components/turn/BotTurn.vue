@@ -3,9 +3,11 @@
     {{cardDeck.actionCard?.id}} / {{cardDeck.supportCard?.id}}
   </div>
 
-  <div class="row mt-3" v-for="(botAction, index) of botActions" :key="index">
-    <component :is="botAction.action" :botAction="botAction"/>
-  </div>
+  <table class="actions">
+    <tr class="mt-3" v-for="(botAction, index) of botActions" :key="index">
+      <component :is="botAction.action" :botAction="botAction"/>
+    </tr>
+  </table>
 
   <router-link :to="nextButtonRouteTo" class="btn btn-primary btn-lg mt-4">
     {{t('action.next')}}
@@ -75,3 +77,10 @@ export default defineComponent({
   }
 })
 </script>
+
+<style lang="scss" scoped>
+table.actions {
+  border-spacing: 1rem;
+  border-collapse: separate;
+}
+</style>

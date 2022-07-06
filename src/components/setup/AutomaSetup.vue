@@ -43,10 +43,10 @@
   <ol>
     <li v-html="t('setupGameAutoma.initialDwellingPlayer')"></li>
     <li>
-      <img src="@/assets/icons/structure/structure-marked.jpg" class="icon"/>&nbsp;<span v-html="t('setupGameAutoma.initialDwellingMarked', {character:randomCard.initialDwellingMarked})"></span>
+      <img src="@/assets/icons/structure/structure-marked.png" class="icon"/>&nbsp;<span v-html="t('setupGameAutoma.initialDwellingMarked', {character:randomCard.initialDwellingMarked})"></span>
     </li>
     <li>
-      <img src="@/assets/icons/structure/structure-unmarked.jpg" class="icon"/>&nbsp;<span v-html="t('setupGameAutoma.initialDwellingUnmarked', {character:randomCard.initialDwellingUnmarked})"></span>
+      <img src="@/assets/icons/structure/structure-unmarked.png" class="icon"/>&nbsp;<span v-html="t('setupGameAutoma.initialDwellingUnmarked', {character:randomCard.initialDwellingUnmarked})"></span>
     </li>
     <li v-html="t('setupGameAutoma.initialDwellingPlayerSecond')"></li>
   </ol>

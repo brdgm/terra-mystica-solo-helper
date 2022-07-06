@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Icon type="structure" :name="type" extension="jpg" class="icon"/>
+    <Icon type="structure" :name="type" class="icon"/>
   </div>
 </template>
 
