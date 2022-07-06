@@ -1,5 +1,5 @@
 <template>
-  <div class="float-end text-muted small">
+  <div class="position-absolute bottom-0 end-0 text-muted cardDebugInfo">
     {{cardDeck.actionCard?.id}} / {{cardDeck.supportCard?.id}}
   </div>
 
@@ -82,5 +82,11 @@ export default defineComponent({
 table.actions {
   border-spacing: 1rem;
   border-collapse: separate;
+}
+.cardDebugInfo {
+  margin-bottom: 2rem;
+  margin-right: 0.25rem;
+  font-size: 0.6rem;
+  background-color: #fff;
 }
 </style>

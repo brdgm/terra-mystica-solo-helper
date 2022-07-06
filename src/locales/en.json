@@ -61,8 +61,13 @@
     "passConfirm": "Do you want to pass?",
     "passInfo": "Collect your round bonus victory points (if any) and take a new Bonus card."
   },
-  "botTurn:": {
-    
+  "botAction": {
+    "gainVictoryPoints": {
+      "text": "Automa gains {count} victory point. | Automa gains {count} victory points."
+    },
+    "transformAndBuild": {
+      "noDwelling": "No dwelling left."
+    }
   },
   "difficultyLevel": {
     "1": "Automalein",

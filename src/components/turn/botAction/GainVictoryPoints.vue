@@ -4,8 +4,8 @@
     <Icon name="gain-victory-point" class="actionIcon"/>
   </td>
   <td></td>
-  <td>
-    !! Gain <b>{{botAction.victoryPoints}}</b> victory points.
+  <td class="text-muted small">
+    <p v-html="t('botAction.gainVictoryPoints.text', {count:botAction.victoryPoints}, botAction.victoryPoints!)"></p>
   </td>
 </template>
 
@@ -39,7 +39,7 @@ export default defineComponent({
 }
 .count {
   position: absolute;
-  width: 6rem;
+  width: 5.5rem;
   padding-top: 0.5rem;
   font-size: 3rem;
   font-weight: bold;

@@ -61,8 +61,13 @@
     "passConfirm": "Möchtest du passen?",
     "passInfo": "Erhalte Siegpunkte von deiner Rundenbonuskarte (falls vorhanden) und nimm eine neue Rundenbonuskarte."
   },
-  "botTurn:": {
-    
+  "botAction": {
+    "gainVictoryPoints": {
+      "text": "Automa erhält {count} Punkt. | Automa erhält {count} Punkte."
+    },
+    "transformAndBuild": {
+      "noDwelling": "Kein Wohnhaus übrig."
+    }
   },
   "difficultyLevel": {
     "1": "Automalein",
