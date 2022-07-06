@@ -1,5 +1,10 @@
 <template>
-  <Icon type="action" :name="botAction.action" class="actionIcon"/>
+  <div class="col-auto">
+    <Icon type="action" :name="botAction.action" class="actionIcon"/>
+  </div>
+  <div class="col-auto">
+    <SupportInfo :bot-action="botAction" :directional-selection="true"/>
+  </div>
 </template>
 
 <script lang="ts">
@@ -7,12 +12,14 @@ import { defineComponent, PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 import BotAction from '@/services/BotAction'
 import Icon from '@/components/structure/Icon.vue'
+import SupportInfo from '../supportInfo/SupportInfo.vue'
 
 export default defineComponent({
   name: 'Trade',
   components: {
-    Icon
-  },
+    Icon,
+    SupportInfo
+},
   setup() {
     const { t } = useI18n()
     return { t }

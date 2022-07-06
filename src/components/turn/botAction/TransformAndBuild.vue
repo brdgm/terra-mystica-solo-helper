@@ -3,9 +3,7 @@
     <Icon type="action" :name="botAction.action" class="actionIcon"/>
   </div>
   <div class="col-auto">
-    <Structure :type="botAction.structure!"/>
-    <TerrainPriority :type="botAction.terrainPriority!"/>
-    <DirectionalSelection :type="botAction.directionalSelection!" :count="botAction.directionalSelectionCount!"/>
+    <SupportInfo :bot-action="botAction" :structure="true" :terrain-priority="true" :directional-selection="true"/>
   </div>
 </template>
 
@@ -14,18 +12,14 @@ import { defineComponent, PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 import BotAction from '@/services/BotAction'
 import Icon from '@/components/structure/Icon.vue'
-import Structure from '@/components/structure/Structure.vue'
-import DirectionalSelection from '@/components/structure/DirectionalSelection.vue'
-import TerrainPriority from '../../structure/TerrainPriority.vue'
+import SupportInfo from '../supportInfo/SupportInfo.vue'
 
 export default defineComponent({
   name: 'TransformAndBuild',
   components: {
     Icon,
-    Structure,
-    TerrainPriority,
-    DirectionalSelection,
-  },
+    SupportInfo
+},
   setup() {
     const { t } = useI18n()
     return { t }

@@ -3,8 +3,7 @@
     <Icon type="action" :name="botAction.action" class="actionIcon"/>
   </div>
   <div class="col-auto">
-    <DirectionalSelection :type="botAction.directionalSelection!" :count="botAction.directionalSelectionCount!"/>
-    <CultTrackSelection :type="botAction.cultTrackSelection!"/>
+    <SupportInfo :bot-action="botAction" :directional-selection="true" :cult-track-selection="true"/>
   </div>
 </template>
 
@@ -13,16 +12,14 @@ import { defineComponent, PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 import BotAction from '@/services/BotAction'
 import Icon from '@/components/structure/Icon.vue'
-import CultTrackSelection from '@/components/structure/CultTrackSelection.vue'
-import DirectionalSelection from '@/components/structure/DirectionalSelection.vue'
+import SupportInfo from '../supportInfo/SupportInfo.vue'
 
 export default defineComponent({
   name: 'AdvanceCultTrack',
   components: {
     Icon,
-    DirectionalSelection,
-    CultTrackSelection
-  },
+    SupportInfo
+},
   setup() {
     const { t } = useI18n()
     return { t }
