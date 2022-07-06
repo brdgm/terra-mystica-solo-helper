@@ -42,6 +42,7 @@ export default class BotActions {
       botAction.shipLevel = botAction.shipLevel || actionCard.shipLevel || this._dlParams.shipLevel
       botAction.tradeMinRound = botAction.tradeMinRound || actionCard.tradeMinRound
       botAction.victoryPointsDifficultyLevel = botAction.victoryPointsDifficultyLevel || actionCard.victoryPointsDifficultyLevel
+      botAction.victoryPoints = botAction.victoryPoints || actionCard.victoryPoints 
       if (!botAction.victoryPoints && botAction.victoryPointsDifficultyLevel) {
         botAction.victoryPoints = this._dlParams.victoryPoints
         botAction.victoryPointsDifficultyLevel = undefined
@@ -55,7 +56,8 @@ export default class BotActions {
 
     // filter out actions not relevant for current round
     return result.filter(botAction => (botAction.action != Action.TAKE_FAVOR_TILE || round >= 5)
-        && (botAction.action != Action.TRADE || round >= (botAction.tradeMinRound || 0)))
+        && (botAction.action != Action.TRADE || round >= (botAction.tradeMinRound || 0))
+        && (botAction.action != Action.GAIN_VICTORY_POINTS || (botAction.victoryPoints && botAction.victoryPoints > 0)))
   }
 
   private getFactionBotActions(action : Action, botFaction : BotFaction) : BotAction[] {
