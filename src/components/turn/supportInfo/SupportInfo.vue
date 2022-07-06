@@ -53,5 +53,8 @@ export default defineComponent({
   background-color: #f7d39c;
   border-radius: 0.5rem;
   padding: 0.5rem;
+  div {
+    margin: 0.2rem;
+  }
 }
 </style>

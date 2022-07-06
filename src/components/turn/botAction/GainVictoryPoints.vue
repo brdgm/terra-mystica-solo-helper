@@ -1,6 +1,7 @@
 <template>
   <td>
-    <Icon type="action" :name="botAction.action" class="actionIcon"/>
+    <div class="count">{{botAction.victoryPoints}}</div>
+    <Icon name="gain-victory-point" class="actionIcon"/>
   </td>
   <td></td>
   <td>
@@ -35,5 +36,16 @@ export default defineComponent({
 <style lang="scss" scoped>
 .actionIcon {
   width: 6rem;
+}
+.count {
+  position: absolute;
+  width: 6rem;
+  padding-top: 0.5rem;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 10px #000, 1px 1px 10px #000;
+  transform: rotate(-5deg)
 }
 </style>
