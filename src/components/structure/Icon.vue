@@ -8,7 +8,7 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'Icon',
   setup() {
-    const images = require.context('@/assets/icons', true, /\.(png|jpg)$/)
+    const images = require.context('@/assets/icons', true, /\.png$/)
     return { images }
   },
   props: {
@@ -19,20 +19,15 @@ export default defineComponent({
     name: {
       type: String,
       required: true
-    },
-    extension: {
-      type: String,
-      required: false
     }
   },
   computed: {
     imageUrl() : string {
-      const extension = this.extension || 'png'
       if (this.type) {
-        return this.images(`./${this.type}/${this.name}.${extension}`)
+        return this.images(`./${this.type}/${this.name}.png`)
       }
       else {
-        return this.images(`./${this.name}.${extension}`)
+        return this.images(`./${this.name}.png`)
       }
     }
   }
