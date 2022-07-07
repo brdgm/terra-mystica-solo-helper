@@ -23,7 +23,8 @@
       "hard": "Hard"
     },
     "expansions": {
-      "title": "Expansions"
+      "title": "Expansions",
+      "finalScoringTile": "Final Scoring Tile"
     }
   }, 
   "setupGameAutoma": {
@@ -79,6 +80,13 @@
   "expansion": {
     "fire-and-ice": "Fire & Ice",
     "merchants-of-the-seas": "Merchants of the Seas"
+  },
+  "finalScoringTile": {
+    "default": "Default (Base Game)",
+    "greatest-distance": "Greatest Distance (Fire & Ice)",
+    "stronghold-sanctuary": "Stronghold and Sanctuary (Fire & Ice)",
+    "outposts": "Outposts (Fire & Ice)",
+    "settlements": "Settlements (Fire & Ice)"
   },
   "botFaction": {
     "simpletons": "The Simpletons",

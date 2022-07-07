@@ -23,6 +23,16 @@
       </div>
     </div>
   </div>
+  <div class="row mt-3" v-if="hasFireAndIce">
+    <div class="col-5 col-md-3">
+      <label for="finalScoringTile" class="form-label">{{t('setup.expansions.finalScoringTile')}}</label>
+    </div>
+    <div class="col-7 col-md-4">
+      <select class="form-select" id="finalScoringTile" v-model="finalScoringTile">
+        <option v-for="finalScoringTile of finalScoringTiles" :key="finalScoringTile" :value="finalScoringTile">{{t(`finalScoringTile.${finalScoringTile}`)}}</option>
+      </select>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -30,6 +40,7 @@ import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useStore } from '@/store'
 import Expansion from '@/services/enum/Expansion'
+import FinalScoringTile from '@/services/enum/FinalScoringTile'
 
 export default defineComponent({
   name: 'Expansions',
@@ -38,17 +49,31 @@ export default defineComponent({
     useStore()
     return { t }
   },
+  data() {
+    return {
+      finalScoringTile: this.$store.state.setup.finalScoringTile
+    }
+  },
   computed: {
     hasFireAndIce() : boolean {
       return this.$store.state.setup.expansions.includes(Expansion.FIRE_AND_ICE)
     },
     hasMerchantsOfTheSeas() : boolean {
       return this.$store.state.setup.expansions.includes(Expansion.MERCHANTS_OF_THE_SEAS)
+    },
+    finalScoringTiles() : FinalScoringTile[] {
+      return Object.values(FinalScoringTile)
+    }
+  },
+  watch: {
+    finalScoringTile() {
+      this.$store.commit('setupFinalScoringTile', this.finalScoringTile)
     }
   },
   methods: {
     toggleFireAndIce() {
       this.$store.commit('setupToggleExpansionFireAndIce')
+      this.finalScoringTile = this.$store.state.setup.finalScoringTile
     },
     toggleMerchantsOfTheSeas() {
       this.$store.commit('setupToggleExpansionMerchantsOfTheSeas')

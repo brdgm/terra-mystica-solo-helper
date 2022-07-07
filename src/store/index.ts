@@ -4,6 +4,7 @@ import Expansion from '@/services/enum/Expansion'
 import { InjectionKey } from 'vue'
 import { createStore, useStore as baseUseStore, Store } from 'vuex'
 import toggleArrayItem from "brdgm-commons/src/util/array/toggleArrayItem"
+import FinalScoringTile from '@/services/enum/FinalScoringTile'
 
 const LOCALSTORAGE_KEY = process.env.VUE_APP_LOCALSTORAGE_KEY_PREFIX + "store"
 
@@ -16,6 +17,7 @@ export interface State {
 export interface Setup {
   difficultyLevel: DifficultyLevel
   expansions: Expansion[]
+  finalScoringTile: FinalScoringTile
   playerSetup: PlayerSetup
 }
 export interface PlayerSetup {
@@ -58,6 +60,7 @@ export const store = createStore<State>({
     setup: {
       difficultyLevel: DifficultyLevel.AUTOMALEIN,
       expansions: [],
+      finalScoringTile: FinalScoringTile.DEFAULT,
       playerSetup: {
         playerCount: 1,
         botCount: 1,
@@ -79,9 +82,15 @@ export const store = createStore<State>({
     },
     setupToggleExpansionFireAndIce(state : State) {
       toggleArrayItem(state.setup.expansions, Expansion.FIRE_AND_ICE)
+      if (!state.setup.expansions.includes(Expansion.FIRE_AND_ICE)) {
+        state.setup.finalScoringTile = FinalScoringTile.DEFAULT
+      }
     },
     setupToggleExpansionMerchantsOfTheSeas(state : State) {
       toggleArrayItem(state.setup.expansions, Expansion.MERCHANTS_OF_THE_SEAS)
+    },
+    setupFinalScoringTile(state : State, finalScoringTile : FinalScoringTile) {
+      state.setup.finalScoringTile = finalScoringTile
     },
     setupPlayer(state : State, playerSetup: PlayerSetup) {
       state.setup.playerSetup = playerSetup

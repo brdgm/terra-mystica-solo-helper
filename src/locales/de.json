@@ -23,7 +23,8 @@
       "hard": "Schwer"
     },
     "expansions": {
-      "title": "Erweiterungen"
+      "title": "Erweiterungen",
+      "finalScoringTile": "Endwertungskärtchen"
     }
   }, 
   "setupGameAutoma": {
@@ -79,6 +80,13 @@
   "expansion": {
     "fire-and-ice": "Feuer & Eis",
     "merchants-of-the-seas": "Die Händler"
+  },
+  "finalScoringTile": {
+    "default": "Standard (Grundspiel)",
+    "greatest-distance": "Grösste Entfernung (Feuer & Eis)",
+    "stronghold-sanctuary": "Heiligtum und Festung (Feuer & Eis)",
+    "outposts": "Außenposten (Feuer & Eis)",
+    "settlements": "Ansiedlungen (Feuer & Eis)"
   },
   "botFaction": {
     "simpletons": "Die Unscheinbaren",
