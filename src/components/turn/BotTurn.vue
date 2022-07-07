@@ -5,7 +5,7 @@
 
   <table class="actions">
     <tr class="mt-3" v-for="(botAction, index) of botActions" :key="index">
-      <component :is="botAction.action" :botAction="botAction"/>
+      <component :is="botAction.action" :botAction="botAction" :navigationState="navigationState"/>
     </tr>
   </table>
 

@@ -88,7 +88,7 @@ describe('BotActions', () => {
 
     const action1 = botActions.actions[0]
     expect(action1.action).to.eq(Action.TRANSFORM_AND_BUILD)
-    expect(action1.structure).to.eq(Structure.STRUCTURE_MARKED)
+    expect(action1.structure).to.eq(Structure.MARKED)
     expect(action1.terrainPriority).to.eq(TerrainPriority.B)
     expect(action1.directionalSelection).to.eq(DirectionalSelection.LEFT_UP)
     expect(action1.directionalSelectionCount).to.eq(1)
@@ -107,7 +107,7 @@ describe('BotActions', () => {
 
     const action1 = botActions.actions[0]
     expect(action1.action).to.eq(Action.TRANSFORM_AND_BUILD)
-    expect(action1.structure).to.eq(Structure.STRUCTURE_MARKED)
+    expect(action1.structure).to.eq(Structure.MARKED)
     expect(action1.terrainPriority).to.eq(TerrainPriority.B)
     expect(action1.directionalSelection).to.eq(DirectionalSelection.LEFT_UP)
     expect(action1.directionalSelectionCount).to.eq(1)
@@ -126,7 +126,7 @@ describe('BotActions', () => {
 
     const action1 = botActions.actions[0]
     expect(action1.action).to.eq(Action.TRANSFORM_AND_BUILD)
-    expect(action1.structure).to.eq(Structure.STRUCTURE_MARKED)
+    expect(action1.structure).to.eq(Structure.MARKED)
     expect(action1.terrainPriority).to.eq(TerrainPriority.B)
     expect(action1.directionalSelection).to.eq(DirectionalSelection.LEFT_UP)
     expect(action1.directionalSelectionCount).to.eq(1)

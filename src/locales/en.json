@@ -67,7 +67,28 @@
       "text": "Automa gains {count} victory point. | Automa gains {count} victory points."
     },
     "transformAndBuild": {
-      "noDwelling": "No dwelling left."
+      "noDwelling": "No dwelling left",
+      "validSpaces": {
+        "marked": "Withing Range of any marked Structure",
+        "marked-reaching": "Withing Range of any marked Structure (with <a href='#modalReaching'>Reaching</a>)",
+        "unmarked": "Withing Range of any unmarked Structure",
+        "unmarked-reaching": "Withing Range of any unmarked Structure (with <a href='#modalReaching'>Reaching</a>)"
+      },
+      "tiebreaker": {
+        "title": "Select Space",
+        "factionPowerMongers": "Giving you the <b>most power</b>",
+        "terrainPriority": "Automa Terrain Priority",
+        "terrainPriorityYourTerrainType": "Terrain Priority with ATP card of <b>your</b> terrain type",
+        "structureClosest": "Space <b>closest</b> to any of your Structures",
+        "structureFurthest": "Space <b>furthest away</b> from any of your Structures",
+        "directionalSelection": "Directional Selection"
+      },
+      "execute": {
+        "title": "Execute",
+        "homeTerrainTile": "Place an Automa Home Terrain tile (if transforming was required).",
+        "dwelling": "Place an Automa Dwelling.",
+        "marked": "Mark the new Dwelling by placing a Power token on its space."
+      }
     }
   },
   "difficultyLevel": {

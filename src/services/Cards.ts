@@ -18,7 +18,7 @@ const cards = [
       Action.GAIN_VICTORY_POINTS
     ],
     victoryPointsDifficultyLevel: true,
-    structure: Structure.STRUCTURE_MARKED,
+    structure: Structure.MARKED,
     terrainPriority: TerrainPriority.A,
     directionalSelection: DirectionalSelection.RIGHT_DOWN,
     directionalSelectionCount: 2,
@@ -36,7 +36,7 @@ const cards = [
       Action.GAIN_VICTORY_POINTS
     ],
     victoryPointsDifficultyLevel: true,
-    structure: Structure.STRUCTURE_MARKED,
+    structure: Structure.MARKED,
     terrainPriority: TerrainPriority.B,
     directionalSelection: DirectionalSelection.LEFT_UP,
     directionalSelectionCount: 1,
@@ -51,7 +51,7 @@ const cards = [
     actions: [
       Action.ADVANCE_CULT_TRACK
     ],
-    structure: Structure.STRUCTURE_UNMARKED_REACHING,
+    structure: Structure.UNMARKED_REACHING,
     terrainPriority: TerrainPriority.B,
     directionalSelection: DirectionalSelection.RIGHT_DOWN,
     directionalSelectionCount: 3,
@@ -69,7 +69,7 @@ const cards = [
       Action.GAIN_VICTORY_POINTS
     ],
     victoryPoints: 1,
-    structure: Structure.STRUCTURE_UNMARKED,
+    structure: Structure.UNMARKED,
     terrainPriority: TerrainPriority.B,
     directionalSelection: DirectionalSelection.LEFT_UP,
     directionalSelectionCount: 3,
@@ -85,7 +85,7 @@ const cards = [
     actions: [
       Action.FACTION_ACTION
     ],
-    structure: Structure.STRUCTURE_MARKED_REACHING,
+    structure: Structure.MARKED_REACHING,
     terrainPriority: TerrainPriority.A,
     directionalSelection: DirectionalSelection.LEFT_UP,
     directionalSelectionCount: 2,
@@ -101,7 +101,7 @@ const cards = [
       Action.GAIN_VICTORY_POINTS
     ],
     victoryPointsDifficultyLevel: true,
-    structure: Structure.STRUCTURE_MARKED_REACHING,
+    structure: Structure.MARKED_REACHING,
     terrainPriority: TerrainPriority.B,
     directionalSelection: DirectionalSelection.RIGHT_DOWN,
     directionalSelectionCount: 3,
@@ -116,7 +116,7 @@ const cards = [
     actions: [
       Action.FACTION_ACTION
     ],
-    structure: Structure.STRUCTURE_UNMARKED_REACHING,
+    structure: Structure.UNMARKED_REACHING,
     terrainPriority: TerrainPriority.B,
     directionalSelection: DirectionalSelection.RIGHT_DOWN,
     directionalSelectionCount: 4,
@@ -133,7 +133,7 @@ const cards = [
       Action.GAIN_VICTORY_POINTS
     ],
     victoryPoints: 2,
-    structure: Structure.STRUCTURE_MARKED_REACHING,
+    structure: Structure.MARKED_REACHING,
     terrainPriority: TerrainPriority.A,
     directionalSelection: DirectionalSelection.RIGHT_DOWN,
     directionalSelectionCount: 1,
@@ -150,7 +150,7 @@ const cards = [
       Action.GAIN_VICTORY_POINTS
     ],
     victoryPoints: 2,
-    structure: Structure.STRUCTURE_MARKED_REACHING,
+    structure: Structure.MARKED_REACHING,
     terrainPriority: TerrainPriority.A,
     directionalSelection: DirectionalSelection.LEFT_UP,
     directionalSelectionCount: 2,
@@ -167,7 +167,7 @@ const cards = [
       Action.GAIN_VICTORY_POINTS
     ],
     victoryPoints: 1,
-    structure: Structure.STRUCTURE_UNMARKED_REACHING,
+    structure: Structure.UNMARKED_REACHING,
     terrainPriority: TerrainPriority.B,
     directionalSelection: DirectionalSelection.LEFT_UP,
     directionalSelectionCount: 4,
@@ -184,7 +184,7 @@ const cards = [
       Action.GAIN_VICTORY_POINTS
     ],
     victoryPointsDifficultyLevel: true,
-    structure: Structure.STRUCTURE_UNMARKED_REACHING,
+    structure: Structure.UNMARKED_REACHING,
     terrainPriority: TerrainPriority.A,
     directionalSelection: DirectionalSelection.LEFT_UP,
     directionalSelectionCount: 2,
@@ -201,7 +201,7 @@ const cards = [
       Action.GAIN_VICTORY_POINTS
     ],
     victoryPointsDifficultyLevel: true,
-    structure: Structure.STRUCTURE_UNMARKED_REACHING,
+    structure: Structure.UNMARKED_REACHING,
     terrainPriority: TerrainPriority.A,
     directionalSelection: DirectionalSelection.LEFT_UP,
     directionalSelectionCount: 3,
@@ -218,7 +218,7 @@ const cards = [
       Action.GAIN_VICTORY_POINTS
     ],
     victoryPoints: 2,
-    structure: Structure.STRUCTURE_MARKED_REACHING,
+    structure: Structure.MARKED_REACHING,
     terrainPriority: TerrainPriority.B,
     directionalSelection: DirectionalSelection.RIGHT_DOWN,
     directionalSelectionCount: 1,
@@ -238,7 +238,7 @@ const cards = [
       Action.TRADE
     ],
     tradeMinRound: 5,
-    structure: Structure.STRUCTURE_MARKED,
+    structure: Structure.MARKED,
     terrainPriority: TerrainPriority.B,
     directionalSelection: DirectionalSelection.LEFT_UP,
     directionalSelectionCount: 1,
@@ -257,7 +257,7 @@ const cards = [
     ],
     shipLevel: 2,
     victoryPoints: 1,
-    structure: Structure.STRUCTURE_UNMARKED,
+    structure: Structure.UNMARKED,
     terrainPriority: TerrainPriority.B,
     directionalSelection: DirectionalSelection.LEFT_UP,
     directionalSelectionCount: 3,
@@ -274,7 +274,7 @@ const cards = [
       Action.TRADE
     ],
     tradeMinRound: 3,
-    structure: Structure.STRUCTURE_UNMARKED,
+    structure: Structure.UNMARKED,
     terrainPriority: TerrainPriority.B,
     directionalSelection: DirectionalSelection.RIGHT_DOWN,
     directionalSelectionCount: 4,
