@@ -1,16 +1,16 @@
 <template>
-  <p>Automa <b>passes</b>.</p>
+  <h5 v-html="t('botPass.title')"></h5>
   <ol>
     <li>
-      <span>Automa gains a <b>fixed number of Victory points</b> as shown in the lower right corner of the current Scoring tile.</span>
+      <span v-html="t('botPass.scoringTile')"></span>
       <Icon name="scoring-tile-cult-color" class="scoringTile"/>
     </li>
     <li>
-      <span>Automa takes a <b>Bonus card</b>:</span>
+      <span v-html="t('botPass.bonusCard')"></span>
       <Icon type="bonus-card-selection" :name="bonusCardSelection" class="bonusCardSelection"/>
     </li>
-    <li>If there are any coins on the Bonus card return them to the general supply.</li>
-    <li>Remove current scoring tile from board.</li>
+    <li v-html="t('botPass.bonusCardGold')"></li>
+    <li v-html="t('botPass.removeScoringTile')"></li>
   </ol>
     
 </template>

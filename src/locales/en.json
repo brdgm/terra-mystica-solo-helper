@@ -115,6 +115,13 @@
       "motsPowerActionBoard": "Block one uncovered power action on Merchant Power Actions Board."
     }
   },
+  "botPass": {
+    "title": "Automa <i>passes</i>.",
+    "scoringTile": "Automa gains a <b>fixed number of Victory points</b> as shown in the lower right corner of the current Scoring tile.",
+    "bonusCard": "Automa takes a <b>Bonus card</b>:",
+    "bonusCardGold": "If there are any coins on the Bonus card return them to the general supply.",
+    "removeScoringTile": "Remove current scoring tile from board."
+  },
   "difficultyLevel": {
     "1": "Automalein",
     "2": "Automa",

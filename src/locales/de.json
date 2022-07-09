@@ -115,6 +115,13 @@
       "motsPowerActionBoard": "Decke ein offenes Machtfeld auf dem Tableau mit Machtaktionen aus <i>Die Händler</i> ab."
     }
   },
+  "botPass": {
+    "title": "Automa <i>passt</i>.",
+    "scoringTile": "Automa erhält die auf dem aktuellen Wertungsplättchen rechts unten <b>angegebenen Punkte</b>.",
+    "bonusCard": "Automa nimmt eine <b>Rundenbonuskarte</b>:",
+    "bonusCardGold": "Lege alle Geldmünzen von dieser Karte zurück in den allgemeinen Vorrat.",
+    "removeScoringTile": "Entferne das aktuelle Wertungsplättchen aus dem Spiel."
+  },
   "difficultyLevel": {
     "1": "Automalein",
     "2": "Automa",
