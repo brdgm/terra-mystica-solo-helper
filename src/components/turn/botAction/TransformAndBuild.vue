@@ -42,6 +42,24 @@
         </ol>
       </ol>
     </td>
+
+    <div class="modal" tabindex="-1" id="modalReaching">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">{{t('botAction.transformAndBuild.reaching.title')}}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" :aria-label="t('action.close')"></button>
+          </div>
+          <div class="modal-body">
+            <p v-html="t('botAction.transformAndBuild.reaching.text1')"></p>
+            <p v-html="t('botAction.transformAndBuild.reaching.text2')"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{t('action.close')}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </template>
   <template v-else>
     <Upgrade :bot-action="upgradeBotAction"/>
@@ -132,5 +150,9 @@ export default defineComponent({
 }
 .fire-ice {
   color: #a1350e;
+}
+:deep(a) {
+  text-decoration: underline dotted;
+  color: #000;
 }
 </style>

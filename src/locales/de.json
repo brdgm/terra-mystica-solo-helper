@@ -70,24 +70,42 @@
       "noDwelling": "Kein Wohnhaus übrig",
       "validSpaces": {
         "marked": "In Reichweite eines markierten Gebäudes",
-        "marked-reaching": "In Reichweite eines markierten Gebäudes (mit <a href='#modalReaching'>Zusammenführen</a>)",
+        "marked-reaching": "In Reichweite eines markierten Gebäudes (mit <a href='#modalReaching' data-bs-toggle='modal'>Zusammenführen</a>)",
         "unmarked": "In Reichweite eines nicht markierten Gebäudes",
-        "unmarked-reaching": "In Reichweite eines nicht markierten Gebäudes (mit <a href='#modalReaching'>Zusammenführen</a>)"
+        "unmarked-reaching": "In Reichweite eines nicht markierten Gebäudes (mit <a href='#modalReaching' data-bs-toggle='modal'>Zusammenführen</a>)"
       },
       "tiebreaker": {
         "title": "Feld auswählen",
-        "factionPowerMongers": "Größter <b>Machterhalt</b> für dich",
-        "terrainPriority": "Landschaftspriorität",
-        "terrainPriorityYourTerrainType": "Landschaftspriorität, verwende LTP-Karte <b>deiner</b> Heimatlandschaft",
-        "structureClosest": "Felder, die deinen Gebäuden am <b>nächsten</b> sind",
-        "structureFurthest": "Felder, die am weitesten von Automa-Gebäuden <b>entfernt</b> sind",
-        "directionalSelection": "Richtungsauswahl"
+        "factionPowerMongers": "Größter <b>Machterhalt</b> für dich.",
+        "terrainPriority": "Landschaftspriorität.",
+        "terrainPriorityYourTerrainType": "Landschaftspriorität, verwende LTP-Karte <b>deiner</b> Heimatlandschaft.",
+        "structureClosest": "Felder, die deinen Gebäuden am <b>nächsten</b> sind.",
+        "structureFurthest": "Felder, die am weitesten von Automa-Gebäuden <b>entfernt</b> sind.",
+        "directionalSelection": "Richtungsauswahl."
       },
       "execute": {
         "title": "Ausführung",
         "homeTerrainTile": "Platziere ein Landschaftsplättchen mit Automas Heimatlandschaft (falls nötig).",
         "dwelling": "Setze ein Automa-Wohnhaus ein.",
         "marked": "Markiere das neue Wohnhaus mit einem Machtchip."
+      },
+      "reaching": {
+        "title": "Zusammenführen",
+        "text1": "Befindet sich noch kein markiertes Automa-Gebäude direkt oder indirekt benachbart zu einem ihrer nicht markierten Gebäude, gelten nur die Felder als mögliche Optionen, die den <i>kürzesten Weg</i> zwischen <i>markierten und unmarkierten Gebäuden</i> weiter verkürzen.",
+        "text2": "Gibt es keine solchen Felder, gelten alle vorher bestimmten möglichen Optionen."
+      }
+    },
+    "upgrade": {
+      "tiebreaker": {
+        "title": "Gebäude wählen",
+        "tradingHouse": "Falls Automa ein Handelshaus in ihrem Vorrat hat: Automa-Wohnhäuser direkt benachbart zu einem deiner Gebäude. Andernfalls alle Gebäude, die Automa aufwerten kann.",
+        "littlePower": "Gebäude, durch deren Aufwertung sie dir am wenigsten Macht gibt.",
+        "directionalSelection": "Richtungsauswahl."
+      },
+      "execute": {
+        "title": "Ausführung",
+        "highestPowerStructure": "Ersetze das gewählte Gebäude durch das Gebäude mit der höchsten Machtstufe, auf das Automa regulär aufwerten kann.",
+        "motsShipyardPreferred": "Hat Automa die Auswahl zwischen ihrer Festung und ihrer Werft, wählt sie die Werft."
       }
     }
   },
