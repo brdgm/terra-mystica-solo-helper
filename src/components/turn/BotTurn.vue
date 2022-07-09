@@ -4,9 +4,12 @@
   </div>
 
   <table class="actions">
-    <tr class="mt-3" v-for="(botAction, index) of botActions" :key="index">
-      <component :is="botAction.action" :botAction="botAction" :navigationState="navigationState"/>
-    </tr>
+    <template v-for="(botAction, index) of botActions" :key="index">
+      <hr v-if="index > 0"/>
+      <tr>
+        <component :is="botAction.action" :botAction="botAction" :navigationState="navigationState"/>
+      </tr>
+    </template>
   </table>
 
   <router-link :to="nextButtonRouteTo" class="btn btn-primary btn-lg mt-4">

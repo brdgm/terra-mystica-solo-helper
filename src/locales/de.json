@@ -107,6 +107,12 @@
         "highestPowerStructure": "Ersetze das gewählte Gebäude durch das Gebäude mit der höchsten Machtstufe, auf das Automa regulär aufwerten kann.",
         "motsShipyardPreferred": "Hat Automa die Auswahl zwischen ihrer Festung und ihrer Werft, wählt sie die Werft."
       }
+    },
+    "blockPowerAction": {
+      "gameBoard": "Decke ein offenes Machtfeld auf dem Spielplan ab",
+      "directionalSelection": "Richtungsauswahl.",
+      "gameBoardExecute": "Ausführung: Decke das gewählte Machtfeld mit einer Aktionsmarke ab. Automa erhält nichts durch diese Aktion.",
+      "motsPowerActionBoard": "Decke ein offenes Machtfeld auf dem Tableau mit Machtaktionen aus <i>Die Händler</i> ab."
     }
   },
   "difficultyLevel": {
