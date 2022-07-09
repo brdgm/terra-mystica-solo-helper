@@ -39,7 +39,7 @@ export default defineComponent({
   components: {
     Icon,
     SupportInfo
-},
+  },
   setup() {
     const { t } = useI18n()
     useStore()

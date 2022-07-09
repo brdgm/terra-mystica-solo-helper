@@ -3,7 +3,10 @@
     {{cardDeck.actionCard?.id}} / {{cardDeck.supportCard?.id}}
   </div>
 
-  <table class="actions">
+  <template v-if="isPass">
+    <BotPass :navigationState="navigationState"/>
+  </template>
+  <table v-else class="actions">
     <template v-for="(botAction, index) of botActions" :key="index">
       <hr v-if="index > 0"/>
       <tr>
@@ -33,6 +36,7 @@ import TakeFavorTile from './botAction/TakeFavorTile.vue'
 import Trade from './botAction/Trade.vue'
 import TransformAndBuild from './botAction/TransformAndBuild.vue'
 import Upgrade from './botAction/Upgrade.vue'
+import BotPass from './BotPass.vue'
 
 export default defineComponent({
   name: 'BotTurn',
@@ -43,7 +47,8 @@ export default defineComponent({
     TakeFavorTile,
     Trade,
     TransformAndBuild,
-    Upgrade
+    Upgrade,
+    BotPass
   },
   setup() {
     const { t } = useI18n()
