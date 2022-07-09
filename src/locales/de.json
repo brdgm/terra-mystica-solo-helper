@@ -119,7 +119,14 @@
     "title": "Automa <i>passt</i>.",
     "scoringTile": "Automa erhält die auf dem aktuellen Wertungsplättchen rechts unten <b>angegebenen Punkte</b>.",
     "bonusCard": "Automa nimmt eine <b>Rundenbonuskarte</b>:",
-    "bonusCardGold": "Lege alle Geldmünzen von dieser Karte zurück in den allgemeinen Vorrat.",
+    "bonusCardGold": "Lege alle Geldmünzen von dieser Karte zurück in den allgemeinen Vorrat."
+  },
+  "endOfRound": {
+    "title": "Rundenende",
+    "turnInfo": "Runde {round}",
+    "cultBonuses": "Der Spieler erhält den <b>Kultbonus</b>.",
+    "returnActionTokens": "Aktionsmarken zurücknehmen.",
+    "bonusCardsCoin": "Lege auf die drei übrig gebliebenen Rundenbonuskarten je <b>1 Geldmünze</b>.",
     "removeScoringTile": "Entferne das aktuelle Wertungsplättchen aus dem Spiel."
   },
   "difficultyLevel": {
@@ -159,6 +166,7 @@
     "playGame": "Spielen",
     "startGame": "Spiel starten",
     "next": "Weiter",
+    "nextRound": "Nächste Runde",
     "abortGame": "Spiel abbrechen",
     "abortGameConfirm": "Das aktuelle Spiel wird abgebrochen - bist Du sicher?",
     "finishGame": "Spiel abschließen",

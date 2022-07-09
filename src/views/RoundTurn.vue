@@ -1,15 +1,18 @@
 <template>
   <div class="float-end">
-    {{t('roundTurn.turnInfo', {round:round, turn:turn})}}
+    <template v-if="endOfRound">{{t('endOfRound.turnInfo', {round:round})}}</template>
+    <template v-else>{{t('roundTurn.turnInfo', {round:round, turn:turn})}}</template>
   </div>
   <h1>
     <template v-if="roundTurn?.player">{{t('roundTurn.titlePlayer', {player:roundTurn?.player}, playerCount)}}</template>
     <template v-if="roundTurn?.bot">{{t('roundTurn.titleBot', {bot:roundTurn?.bot, faction:t('botFaction.'+botFaction)}, botCount)}}</template>
     <img v-if="startPlayer" src="@/assets/icons/start-player-token.png" class="startPlayerIcon"/>
+    <template v-if="endOfRound">{{t('endOfRound.title')}}</template>
   </h1>
 
   <PlayerTurn v-if="roundTurn?.player" :navigationState="navigationState" :nextButtonRouteTo="nextButtonRouteTo"/>
   <BotTurn v-if="roundTurn?.bot" :navigationState="navigationState" :nextButtonRouteTo="nextButtonRouteTo"/>
+  <EndOfRound v-if="endOfRound" :nextButtonRouteTo="nextButtonRouteTo"/>
 
   <FooterButtons :backButtonRouteTo="backButtonRouteTo"  endGameButtonType="abortGame"/>
 </template>
@@ -23,13 +26,15 @@ import NavigationState from '@/util/NavigationState'
 import PlayerTurn from '@/components/turn/PlayerTurn.vue'
 import BotTurn from '@/components/turn/BotTurn.vue'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
+import EndOfRound from '@/components/turn/EndOfRound.vue'
 
 export default defineComponent({
   name: 'RoundTurn',
   components: {
     PlayerTurn,
     BotTurn,
-    FooterButtons
+    FooterButtons,
+    EndOfRound
   },
   setup() {
     const { t } = useI18n()
@@ -49,16 +54,28 @@ export default defineComponent({
   },
   computed: {
     backButtonRouteTo() : string {
-      if (this.round > 1 || this.turn > 1) {
+      if (this.turn > 1) {
         return `/round/${this.round}/turn/${this.turn-1}`
+      }
+      else if (this.round > 1) {
+        const lastRound = this.$store.state.rounds[this.round-2]
+        return `/round/${this.round-1}/turn/${lastRound.turns.length+1}`
       }
       else {
         return ''
       }
     },
     nextButtonRouteTo() : string {
-      return `/round/${this.round}/turn/${this.turn+1}`
+      if (this.endOfRound) {
+        return `/round/${this.round+1}/turn/1`
+      }
+      else {
+        return `/round/${this.round}/turn/${this.turn+1}`
+      }
     },
+    endOfRound() : boolean {
+      return !(this.roundTurn?.player || this.roundTurn?.bot)
+    }
   }
 })
 </script>

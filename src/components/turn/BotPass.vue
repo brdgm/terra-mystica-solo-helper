@@ -10,7 +10,6 @@
       <Icon type="bonus-card-selection" :name="bonusCardSelection" class="bonusCardSelection"/>
     </li>
     <li v-html="t('botPass.bonusCardGold')"></li>
-    <li v-html="t('botPass.removeScoringTile')"></li>
   </ol>
     
 </template>

@@ -124,6 +124,7 @@ export default class NavigationState {
         if (turnData && turnData.cardDeck) {
           cardDeck = CardDeck.fromPersistence(turnData.cardDeck)
           cardDeck.prepareForNextRound(round, hasMerchantsOfTheSeas)
+          cardDeck.draw()
           return cardDeck
         }
       }

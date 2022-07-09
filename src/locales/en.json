@@ -119,7 +119,14 @@
     "title": "Automa <i>passes</i>.",
     "scoringTile": "Automa gains a <b>fixed number of Victory points</b> as shown in the lower right corner of the current Scoring tile.",
     "bonusCard": "Automa takes a <b>Bonus card</b>:",
-    "bonusCardGold": "If there are any coins on the Bonus card return them to the general supply.",
+    "bonusCardGold": "If there are any coins on the Bonus card return them to the general supply."
+  },
+  "endOfRound": {
+    "title": "End of Round",
+    "turnInfo": "Round {round}",
+    "cultBonuses": "Player gains <b>Cult Bonuses</b>.",
+    "returnActionTokens": "Return action tokens.",
+    "bonusCardsCoin": "Put <b>1 Coin</b> on each of the three leftover Bonus Cards.",
     "removeScoringTile": "Remove current scoring tile from board."
   },
   "difficultyLevel": {
@@ -159,6 +166,7 @@
     "playGame": "Play Game",
     "startGame": "Start Game",
     "next": "Next",
+    "nextRound": "Next Round",
     "abortGame": "Abort Game",
     "abortGameConfirm": "Aborting the running game - are you sure?",
     "finishGame": "Finish Game",
