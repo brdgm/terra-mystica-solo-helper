@@ -75,7 +75,7 @@
         "unmarked-reaching": "Withing Range of any unmarked Structure (with <a href='#modalReaching' data-bs-toggle='modal'>Reaching</a>)"
       },
       "tiebreaker": {
-        "title": "Select Space",
+        "title": "Select Space:",
         "factionPowerMongers": "Giving you the <b>most power</b>.",
         "terrainPriority": "Automa Terrain Priority.",
         "terrainPriorityYourTerrainType": "Terrain Priority with ATP card of <b>your</b> terrain type.",
@@ -84,7 +84,7 @@
         "directionalSelection": "Directional Selection."
       },
       "execute": {
-        "title": "Execute",
+        "title": "Execute:",
         "homeTerrainTile": "Place an Automa Home Terrain tile (if transforming was required).",
         "dwelling": "Place an Automa Dwelling.",
         "marked": "Mark the new Dwelling by placing a Power token on its space."
@@ -97,13 +97,13 @@
     },
     "upgrade": {
       "tiebreaker": {
-        "title": "Choose structure",
+        "title": "Choose structure:",
         "tradingHouse": "If Automa has a Trading house available: Automa Dwellings adjacent to any of your Structures. Otherwise, any Structure that Automa can upgrade.",
         "littlePower": "Giving you as little Power as possible.",
         "directionalSelection": "Directional Selection."
       },
       "execute": {
-        "title": "Execute",
+        "title": "Execute:",
         "highestPowerStructure": "Replace the chosen Structure with the highest Power value Structure it can be legally upgraded to.",
         "motsShipyardPreferred": "If there’s a tie between Stronghold and Shipyard Automa builds her Shipyard."
       }
@@ -131,6 +131,19 @@
         "title": "Execute:",
         "placePriest": "Place an available Automa Priest on the highest numbered Priest space below the chosen track and advance Automa‘s Marker the corresponding number of spaces.",
         "noPriest": "If Automa has no more available Priests, or if there’s no empty Priest space available below the track, advance Automa‘s Marker by 1 on that track without placing a Priest."
+      }
+    },
+    "trade": {
+      "selectStructure": {
+        "title": "Select structure adjacent to a river space without one of Automa's Trade tokens:",
+        "highestPower": "Structures with the highest Power value.",
+        "directionalSelection": "Directional Selection."
+      },
+      "execute": {
+        "title": "Execute:",
+        "placeMarker": "Place one of Automa’s Trade markers beneath the selected Structure.",
+        "victoryPoints": "Automa gains Victory points equal to the Power value of the selected Structure.",
+        "gainPower": "You may gain Power for the trade, as normal."
       }
     }
   },

@@ -5,6 +5,21 @@
   <td>
     <SupportInfo :bot-action="botAction" :directional-selection="true"/>
   </td>
+  <td class="text-muted small">
+    <ol>
+      <li v-html="t('botAction.trade.selectStructure.title')"></li>
+      <ol type="a">
+        <li v-html="t('botAction.trade.selectStructure.highestPower')"></li>
+        <li v-html="t('botAction.trade.selectStructure.directionalSelection')"></li>
+      </ol>
+      <li v-html="t('botAction.trade.execute.title')"></li>
+      <ol type="a">
+        <li v-html="t('botAction.trade.execute.placeMarker')"></li>
+        <li v-html="t('botAction.trade.execute.victoryPoints')"></li>
+        <li v-html="t('botAction.trade.execute.gainPower')"></li>
+      </ol>
+    </ol>
+  </td>
 </template>
 
 <script lang="ts">

@@ -75,7 +75,7 @@
         "unmarked-reaching": "In Reichweite eines nicht markierten Gebäudes (mit <a href='#modalReaching' data-bs-toggle='modal'>Zusammenführen</a>)"
       },
       "tiebreaker": {
-        "title": "Feld auswählen",
+        "title": "Feld auswählen:",
         "factionPowerMongers": "Größter <b>Machterhalt</b> für dich.",
         "terrainPriority": "Landschaftspriorität.",
         "terrainPriorityYourTerrainType": "Landschaftspriorität, verwende LTP-Karte <b>deiner</b> Heimatlandschaft.",
@@ -84,7 +84,7 @@
         "directionalSelection": "Richtungsauswahl."
       },
       "execute": {
-        "title": "Ausführung",
+        "title": "Ausführung:",
         "homeTerrainTile": "Platziere ein Landschaftsplättchen mit Automas Heimatlandschaft (falls nötig).",
         "dwelling": "Setze ein Automa-Wohnhaus ein.",
         "marked": "Markiere das neue Wohnhaus mit einem Machtchip."
@@ -97,13 +97,13 @@
     },
     "upgrade": {
       "tiebreaker": {
-        "title": "Gebäude wählen",
+        "title": "Gebäude wählen:",
         "tradingHouse": "Falls Automa ein Handelshaus in ihrem Vorrat hat: Automa-Wohnhäuser direkt benachbart zu einem deiner Gebäude. Andernfalls alle Gebäude, die Automa aufwerten kann.",
         "littlePower": "Gebäude, durch deren Aufwertung sie dir am wenigsten Macht gibt.",
         "directionalSelection": "Richtungsauswahl."
       },
       "execute": {
-        "title": "Ausführung",
+        "title": "Ausführung:",
         "highestPowerStructure": "Ersetze das gewählte Gebäude durch das Gebäude mit der höchsten Machtstufe, auf das Automa regulär aufwerten kann.",
         "motsShipyardPreferred": "Hat Automa die Auswahl zwischen ihrer Festung und ihrer Werft, wählt sie die Werft."
       }
@@ -131,6 +131,19 @@
         "title": "Ausführung:",
         "placePriest": "Setze 1 Priester aus Automas Vorrat unterhalb der gewählten Skala auf das freie Feld mit der höchsten Zahl. Automa steigt mit ihrem Markierungsstein um die entsprechende Anzahl an Stufen auf.",
         "noPriest": "Hat Automa keinen Priester mehr oder gibt es unter der gewählten Skala kein freies Feld mehr, steigt Automa dort um 1 Stufe auf, ohne einen Priester einzusetzen."
+      }
+    },
+    "trade": {
+      "selectStructure": {
+        "title": "Wähle Gebäude, direkt benachtbart zu einem Flussfeld, unter welchen noch kein Automa-Handelsmarker liegt:",
+        "highestPower": "Gebäude mit der höchsten Machtstufe.",
+        "directionalSelection": "Richtungsauswahl."
+      },
+      "execute": {
+        "title": "Ausführung:",
+        "placeMarker": "Lege einen Automa-Handelsmarker unter das gewählte Gebäude.",
+        "victoryPoints": "Automa erhält die Anzahl an Punkten, die der Machtstufe des gewählten Gebäudes entspricht.",
+        "gainPower": "Du darfst durch Automas Handel regulär Macht erhalten."
       }
     }
   },
