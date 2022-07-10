@@ -14,7 +14,8 @@
       </ol>
       <li class="mots" v-if="hasMerchantsOfTheSeas">
         <Icon type="expansion" name="merchants-of-the-seas" class="expansionIcon"/>
-        <span v-html="t('botAction.blockPowerAction.motsPowerActionBoard')"></span></li>
+        <span v-html="t('botAction.blockPowerAction.motsPowerActionBoard')"></span>
+      </li>
     </ol>
   </td>
 </template>

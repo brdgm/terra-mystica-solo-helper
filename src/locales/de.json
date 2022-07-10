@@ -113,6 +113,25 @@
       "directionalSelection": "Richtungsauswahl.",
       "gameBoardExecute": "Ausführung: Decke das gewählte Machtfeld mit einer Aktionsmarke ab. Automa erhält nichts durch diese Aktion.",
       "motsPowerActionBoard": "Decke ein offenes Machtfeld auf dem Tableau mit Machtaktionen aus <i>Die Händler</i> ab."
+    },
+    "advanceCultTrack": {
+      "notMarker10": "Automa schreitet nur auf Kultskalen voran ohne Markierungsstein auf Stufe 10.",
+      "scoringTile": {
+        "title": "Automa bevorzugt eine Skala deren Farbe dem Kult auf dem Wertungsplättchen entspricht."
+      },
+      "catchUp": {
+        "title": "Automa versucht aufzuholen:",
+        "otherwiseTitle": "Anstonsten veruscht Automa aufzuholen:",
+        "marketAt0": "Die Skala, auf der Automas Markierungsstein auf 0 steht.",
+        "highestMarker": "Die Skala, auf der Automas Markierungsstein den geringsten Abstand zu deinem hat. Automa kann dabei auf gleicher, höherer oder niedriger Stufe sein als du.",
+        "highestMarkerMultipleHumans": "Die Skala, auf der Automas Markierungsstein den kleinsten Abstand zu dem Markierungsstein auf der höchsten Stufe derselben Skala hat. Automas Markierungsstein kann dabei auf der gleichen, einer höheren oder niedrigeren Stufe stehen als der andere Markierungstein.",
+        "directionalSelection": "Richtungsauswahl."
+      },
+      "execute": {
+        "title": "Ausführung:",
+        "placePriest": "Setze 1 Priester aus Automas Vorrat unterhalb der gewählten Skala auf das freie Feld mit der höchsten Zahl. Automa steigt mit ihrem Markierungsstein um die entsprechende Anzahl an Stufen auf.",
+        "noPriest": "Hat Automa keinen Priester mehr oder gibt es unter der gewählten Skala kein freies Feld mehr, steigt Automa dort um 1 Stufe auf, ohne einen Priester einzusetzen."
+      }
     }
   },
   "botPass": {
