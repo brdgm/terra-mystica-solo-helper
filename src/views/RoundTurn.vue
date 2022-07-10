@@ -13,7 +13,7 @@
 
   <PlayerTurn v-if="roundTurn?.player" :navigationState="navigationState" :nextButtonRouteTo="nextButtonRouteTo"/>
   <BotTurn v-if="roundTurn?.bot" :navigationState="navigationState" :nextButtonRouteTo="nextButtonRouteTo"/>
-  <EndOfGame v-if="endOfGame"/>
+  <EndOfGame v-if="endOfGame" :round="round"/>
   <EndOfRound v-else-if="endOfRound" :nextButtonRouteTo="nextButtonRouteTo"/>
 
   <FooterButtons :backButtonRouteTo="backButtonRouteTo" :endGameButtonType="endOfGame ? 'endGame' : 'abortGame'"/>

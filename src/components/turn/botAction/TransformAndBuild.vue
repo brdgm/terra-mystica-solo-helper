@@ -1,6 +1,7 @@
 <template>
   <template v-if="!isUpgrade">
     <td>
+      <div class="shipLevel">{{botAction.shipLevel}}</div>
       <Icon type="action" :name="botAction.action" class="actionIcon"/>
     </td>
     <td>
@@ -154,5 +155,14 @@ export default defineComponent({
 :deep(a) {
   text-decoration: underline dotted;
   color: #000;
+}
+.shipLevel {
+  position: absolute;
+  margin-left: 3rem;
+  margin-top: 3.65rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  color: black;
 }
 </style>
