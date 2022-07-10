@@ -8,19 +8,7 @@
   <td class="text-muted small">
     <ol>
       <li v-html="t('botAction.advanceCultTrack.notMarker10')"></li>
-      <template v-if="isScoringTileCultTrackSelection">
-        <li v-html="t('botAction.advanceCultTrack.scoringTile.title')"></li>
-        <li v-html="t('botAction.advanceCultTrack.catchUp.otherwiseTitle')"></li>
-      </template>
-      <template v-else>
-        <li v-html="t('botAction.advanceCultTrack.catchUp.title')"></li>
-      </template>
-      <ol type="a">
-        <li v-html="t('botAction.advanceCultTrack.catchUp.marketAt0')"></li>
-        <li v-if="isMultipleHumanPlayers" v-html="t('botAction.advanceCultTrack.catchUp.highestMarkerMultipleHumans')"></li>
-        <li v-else v-html="t('botAction.advanceCultTrack.catchUp.highestMarker')"></li>
-        <li v-html="t('botAction.advanceCultTrack.catchUp.directionalSelection')"></li>
-      </ol>
+      <AdvanceCultTrackTrackSelection :bot-action="botAction"/>
       <li v-html="t('botAction.advanceCultTrack.execute.title')"></li>
       <ol type="a">
         <li v-html="t('botAction.advanceCultTrack.execute.placePriest')"></li>
@@ -36,32 +24,23 @@ import { useI18n } from 'vue-i18n'
 import BotAction from '@/services/BotAction'
 import Icon from '@/components/structure/Icon.vue'
 import SupportInfo from '../supportInfo/SupportInfo.vue'
-import CultTrackSelection from '@/services/enum/CultTrackSelection'
-import { useStore } from '@/store'
+import AdvanceCultTrackTrackSelection from './AdvanceCultTrackTrackSelection.vue'
 
 export default defineComponent({
   name: 'AdvanceCultTrack',
   components: {
     Icon,
-    SupportInfo
+    SupportInfo,
+    AdvanceCultTrackTrackSelection
   },
   setup() {
     const { t } = useI18n()
-    useStore()
     return { t }
   },
   props: {
     botAction: {
       type: Object as PropType<BotAction>,
       required: true
-    }
-  },
-  computed: {
-    isScoringTileCultTrackSelection() : boolean {
-      return this.botAction.cultTrackSelection == CultTrackSelection.SCORING_TILE
-    },
-    isMultipleHumanPlayers() : boolean {
-      return this.$store.state.setup.playerSetup.playerCount > 1
     }
   }
 })

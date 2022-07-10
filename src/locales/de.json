@@ -145,6 +145,10 @@
         "victoryPoints": "Automa erhält die Anzahl an Punkten, die der Machtstufe des gewählten Gebäudes entspricht.",
         "gainPower": "Du darfst durch Automas Handel regulär Macht erhalten."
       }
+    },
+    "takeFavorTile": {
+      "selectCultFavorTile": "Nimm ein Gunstplättchen, die einen Kult um 3 Stufen erhöhen und auf deren Kultskala sich kein Markierungsstein auf Stufe 10 befindet.",
+      "execute": "Ausführung: Automa nimmt das ausgewählte Plättchen und steigt auf der entsprechenden Kultskala um 3 Felder auf."
     }
   },
   "botPass": {
