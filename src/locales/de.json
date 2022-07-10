@@ -165,6 +165,14 @@
     "bonusCardsCoin": "Lege auf die drei übrig gebliebenen Rundenbonuskarten je <b>1 Geldmünze</b>.",
     "removeScoringTile": "Entferne das aktuelle Wertungsplättchen aus dem Spiel."
   },
+  "endOfGame": {
+    "title": "Spielende",
+    "cultScoring": "Automa erhält Punkte durch die <b>Kultwerting</b>.",
+    "areaScoring": "Automa erhält Punkte durch die <b>Gebietswertung</b>.",
+    "areaScoringFireIceStrongholdSanctuary": "Heiligtum und Festung: Ermittle die <i>Größte Entfernung</i> und teile die Zahl durch 2 (aufgerundet).",
+    "areaScoringFireIceSettlements": "Außenposten: Ermittle die Anzahl an Ansiedlungen und ziehe 2 vom Ergebnis ab.",
+    "resourceScoring": "Automa erhält keine Punkte durch die Ressourcenwertung."
+  },
   "difficultyLevel": {
     "1": "Automalein",
     "2": "Automa",
@@ -205,8 +213,6 @@
     "nextRound": "Nächste Runde",
     "abortGame": "Spiel abbrechen",
     "abortGameConfirm": "Das aktuelle Spiel wird abgebrochen - bist Du sicher?",
-    "finishGame": "Spiel abschließen",
-    "finishGameConfirm": "Spiel abschließen und die Auswertung aufrufen - bist Du sicher?",
     "endGame": "Spiel beenden",
     "endGameConfirm": "Dieses Spiel wird beendet - bist Du sicher?",
     "cancel": "Abbrechen",

@@ -7,14 +7,16 @@
     <template v-if="roundTurn?.player">{{t('roundTurn.titlePlayer', {player:roundTurn?.player}, playerCount)}}</template>
     <template v-if="roundTurn?.bot">{{t('roundTurn.titleBot', {bot:roundTurn?.bot, faction:t('botFaction.'+botFaction)}, botCount)}}</template>
     <img v-if="startPlayer" src="@/assets/icons/start-player-token.png" class="startPlayerIcon"/>
-    <template v-if="endOfRound">{{t('endOfRound.title')}}</template>
+    <template v-if="endOfGame">{{t('endOfGame.title')}}</template>
+    <template v-else-if="endOfRound">{{t('endOfRound.title')}}</template>
   </h1>
 
   <PlayerTurn v-if="roundTurn?.player" :navigationState="navigationState" :nextButtonRouteTo="nextButtonRouteTo"/>
   <BotTurn v-if="roundTurn?.bot" :navigationState="navigationState" :nextButtonRouteTo="nextButtonRouteTo"/>
-  <EndOfRound v-if="endOfRound" :nextButtonRouteTo="nextButtonRouteTo"/>
+  <EndOfGame v-if="endOfGame"/>
+  <EndOfRound v-else-if="endOfRound" :nextButtonRouteTo="nextButtonRouteTo"/>
 
-  <FooterButtons :backButtonRouteTo="backButtonRouteTo"  endGameButtonType="abortGame"/>
+  <FooterButtons :backButtonRouteTo="backButtonRouteTo" :endGameButtonType="endOfGame ? 'endGame' : 'abortGame'"/>
 </template>
 
 <script lang="ts">
@@ -27,6 +29,7 @@ import PlayerTurn from '@/components/turn/PlayerTurn.vue'
 import BotTurn from '@/components/turn/BotTurn.vue'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
 import EndOfRound from '@/components/turn/EndOfRound.vue'
+import EndOfGame from '@/components/turn/EndOfGame.vue'
 
 export default defineComponent({
   name: 'RoundTurn',
@@ -34,7 +37,8 @@ export default defineComponent({
     PlayerTurn,
     BotTurn,
     FooterButtons,
-    EndOfRound
+    EndOfRound,
+    EndOfGame
   },
   setup() {
     const { t } = useI18n()
@@ -75,6 +79,9 @@ export default defineComponent({
     },
     endOfRound() : boolean {
       return !(this.roundTurn?.player || this.roundTurn?.bot)
+    },
+    endOfGame() : boolean {
+      return this.endOfRound && this.round > 5
     }
   }
 })

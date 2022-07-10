@@ -165,6 +165,14 @@
     "bonusCardsCoin": "Put <b>1 Coin</b> on each of the three leftover Bonus Cards.",
     "removeScoringTile": "Remove current scoring tile from board."
   },
+  "endOfGame": {
+    "title": "End of Game",
+    "cultScoring": "Automa gains victory points from <b>Cult scoring</b>.",
+    "areaScoring": "Automa gains victory points from <b>Area scoring</b>.",
+    "areaScoringFireIceStrongholdSanctuary": "Stronghold and Sanctuary: Divide <i>Greatest Distance</i> by 2 and round up.",
+    "areaScoringFireIceSettlements": "Outposts: Subtract 2 from <i>Settlements</i>.",
+    "resourceScoring": "Automa doesn't get any points from Resource scoring."
+  },
   "difficultyLevel": {
     "1": "Automalein",
     "2": "Automa",
@@ -205,8 +213,6 @@
     "nextRound": "Next Round",
     "abortGame": "Abort Game",
     "abortGameConfirm": "Aborting the running game - are you sure?",
-    "finishGame": "Finish Game",
-    "finishGameConfirm": "Finishing this game and go to scoring - are you sure?",
     "endGame": "End Game",
     "endGameConfirm": "End this game and return to home screen - are you sure?",
     "cancel": "Cancel",
