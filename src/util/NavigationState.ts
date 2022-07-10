@@ -94,6 +94,9 @@ export default class NavigationState {
         const cardDeck = this.createCardDeck(round, nextPlayer, store);
         if (cardDeck.isPass()) {
           turnData.pass = true
+          if (!this.playerOrder.hasAnyonePassed()) {
+            turnData.startPlayer = true
+          }
         }
         turnData.cardDeck = cardDeck.toPersistence()
       }

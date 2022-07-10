@@ -63,11 +63,11 @@ export default defineComponent({
       }
       else if (this.round > 1) {
         const lastRound = this.$store.state.rounds[this.round-2]
-        return `/round/${this.round-1}/turn/${lastRound.turns.length+1}`
+        if (lastRound && lastRound.turns) {
+          return `/round/${this.round-1}/turn/${lastRound.turns.length+1}`
+        }
       }
-      else {
-        return ''
-      }
+      return ''
     },
     nextButtonRouteTo() : string {
       if (this.endOfRound) {
