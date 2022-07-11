@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
+import { defineComponent } from 'vue'
 import DirectionalSelection from '@/services/enum/DirectionalSelection'
 import Icon from '@/components/structure/Icon.vue'
 
@@ -17,7 +17,7 @@ export default defineComponent({
   },
   props: {
     type: {
-      type: Object as PropType<DirectionalSelection>,
+      type: String,
       required: true
     },
     count: {

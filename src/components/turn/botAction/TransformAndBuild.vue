@@ -83,6 +83,7 @@ import Structure from '@/services/enum/Structure'
 
 export default defineComponent({
   name: 'TransformAndBuild',
+  inheritAttrs: false,
   components: {
     Icon,
     SupportInfo,

@@ -36,6 +36,7 @@ import Expansion from '@/services/enum/Expansion'
 
 export default defineComponent({
   name: 'Upgrade',
+  inheritAttrs: false,
   components: {
     Icon,
     SupportInfo

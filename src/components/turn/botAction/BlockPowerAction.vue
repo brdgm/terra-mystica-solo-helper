@@ -31,6 +31,7 @@ import Expansion from '@/services/enum/Expansion'
 
 export default defineComponent({
   name: 'BlockPowerAction',
+  inheritAttrs: false,
   components: {
     Icon,
     SupportInfo

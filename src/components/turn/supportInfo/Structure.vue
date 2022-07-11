@@ -5,8 +5,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
-import Structure from '@/services/enum/Structure'
+import { defineComponent } from 'vue'
 import Icon from '@/components/structure/Icon.vue'
 
 export default defineComponent({
@@ -16,7 +15,7 @@ export default defineComponent({
   },
   props: {
     type: {
-      type: Object as PropType<Structure>,
+      type: String,
       required: true
     }
   }

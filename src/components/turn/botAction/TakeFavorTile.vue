@@ -24,6 +24,7 @@ import AdvanceCultTrackTrackSelection from './AdvanceCultTrackTrackSelection.vue
 
 export default defineComponent({
   name: 'TakeFavorTile',
+  inheritAttrs: false,
   components: {
     Icon,
     SupportInfo,

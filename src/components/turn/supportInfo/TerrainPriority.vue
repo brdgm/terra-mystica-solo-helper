@@ -6,8 +6,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
-import TerrainPriority from '@/services/enum/TerrainPriority'
+import { defineComponent } from 'vue'
 import Icon from '@/components/structure/Icon.vue'
 
 export default defineComponent({
@@ -17,7 +16,7 @@ export default defineComponent({
   },
   props: {
     type: {
-      type: Object as PropType<TerrainPriority>,
+      type: String,
       required: true
     }
   }

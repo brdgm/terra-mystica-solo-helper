@@ -17,6 +17,7 @@ import Icon from '@/components/structure/Icon.vue'
 
 export default defineComponent({
   name: 'GainVictoryPoints',
+  inheritAttrs: false,
   components: {
     Icon
   },

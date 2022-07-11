@@ -23,6 +23,7 @@ import { useStore } from '@/store'
 
 export default defineComponent({
   name: 'AdvanceCultTrackTrackSelection',
+  inheritAttrs: false,
   setup() {
     const { t } = useI18n()
     useStore()

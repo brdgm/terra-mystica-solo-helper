@@ -31,6 +31,7 @@ import SupportInfo from '../supportInfo/SupportInfo.vue'
 
 export default defineComponent({
   name: 'Trade',
+  inheritAttrs: false,
   components: {
     Icon,
     SupportInfo

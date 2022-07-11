@@ -28,6 +28,7 @@ import AdvanceCultTrackTrackSelection from './AdvanceCultTrackTrackSelection.vue
 
 export default defineComponent({
   name: 'AdvanceCultTrack',
+  inheritAttrs: false,
   components: {
     Icon,
     SupportInfo,
