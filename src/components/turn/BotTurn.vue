@@ -1,19 +1,19 @@
 <template>
-  <div class="position-absolute bottom-0 end-0 text-muted cardDebugInfo">
+  <div class="fixed-bottom text-muted cardDebugInfo">
     {{cardDeck.actionCard?.id}} / {{cardDeck.supportCard?.id}}
   </div>
 
   <template v-if="isPass">
     <BotPass :navigationState="navigationState"/>
   </template>
-  <table v-else class="actions">
+  <div v-else class="actions">
     <template v-for="(botAction, index) of botActions" :key="index">
-      <hr v-if="index > 0"/>
-      <tr>
+      <hr v-if="index > 0" class="actionSeparator"/>
+      <div class="actionRow">
         <component :is="botAction.action" :botAction="botAction" :navigationState="navigationState"/>
-      </tr>
+      </div>
     </template>
-  </table>
+  </div>
 
   <router-link :to="nextButtonRouteTo" class="btn btn-primary btn-lg mt-4">
     {{t('action.next')}}
@@ -86,15 +86,28 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
-table.actions {
-  border-spacing: 1rem;
-  border-collapse: separate;
+<style lang="scss">
+.actions {
+  .actionRow {
+    margin-top: 1rem;
+    display: flex;
+    flex-flow: wrap;
+    .actionCol {
+      margin: 0.5rem;
+    }
+  }
+  .actionSeparator {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    color: gray;
+  }
 }
 .cardDebugInfo {
   margin-bottom: 2rem;
-  margin-right: 0.25rem;
+  padding-right: 0.5rem;
   font-size: 0.6rem;
-  background-color: #fff;
+  background-color: transparent;
+  text-align: right;
 }
 </style>

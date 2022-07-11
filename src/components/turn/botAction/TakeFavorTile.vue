@@ -1,17 +1,17 @@
 <template>
-  <td>
+  <div class="actionCol">
     <Icon type="action" :name="botAction.action" class="actionIcon"/>
-  </td>
-  <td>
+  </div>
+  <div class="actionCol">
     <SupportInfo :bot-action="botAction" :directional-selection="true" :cult-track-selection="true"/>
-  </td>
-  <td class="text-muted small">
+  </div>
+  <div class="actionCol text-muted small">
     <ol>
       <li v-html="t('botAction.takeFavorTile.selectCultFavorTile')"></li>
       <AdvanceCultTrackTrackSelection :bot-action="botAction"/>
       <li v-html="t('botAction.takeFavorTile.execute')"></li>
     </ol>
-  </td>
+  </div>
 </template>
 
 <script lang="ts">

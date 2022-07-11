@@ -1,11 +1,11 @@
 <template>
-  <td>
+  <div class="actionCol">
     <Icon type="action" :name="botAction.action" class="actionIcon"/>
-  </td>
-  <td>
+  </div>
+  <div class="actionCol">
     <SupportInfo :bot-action="botAction" :directional-selection="true"/>
-  </td>
-  <td class="text-muted small">
+  </div>
+  <div class="actionCol text-muted small">
     <ol>
       <li v-html="t('botAction.upgrade.tiebreaker.title')"></li>
       <ol type="a">
@@ -22,7 +22,7 @@
         </li>
       </ol>
     </ol>
-  </td>
+  </div>
 </template>
 
 <script lang="ts">

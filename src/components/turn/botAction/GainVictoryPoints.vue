@@ -1,12 +1,12 @@
 <template>
-  <td>
+  <div class="actionCol">
     <div class="count">{{botAction.victoryPoints}}</div>
     <Icon name="gain-victory-point" class="actionIcon"/>
-  </td>
-  <td></td>
-  <td class="text-muted small">
+  </div>
+  <div class="actionCol"></div>
+  <div class="actionCol text-muted small">
     <p v-html="t('botAction.gainVictoryPoints.text', {count:botAction.victoryPoints}, botAction.victoryPoints!)"></p>
-  </td>
+  </div>
 </template>
 
 <script lang="ts">

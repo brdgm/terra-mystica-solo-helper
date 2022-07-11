@@ -1,11 +1,11 @@
 <template>
-  <td>
+  <div class="actionCol">
     <Icon type="action" :name="botAction.action" class="actionIcon"/>
-  </td>
-  <td>
+  </div>
+  <div class="actionCol">
     <SupportInfo :bot-action="botAction" :directional-selection="true"/>
-  </td>
-  <td class="text-muted small">
+  </div>
+  <div class="actionCol text-muted small">
     <ol>
       <li v-html="t('botAction.blockPowerAction.gameBoard')"></li>
       <ol type="a">
@@ -17,7 +17,7 @@
         <span v-html="t('botAction.blockPowerAction.motsPowerActionBoard')"></span>
       </li>
     </ol>
-  </td>
+  </div>
 </template>
 
 <script lang="ts">

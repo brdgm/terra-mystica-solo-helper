@@ -1,13 +1,13 @@
 <template>
   <template v-if="!isUpgrade">
-    <td>
+    <div class="actionCol">
       <div class="shipLevel">{{botAction.shipLevel}}</div>
       <Icon type="action" :name="botAction.action" class="actionIcon"/>
-    </td>
-    <td>
+    </div>
+    <div class="actionCol">
       <SupportInfo :bot-action="botAction" :structure="true" :terrain-priority="true" :directional-selection="true"/>
-    </td>
-    <td class="text-muted small">
+    </div>
+    <div class="actionCol text-muted small">
       <button type="button" class="btn btn-outline-secondary btn-sm" @click="isUpgrade=true">{{t('botAction.transformAndBuild.noDwelling')}}</button>
       <ol class="mt-2">
         <li v-html="t(`botAction.transformAndBuild.validSpaces.${botAction.structure}`)"></li>
@@ -42,7 +42,7 @@
           <li v-if="isMarkedStructure" v-html="t('botAction.transformAndBuild.execute.marked')"></li>
         </ol>
       </ol>
-    </td>
+    </div>
 
     <div class="modal" tabindex="-1" id="modalReaching">
       <div class="modal-dialog modal-dialog-centered">
