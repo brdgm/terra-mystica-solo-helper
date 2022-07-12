@@ -17,8 +17,7 @@
       <ol type="a">
         <li v-html="t('botAction.upgrade.execute.highestPowerStructure')"></li>
         <li class="mots" v-if="hasMerchantsOfTheSeas">
-          <Icon type="expansion" name="merchants-of-the-seas" class="expansionIcon"/>
-          <span v-html="t('botAction.upgrade.execute.motsShipyardPreferred')"></span>
+          <Icon type="expansion" name="merchants-of-the-seas" class="expansionIcon"/><span v-html="t('botAction.upgrade.execute.motsShipyardPreferred')"></span>
         </li>
       </ol>
     </ol>
@@ -33,6 +32,8 @@ import Icon from '@/components/structure/Icon.vue'
 import SupportInfo from '../supportInfo/SupportInfo.vue'
 import { useStore } from '@/store'
 import Expansion from '@/services/enum/Expansion'
+import BotFaction from '@/services/enum/BotFaction'
+import NavigationState from '@/util/NavigationState'
 
 export default defineComponent({
   name: 'Upgrade',
@@ -50,11 +51,18 @@ export default defineComponent({
     botAction: {
       type: Object as PropType<BotAction>,
       required: true
+    },
+    navigationState: {
+      type: NavigationState,
+      required: true
     }
   },
   computed: {
     hasMerchantsOfTheSeas(): boolean {
       return this.$store.state.setup.expansions.includes(Expansion.MERCHANTS_OF_THE_SEAS)
+    },
+    botFaction() : BotFaction|undefined {
+      return this.navigationState.botFaction
     }
   }
 })
@@ -64,8 +72,9 @@ export default defineComponent({
 .actionIcon {
   width: 6rem;
 }
-.expansionIcon {
-  height: 1.5rem;
+.expansionIcon, .factionActionIcon {
+  height: 1.3rem;
+  margin-right: 0.2rem;
 }
 .mots {
   color: #007f93;

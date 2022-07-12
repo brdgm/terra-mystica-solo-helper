@@ -11,16 +11,17 @@
         <span v-html="t('endOfGame.areaScoringFireIceStrongholdSanctuary')"></span>
       </li>
       <li class="fire-ice" v-if="isSettlementsScoring">
-        <Icon type="expansion" name="fire-and-ice" class="expansionIcon"/>
-        <span v-html="t('endOfGame.areaScoringFireIceSettlements')"></span>
+        <Icon type="expansion" name="fire-and-ice" class="expansionIcon"/><span v-html="t('endOfGame.areaScoringFireIceSettlements')"></span>
       </li>
     </ul>
+    <li v-if="isFactionWanderers"><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('endOfGame.factionWanderers')"></span></li>
     <li v-html="t('endOfGame.resourceScoring')"></li>
   </ol>
 </template>
 
 <script lang="ts">
 import DifficultyLevelParameters from '@/services/DifficultyLevelParameters'
+import BotFaction from '@/services/enum/BotFaction'
 import FinalScoringTile from '@/services/enum/FinalScoringTile'
 import { useStore } from '@/store'
 import { defineComponent } from 'vue'
@@ -55,14 +56,18 @@ export default defineComponent({
     shipLevel() : number {
       const params = DifficultyLevelParameters.get(this.$store.state.setup.difficultyLevel, this.round)
       return params.shipLevel
+    },
+    isFactionWanderers() : boolean {
+      return this.$store.state.setup.playerSetup.botFaction.includes(BotFaction.WANDERERS)
     }
   }
 })
 </script>
 
 <style lang="scss" scoped>
-.expansionIcon {
+.expansionIcon, .factionActionIcon {
   height: 1.3rem;
+  margin-right: 0.2rem;
 }
 .fire-ice {
   color: #a1350e;

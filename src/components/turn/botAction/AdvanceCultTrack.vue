@@ -1,14 +1,17 @@
 <template>
   <div class="actionCol">
-    <Icon type="action" :name="botAction.action" class="actionIcon"/>
+    <Icon v-if="isDruids || isPowerMongers" type="action" name="advance-cult-track-no-priest" class="actionIcon"/>
+    <Icon v-else type="action" :name="botAction.action" class="actionIcon"/>
   </div>
   <div class="actionCol">
-    <SupportInfo :bot-action="botAction" :directional-selection="true" :cult-track-selection="true"/>
+    <SupportInfo :bot-action="supportInfoBotAction" :directional-selection="true" :cult-track-selection="true"/>
   </div>
   <div class="actionCol text-muted small">
     <ol>
+      <li v-if="isDruids"><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.advanceCultTrack.factionDruids')"></span></li>
+      <li v-if="isPowerMongers"><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.advanceCultTrack.factionPowerMongers')"></span></li>
       <li v-html="t('botAction.advanceCultTrack.notMarker10')"></li>
-      <AdvanceCultTrackTrackSelection :bot-action="botAction"/>
+      <AdvanceCultTrackTrackSelection :bot-action="supportInfoBotAction"/>
       <li v-html="t('botAction.advanceCultTrack.execute.title')"></li>
       <ol type="a">
         <li v-html="t('botAction.advanceCultTrack.execute.placePriest')"></li>
@@ -25,6 +28,8 @@ import BotAction from '@/services/BotAction'
 import Icon from '@/components/structure/Icon.vue'
 import SupportInfo from '../supportInfo/SupportInfo.vue'
 import AdvanceCultTrackTrackSelection from './AdvanceCultTrackTrackSelection.vue'
+import BotFaction from '@/services/enum/BotFaction'
+import CultTrackSelection from '@/services/enum/CultTrackSelection'
 
 export default defineComponent({
   name: 'AdvanceCultTrack',
@@ -43,6 +48,31 @@ export default defineComponent({
       type: Object as PropType<BotAction>,
       required: true
     }
+  },
+  computed: {
+    botFaction() : BotFaction|undefined {
+      return this.botAction.botFaction
+    },
+    isDruids() : boolean {
+      return this.botFaction == BotFaction.DRUIDS
+    },
+    isPowerMongers() : boolean {
+      return this.botFaction == BotFaction.POWERMONGERS
+    },
+    supportInfoBotAction() : BotAction {
+      if (this.isDruids || this.isPowerMongers) {
+        // force to catch-up cult track selection
+        return {
+          action: this.botAction.action,
+          directionalSelection: this.botAction.directionalSelection,
+          directionalSelectionCount: this.botAction.directionalSelectionCount,
+          cultTrackSelection: CultTrackSelection.CATCH_UP
+        }
+      }
+      else {
+        return this.botAction
+      }
+    }
   }
 })
 </script>
@@ -50,5 +80,9 @@ export default defineComponent({
 <style lang="scss" scoped>
 .actionIcon {
   width: 6rem;
+}
+.factionActionIcon {
+  height: 1.3rem;
+  margin-right: 0.2rem;
 }
 </style>

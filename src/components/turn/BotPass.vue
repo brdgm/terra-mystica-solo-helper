@@ -5,6 +5,10 @@
       <span v-html="t('botPass.scoringTile')"></span>
       <Icon name="scoring-tile-cult-color" class="scoringTile"/>
     </li>
+    <li v-if="isFactionRacelings && isStartPlayer">
+      <Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botPass.scoringTileFactionRacelings')"></span>
+      <Icon name="scoring-tile-cult-color" class="scoringTile"/>
+    </li>
     <li>
       <span v-html="t('botPass.bonusCard')"></span>
       <Icon type="bonus-card-selection" :name="bonusCardSelection" class="bonusCardSelection"/>
@@ -20,6 +24,7 @@ import { useI18n } from 'vue-i18n'
 import Icon from '@/components/structure/Icon.vue'
 import NavigationState from '@/util/NavigationState'
 import BonusCardSelection from '@/services/enum/BonusCardSelection'
+import BotFaction from '@/services/enum/BotFaction'
 
 export default defineComponent({
   name: 'BotPass',
@@ -39,6 +44,12 @@ export default defineComponent({
   computed: {
     bonusCardSelection() : BonusCardSelection {
       return this.navigationState.cardDeck?.supportCard?.bonusCardSelection as BonusCardSelection
+    },
+    isFactionRacelings() : boolean {
+      return this.navigationState.botFaction == BotFaction.RACELINGS
+    },
+    isStartPlayer(): boolean {
+      return this.navigationState.roundTurn?.startPlayer || false
     }
   }
 })
@@ -58,5 +69,9 @@ export default defineComponent({
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   margin-left: 3rem;
+}
+.factionActionIcon {
+  height: 1.3rem;
+  margin-right: 0.2rem;
 }
 </style>

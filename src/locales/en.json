@@ -72,7 +72,8 @@
         "marked": "Withing Range of any marked Structure",
         "marked-reaching": "Withing Range of any marked Structure (with <a href='#modalReaching' data-bs-toggle='modal'>Reaching</a>)",
         "unmarked": "Withing Range of any unmarked Structure",
-        "unmarked-reaching": "Withing Range of any unmarked Structure (with <a href='#modalReaching' data-bs-toggle='modal'>Reaching</a>)"
+        "unmarked-reaching": "Withing Range of any unmarked Structure (with <a href='#modalReaching' data-bs-toggle='modal'>Reaching</a>)",
+        "factionWanderers": "<b>Ignore range restrictions.</b>"
       },
       "tiebreaker": {
         "title": "Select Space:",
@@ -115,6 +116,8 @@
       "motsPowerActionBoard": "Block one uncovered power action on Merchant Power Actions Board."
     },
     "advanceCultTrack": {
+      "factionDruids": "<b>Automa advances 2 spaces on a single track (without placing a Priest)</b>.",
+      "factionPowerMongers": "<b>Ongoing Benefit: Whenever you gain 2 or more Power via structures, Automa advances 1 space on a Cult track (Cult Catch-up action without placing a Priest).</b>",
       "notMarker10": "Automa advances only on tracks without a Marker on space 10.",
       "scoringTile": {
         "title": "Prefer cult track matching the color of the Automa icon on current Scoring tile."
@@ -154,6 +157,7 @@
   "botPass": {
     "title": "Automa <i>passes</i>.",
     "scoringTile": "Automa gains a <b>fixed number of Victory points</b> as shown in the lower right corner of the current Scoring tile.",
+    "scoringTileFactionRacelings": "Racelings: Automa passed first this round and gains the <b>fixed number of Victory Points</b> on the current Scoring tile <b>again</b>.",
     "bonusCard": "Automa takes a <b>Bonus card</b>:",
     "bonusCardGold": "If there are any coins on the Bonus card return them to the general supply."
   },
@@ -171,6 +175,7 @@
     "areaScoring": "Automa gains victory points from <b>Area scoring</b>.",
     "areaScoringFireIceStrongholdSanctuary": "Stronghold and Sanctuary: Divide <i>Greatest Distance</i> by 2 and round up.",
     "areaScoringFireIceSettlements": "Outposts: Subtract 2 from <i>Settlements</i>.",
+    "factionWanderers": "<b>Wanderers:</b> Gain 1 victory point per structure anywhere on the board.",
     "resourceScoring": "Automa doesn't get any points from Resource scoring."
   },
   "difficultyLevel": {

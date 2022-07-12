@@ -37,6 +37,18 @@ export default class BotActions {
       result = [{action: action}]
     }
 
+    // ongoing benefit for powermongers
+    if (botFaction == BotFaction.POWERMONGERS) {
+      const benefitApplyIndex = result.findIndex(botAction => botAction.action == Action.TRANSFORM_AND_BUILD || botAction.action == Action.UPGRADE)
+      if (benefitApplyIndex >= 0) {
+        result = [
+          ...result.slice(0, benefitApplyIndex+1),
+          {action: Action.ADVANCE_CULT_TRACK, botFaction: BotFaction.POWERMONGERS},
+          ...result.slice(benefitApplyIndex+1,result.length)
+        ] 
+      }
+    }
+
     // apply defaults from support card
     result.forEach(botAction => {
       botAction.shipLevel = botAction.shipLevel || actionCard.shipLevel || this._dlParams.shipLevel

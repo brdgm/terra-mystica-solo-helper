@@ -10,27 +10,28 @@
     <div class="actionCol text-muted small">
       <button type="button" class="btn btn-outline-secondary btn-sm" @click="isUpgrade=true">{{t('botAction.transformAndBuild.noDwelling')}}</button>
       <ol class="mt-2">
-        <li v-html="t(`botAction.transformAndBuild.validSpaces.${botAction.structure}`)"></li>
+        <li v-if="isWanderers"><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.validSpaces.factionWanderers')"></span></li>
+        <li v-else v-html="t(`botAction.transformAndBuild.validSpaces.${botAction.structure}`)"></li>
         <li v-html="t('botAction.transformAndBuild.tiebreaker.title')"></li>
         <ol type="a">
           <template v-if="isBlight">
-            <li v-html="t('botAction.transformAndBuild.tiebreaker.structureClosest')"></li>
-            <li v-html="t('botAction.transformAndBuild.tiebreaker.directionalSelection')"></li>
+            <li><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.structureClosest')"></span></li>
+            <li><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.directionalSelection')"></span></li>
           </template>
           <template v-else-if="isKuddlers">
-            <li v-html="t('botAction.transformAndBuild.tiebreaker.structureClosest')"></li>
-            <li v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriorityYourTerrainType')"></li>
+            <li><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.structureClosest')"></span></li>
+            <li><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriorityYourTerrainType')"></span></li>
             <li v-html="t('botAction.transformAndBuild.tiebreaker.directionalSelection')"></li>
           </template>
           <template v-else-if="isMimics">
-            <li v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriorityYourTerrainType')"></li>
-            <li v-html="t('botAction.transformAndBuild.tiebreaker.structureClosest')"></li>
+            <li><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriorityYourTerrainType')"></span></li>
+            <li><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.structureClosest')"></span></li>
             <li v-html="t('botAction.transformAndBuild.tiebreaker.directionalSelection')"></li>
           </template>
           <template v-else>
-            <li v-if="isPowerMongers" v-html="t('botAction.transformAndBuild.tiebreaker.factionPowerMongers')"></li>
+            <li v-if="isPowerMongers"><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.factionPowerMongers')"></span></li>
             <li v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriority')"></li>
-            <li v-if="useSpaceFurthestAway" class="fire-ice"><Icon type="expansion" name="fire-and-ice" class="expansionIcon"/> <span v-html="t('botAction.transformAndBuild.tiebreaker.structureFurthest')"></span></li>
+            <li v-if="useSpaceFurthestAway" class="fire-ice"><Icon type="expansion" name="fire-and-ice" class="expansionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.structureFurthest')"></span></li>
             <li v-else v-html="t('botAction.transformAndBuild.tiebreaker.structureClosest')"></li>
             <li v-html="t('botAction.transformAndBuild.tiebreaker.directionalSelection')"></li>
           </template>
@@ -63,7 +64,7 @@
     </div>
   </template>
   <template v-else>
-    <Upgrade :bot-action="upgradeBotAction"/>
+    <Upgrade :bot-action="upgradeBotAction" :navigation-state="navigationState"/>
   </template>
 </template>
 
@@ -121,11 +122,17 @@ export default defineComponent({
       const finalScoringTile = this.$store.state.setup.finalScoringTile
       return finalScoringTile == FinalScoringTile.GREATEST_DISTANCE || finalScoringTile == FinalScoringTile.STRONGHOLD_SANCTUARY
     },
-    botFaction() : BotFaction {
-      return this.navigationState.botFaction as BotFaction
+    botFaction() : BotFaction|undefined {
+      return this.botAction.botFaction
+    },
+    isFactionAction() : boolean {
+      return this.botFaction != undefined
     },
     isKuddlers() : boolean {
       return this.botFaction == BotFaction.KUDDLERS
+    },
+    isWanderers() : boolean {
+      return this.botFaction == BotFaction.WANDERERS
     },
     isMimics() : boolean {
       return this.botFaction == BotFaction.MIMICS
@@ -147,8 +154,9 @@ export default defineComponent({
 .actionIcon {
   width: 6rem;
 }
-.expansionIcon, .structureIcon {
+.expansionIcon, .structureIcon, .factionActionIcon {
   height: 1.3rem;
+  margin-right: 0.2rem;
 }
 .fire-ice {
   color: #a1350e;
