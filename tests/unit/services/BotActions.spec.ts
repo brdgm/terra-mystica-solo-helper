@@ -119,22 +119,68 @@ describe('BotActions', () => {
     expect(action2.botFaction).to.undefined
   })
 
-  it('*5/*2-druids', () => {
-    const botActions = new BotActions(Cards.get('*5'), Cards.get('*2'),
+  it('*5/*3-druids', () => {
+    const botActions = new BotActions(Cards.get('*5'), Cards.get('*3'),
         1, BotFaction.DRUIDS, DifficultyLevel.AUTOMA)
     expect(botActions.actions.length).to.eq(2)
 
     const action1 = botActions.actions[0]
     expect(action1.action).to.eq(Action.TRANSFORM_AND_BUILD)
-    expect(action1.structure).to.eq(Structure.MARKED)
+    expect(action1.structure).to.eq(Structure.UNMARKED_REACHING)
     expect(action1.terrainPriority).to.eq(TerrainPriority.B)
-    expect(action1.directionalSelection).to.eq(DirectionalSelection.LEFT_UP)
-    expect(action1.directionalSelectionCount).to.eq(1)
+    expect(action1.directionalSelection).to.eq(DirectionalSelection.RIGHT_DOWN)
+    expect(action1.directionalSelectionCount).to.eq(3)
     expect(action1.botFaction).to.undefined
 
     const action2 = botActions.actions[1]
     expect(action2.action).to.eq(Action.ADVANCE_CULT_TRACK)
     expect(action2.cultTrackSelection).to.eq(CultTrackSelection.CATCH_UP)
     expect(action2.botFaction).to.eq(BotFaction.DRUIDS)
+  })
+
+  it('*5/*1-powermongers', () => {
+    const botActions = new BotActions(Cards.get('*5'), Cards.get('*1'),
+        1, BotFaction.POWERMONGERS, DifficultyLevel.AUTOMA)
+    expect(botActions.actions.length).to.eq(3)
+
+    const action1 = botActions.actions[0]
+    expect(action1.action).to.eq(Action.TRANSFORM_AND_BUILD)
+    expect(action1.structure).to.eq(Structure.MARKED)
+    expect(action1.terrainPriority).to.eq(TerrainPriority.A)
+    expect(action1.directionalSelection).to.eq(DirectionalSelection.RIGHT_DOWN)
+    expect(action1.directionalSelectionCount).to.eq(2)
+    expect(action1.botFaction).to.eq(BotFaction.POWERMONGERS)
+
+    const action2 = botActions.actions[1]
+    expect(action2.action).to.eq(Action.ADVANCE_CULT_TRACK)
+    expect(action2.cultTrackSelection).to.eq(CultTrackSelection.CATCH_UP)
+    expect(action2.botFaction).to.eq(BotFaction.POWERMONGERS)
+
+    const action3 = botActions.actions[2]
+    expect(action3.action).to.eq(Action.GAIN_VICTORY_POINTS)
+    expect(action3.victoryPoints).to.eq(2)
+    expect(action3.botFaction).to.undefined
+  })
+
+  it('11/*1-powermongers', () => {
+    const botActions = new BotActions(Cards.get('11'), Cards.get('*1'),
+        3, BotFaction.POWERMONGERS, DifficultyLevel.AUTOMA)
+    expect(botActions.actions.length).to.eq(3)
+
+    const action1 = botActions.actions[0]
+    expect(action1.action).to.eq(Action.UPGRADE)
+    expect(action1.directionalSelection).to.eq(DirectionalSelection.RIGHT_DOWN)
+    expect(action1.directionalSelectionCount).to.eq(2)
+    expect(action1.botFaction).to.undefined
+
+    const action2 = botActions.actions[1]
+    expect(action2.action).to.eq(Action.ADVANCE_CULT_TRACK)
+    expect(action2.cultTrackSelection).to.eq(CultTrackSelection.CATCH_UP)
+    expect(action2.botFaction).to.eq(BotFaction.POWERMONGERS)
+
+    const action3 = botActions.actions[2]
+    expect(action3.action).to.eq(Action.GAIN_VICTORY_POINTS)
+    expect(action3.victoryPoints).to.eq(1)
+    expect(action3.botFaction).to.undefined
   })
 })

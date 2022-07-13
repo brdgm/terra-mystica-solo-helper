@@ -4,14 +4,14 @@
     <Icon v-else type="action" :name="botAction.action" class="actionIcon"/>
   </div>
   <div class="actionCol">
-    <SupportInfo :bot-action="supportInfoBotAction" :directional-selection="true" :cult-track-selection="true"/>
+    <SupportInfo :bot-action="botAction" :directional-selection="true" :cult-track-selection="true"/>
   </div>
   <div class="actionCol text-muted small">
     <ol>
       <li v-if="isDruids"><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.advanceCultTrack.factionDruids')"></span></li>
       <li v-if="isPowerMongers"><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.advanceCultTrack.factionPowerMongers')"></span></li>
       <li v-html="t('botAction.advanceCultTrack.notMarker10')"></li>
-      <AdvanceCultTrackTrackSelection :bot-action="supportInfoBotAction"/>
+      <AdvanceCultTrackTrackSelection :bot-action="botAction"/>
       <li v-html="t('botAction.advanceCultTrack.execute.title')"></li>
       <ol type="a">
         <li v-html="t('botAction.advanceCultTrack.execute.placePriest')"></li>
@@ -29,7 +29,6 @@ import Icon from '@/components/structure/Icon.vue'
 import SupportInfo from '../supportInfo/SupportInfo.vue'
 import AdvanceCultTrackTrackSelection from './AdvanceCultTrackTrackSelection.vue'
 import BotFaction from '@/services/enum/BotFaction'
-import CultTrackSelection from '@/services/enum/CultTrackSelection'
 
 export default defineComponent({
   name: 'AdvanceCultTrack',
@@ -58,20 +57,6 @@ export default defineComponent({
     },
     isPowerMongers() : boolean {
       return this.botFaction == BotFaction.POWERMONGERS
-    },
-    supportInfoBotAction() : BotAction {
-      if (this.isDruids || this.isPowerMongers) {
-        // force to catch-up cult track selection
-        return {
-          action: this.botAction.action,
-          directionalSelection: this.botAction.directionalSelection,
-          directionalSelectionCount: this.botAction.directionalSelectionCount,
-          cultTrackSelection: CultTrackSelection.CATCH_UP
-        }
-      }
-      else {
-        return this.botAction
-      }
     }
   }
 })
