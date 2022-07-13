@@ -71,7 +71,7 @@ export default class CardDeck {
    */
   public isPass() : boolean {
     return (this._deck.length == 0)
-        || (this._deck.length <= 2 && this.actionCard?.pass == true)
+        || (this._deck.length <= 2 && (this.actionCard?.pass || false))
   }
 
   /**

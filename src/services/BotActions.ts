@@ -32,7 +32,7 @@ export default class BotActions {
     let result
     
     if (action == Action.FACTION_ACTION) {
-      result = this.getFactionBotActions(action, botFaction)
+      result = this.getFactionBotActions(botFaction)
     }
     else {
       result = [{action: action}]
@@ -73,7 +73,7 @@ export default class BotActions {
         && (botAction.action != Action.GAIN_VICTORY_POINTS || (botAction.victoryPoints && botAction.victoryPoints > 0)))
   }
 
-  private getFactionBotActions(action : Action, botFaction : BotFaction) : BotAction[] {
+  private getFactionBotActions(botFaction : BotFaction) : BotAction[] {
     switch (botFaction) {
       case BotFaction.SIMPLETONS:
         return [
