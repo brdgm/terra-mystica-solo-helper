@@ -79,6 +79,7 @@ export default defineComponent({
       if (this.playerCount > this.maxPlayerCount) {
         this.playerCount = this.maxPlayerCount
       }
+      this.botFaction = this.botFaction.splice(0, this.botCount)
       this.storePlayerSetup()
     },
     botFaction: {

@@ -42,7 +42,7 @@
     "step5c-mots": "Return 2 Automa Trading houses to the box. They will not be used.",
     "step5d": "Give her all Priests of her color.",
     "step5e": "Place her Markers on the Cult track. For each Cult symbol in the upper left of her Faction card, advance the corresponding Marker.",
-    "step5f": "Follow any additional setup instructions on the Automa Faction card and familiarize yourself with any special rules for her faction.",
+    "step5f": "Follow the additional setup instructions on the <b>{faction} Automa Faction card</b> and familiarize yourself with the special rules.",
     "step5g": "Place a Marker of Automa’s color on space 20 of the Victory point track (as normal).",
     "step5h-mots": "Give her all Trade markers and the Shipyard in her color.",
     "initialDwelling": "Initial Dwelling Placement",
@@ -176,6 +176,7 @@
     "areaScoringFireIceStrongholdSanctuary": "Stronghold and Sanctuary: Divide <i>Greatest Distance</i> by 2 and round up.",
     "areaScoringFireIceSettlements": "Outposts: Subtract 2 from <i>Settlements</i>.",
     "factionWanderers": "<b>Wanderers:</b> Gain 1 victory point per structure anywhere on the board.",
+    "factionGognomes": "<b>Gognomes</b>: Ensure Gognomes got victory points for their achievements.",
     "resourceScoring": "Automa doesn't get any points from Resource scoring."
   },
   "difficultyLevel": {

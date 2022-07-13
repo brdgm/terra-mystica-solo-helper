@@ -15,6 +15,7 @@
       </li>
     </ul>
     <li v-if="isFactionWanderers"><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('endOfGame.factionWanderers')"></span></li>
+    <li v-if="isFactionGognomes"><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('endOfGame.factionGognomes')"></span></li>
     <li v-html="t('endOfGame.resourceScoring')"></li>
   </ol>
 </template>
@@ -59,6 +60,9 @@ export default defineComponent({
     },
     isFactionWanderers() : boolean {
       return this.$store.state.setup.playerSetup.botFaction.includes(BotFaction.WANDERERS)
+    },
+    isFactionGognomes() : boolean {
+      return this.$store.state.setup.playerSetup.botFaction.includes(BotFaction.GOGNOMES)
     }
   }
 })

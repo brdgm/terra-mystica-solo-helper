@@ -28,7 +28,9 @@
         </li>
         <li v-html="t('setupGameAutoma.step5d')"></li>
         <li v-html="t('setupGameAutoma.step5e')"></li>
-        <li v-html="t('setupGameAutoma.step5f')"></li>
+        <li v-if="isFactionSymbionts" v-html="t('setupGameAutoma.step5f',{faction:t('botFaction.symbionts')})"></li>
+        <li v-if="isFactionBlight" v-html="t('setupGameAutoma.step5f',{faction:t('botFaction.blight')})"></li>
+        <li v-if="isFactionGognomes" v-html="t('setupGameAutoma.step5f',{faction:t('botFaction.gognomes')})"></li>
         <li v-html="t('setupGameAutoma.step5g')"></li>
         <li class="mots" v-if="hasMerchantsOfTheSeas">
           <Icon type="expansion" name="merchants-of-the-seas" class="expansionIcon"/>
@@ -60,6 +62,7 @@ import { useI18n } from 'vue-i18n'
 import rollDice from 'brdgm-commons/src/util/random/rollDice'
 import Expansion from '@/services/enum/Expansion'
 import Icon from '../structure/Icon.vue'
+import BotFaction from '@/services/enum/BotFaction'
 
 export default defineComponent({
   name: 'AutomaSetup',
@@ -78,6 +81,15 @@ export default defineComponent({
       const allCards = Cards.getAll()
       const index = rollDice(allCards.length)
       return allCards[index - 1]
+    },
+    isFactionSymbionts() : boolean {
+      return this.$store.state.setup.playerSetup.botFaction.includes(BotFaction.SYMBIONTS)
+    },
+    isFactionBlight() : boolean {
+      return this.$store.state.setup.playerSetup.botFaction.includes(BotFaction.BLIGHT)
+    },
+    isFactionGognomes() : boolean {
+      return this.$store.state.setup.playerSetup.botFaction.includes(BotFaction.GOGNOMES)
     }
   }
 })

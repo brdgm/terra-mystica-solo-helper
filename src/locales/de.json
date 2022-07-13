@@ -42,7 +42,7 @@
     "step5c-mots": "Lege zusätzlich 2 Automa-Handelshäuser zurück in die Schachtel. Sie werden nicht verwendet.",
     "step5d": "Lege alle Priester ihrer Farbe in ihren Bereich.",
     "step5e": "Setze 4 ihrer Markierungssteine auf den Kultplan. Für jedes Kultsymbol links oben auf ihrer Völkerkarte, steigt sie auf der entsprechenden Skala 1 Stufe auf.",
-    "step5f": "Wende ggf. weitere Aufbauregeln ihrer Völkerkarte an und mache dich mit den Sonderregeln ihres Volkes vertraut.",
+    "step5f": "Wende die weiteren Aufbauregeln der <b>{faction}-Völkerkarte</b> an und mache dich mit den Sonderregeln vertraut.",
     "step5g": "Setze 1 ihrer Markierungssteine wie üblich auf Feld 20 der Punkteleiste.",
     "step5h-mots": "Lege alle Handelsmarker in Automas Farbe und ihre Werft in ihren Bereich.",
     "initialDwelling": "Einsetzen der ersten Wohnhäuser",
@@ -176,6 +176,7 @@
     "areaScoringFireIceStrongholdSanctuary": "Heiligtum und Festung: Ermittle die <i>Größte Entfernung</i> und teile die Zahl durch 2 (aufgerundet).",
     "areaScoringFireIceSettlements": "Außenposten: Ermittle die Anzahl an Ansiedlungen und ziehe 2 vom Ergebnis ab.",
     "factionWanderers": "<b>Wanderer:</b> Erhalte 1 Punkt für jedes eigene Gebäude auf dem Spielplan.",
+    "factionGognomes": "<b>Gognome</b>: Stelle sicher, dass die Gognome die Punkte für ihre Aufgaben erhalten haben.",
     "resourceScoring": "Automa erhält keine Punkte durch die Ressourcenwertung."
   },
   "difficultyLevel": {
@@ -206,7 +207,7 @@
     "powermongers": "Machthändler",
     "symbionts": "Symbionten",
     "blight": "Verwüster",
-    "gognomes": "Gognomes"
+    "gognomes": "Gognome"
   },
   "notfound": {
     "title": "Nicht Gefunden"
