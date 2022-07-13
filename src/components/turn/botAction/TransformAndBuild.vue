@@ -14,11 +14,7 @@
         <li v-else v-html="t(`botAction.transformAndBuild.validSpaces.${botAction.structure}`)"></li>
         <li v-html="t('botAction.transformAndBuild.tiebreaker.title')"></li>
         <ol type="a">
-          <template v-if="isBlight">
-            <li><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.structureClosest')"></span></li>
-            <li><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.directionalSelection')"></span></li>
-          </template>
-          <template v-else-if="isKuddlers">
+          <template v-if="isKuddlers">
             <li><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.structureClosest')"></span></li>
             <li><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriorityYourTerrainType')"></span></li>
             <li v-html="t('botAction.transformAndBuild.tiebreaker.directionalSelection')"></li>
@@ -139,9 +135,6 @@ export default defineComponent({
     },
     isPowerMongers() : boolean {
       return this.botFaction == BotFaction.POWERMONGERS
-    },
-    isBlight() : boolean {
-      return this.botFaction == BotFaction.BLIGHT
     },
     isMarkedStructure() : boolean {
       return this.botAction.structure == Structure.MARKED || this.botAction.structure == Structure.MARKED_REACHING

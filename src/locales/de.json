@@ -152,6 +152,14 @@
     "takeFavorTile": {
       "selectCultFavorTile": "Nimm ein Gunstplättchen, die einen Kult um 3 Stufen erhöhen und auf deren Kultskala sich kein Markierungsstein auf Stufe 10 befindet.",
       "execute": "Ausführung: Automa nimmt das ausgewählte Plättchen und steigt auf der entsprechenden Kultskala um 3 Felder auf."
+    },
+    "factionSymbiontsPlaceCube": {
+      "validSpaces": "Mögliche Optionen: Alle Felder direkt benachbart zu deinen Gebäuden.",
+      "symbiontYouthATP": "Landschaftsprioriät. Nutze die LTP-Karte der <b>Jugend</b>.",
+      "placeCube": "Setze 1 <b>Arbeiterklötzchen</b> auf das gewählte Feld."
+    },
+    "factionBlightTransformFallowLand": {
+      "transform": "Wandle <b>2 Brachland</B>-Felder in <b>Verwüstetes Land</b> um."
     }
   },
   "botPass": {

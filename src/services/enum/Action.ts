@@ -9,6 +9,8 @@ enum Action {
   UPGRADE = 'upgrade',
   TAKE_FAVOR_TILE = 'take-favor-tile',
   TRANSFORM_AND_BUILD = 'transform-and-build',
-  TRADE = 'trade'
+  TRADE = 'trade',
+  FACTION_SYMBIONTS_PLACE_CUBE = 'faction-symbionts-place-cube',
+  FACTION_BLIGHT_TRANSFORM_FALLOW_LAND = 'faction-blight-transform-fallow-land'
 }
 export default Action

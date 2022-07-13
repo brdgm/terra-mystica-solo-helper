@@ -111,11 +111,13 @@ export default class BotActions {
         ]
       case BotFaction.SYMBIONTS:
         return [
-          {action: Action.TRANSFORM_AND_BUILD, botFaction: BotFaction.SYMBIONTS}
+          {action: Action.TRANSFORM_AND_BUILD, botFaction: BotFaction.SYMBIONTS},
+          {action: Action.FACTION_SYMBIONTS_PLACE_CUBE, botFaction: BotFaction.SYMBIONTS}
         ]
       case BotFaction.BLIGHT:
         return [
           {action: Action.TRANSFORM_AND_BUILD, botFaction: BotFaction.BLIGHT},
+          {action: Action.FACTION_BLIGHT_TRANSFORM_FALLOW_LAND, botFaction: BotFaction.BLIGHT},
           {action: Action.GAIN_VICTORY_POINTS, victoryPoints: 1}
         ]
       case BotFaction.GOGNOMES:

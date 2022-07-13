@@ -36,6 +36,8 @@ import TakeFavorTile from './botAction/TakeFavorTile.vue'
 import Trade from './botAction/Trade.vue'
 import TransformAndBuild from './botAction/TransformAndBuild.vue'
 import Upgrade from './botAction/Upgrade.vue'
+import FactionSymbiontsPlaceCube from './botAction/FactionSymbiontsPlaceCube.vue'
+import FactionBlightTransformFallowLand from './botAction/FactionBlightTransformFallowLand.vue'
 import BotPass from './BotPass.vue'
 
 export default defineComponent({
@@ -48,6 +50,8 @@ export default defineComponent({
     Trade,
     TransformAndBuild,
     Upgrade,
+    FactionSymbiontsPlaceCube,
+    FactionBlightTransformFallowLand,
     BotPass
   },
   setup() {
