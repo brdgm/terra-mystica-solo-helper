@@ -38,6 +38,7 @@
         </li>
       </ol>
     </li>
+    <li v-html="t('setupGameAutoma.step6',{count:bonusCardCount})"></li>
   </ol>
 
   <h4>{{t('setupGameAutoma.initialDwelling')}}</h4>
@@ -74,14 +75,17 @@ export default defineComponent({
     return { t }
   },
   computed: {
-    hasMerchantsOfTheSeas(): boolean {
+    hasMerchantsOfTheSeas() : boolean {
       return this.$store.state.setup.expansions.includes(Expansion.MERCHANTS_OF_THE_SEAS)
+    },
+    bonusCardCount() : number {
+      return this.$store.state.setup.playerSetup.botCount + this.$store.state.setup.playerSetup.playerCount + 3
     },
     randomCard(): Card {
       const allCards = Cards.getAll()
       const index = rollDice(allCards.length)
       return allCards[index - 1]
-    },
+    },    
     isFactionSymbionts() : boolean {
       return this.$store.state.setup.playerSetup.botFaction.includes(BotFaction.SYMBIONTS)
     },

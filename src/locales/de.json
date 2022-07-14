@@ -45,6 +45,7 @@
     "step5f": "Wende die weiteren Aufbauregeln der <b>{faction}-Völkerkarte</b> an und mache dich mit den Sonderregeln vertraut.",
     "step5g": "Setze 1 ihrer Markierungssteine wie üblich auf Feld 20 der Punkteleiste.",
     "step5h-mots": "Lege alle Handelsmarker in Automas Farbe und ihre Werft in ihren Bereich.",
+    "step6": "Mische die {count} Rundenbonuskarten und lege sie aufgedeckt nebeneinander in einer Reihe aus. Automa erhält die Karte ganz links. Wähle dann regulär eine Karte für dich.",
     "initialDwelling": "Einsetzen der ersten Wohnhäuser",
     "initialDwellingIntro": "Automa setzt ihre beiden Wohnhäuser ein, nachdem du dein erstes Wohnhaus eingesetzt hast. Nutze dafür die <b>Spielplankarte</b>, die den gewählten Spielplan zeigt.",
     "initialDwellingPlayer": "Setze dein erstes Wohnhaus ein.",
