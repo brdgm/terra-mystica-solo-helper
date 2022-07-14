@@ -126,10 +126,10 @@
       "factionPowerMongers": "<b>Ongoing Benefit: Whenever you gain 2 or more Power via structures, Automa advances 1 space on a Cult track (Cult Catch-up action without placing a Priest).</b>",
       "notMarker10": "Automa advances only on tracks without a Marker on space 10.",
       "scoringTile": {
-        "title": "Prefer cult track matching the color of the Automa icon on current Scoring tile."
+        "title": "Prefer cult track matching the <b>color</b> of the Automa icon on current <b>Scoring tile</b>."
       },
       "catchUp": {
-        "title": "Use Catch-Up selection:",
+        "title": "Use <b>Catch-Up</b> selection:",
         "otherwiseTitle": "Otherwise use Catch-Up selection:",
         "marketAt0": "The Cult track where Automa‘s Marker is at 0.",
         "highestMarker": "The Cult track where Automa‘s Marker is nearest to your Marker; it can be on the same space or above or below you.",

@@ -126,11 +126,11 @@
       "factionPowerMongers": "<b>Dauerhafte Fähigkeit: Erhälst du durch ein Automa-Gebäude min. 2 Macht, steigt Automa ohne Priestereinsatz um 1 Stufe auf 1 Kultskala auf (Methode: Aufholen).</b>",
       "notMarker10": "Automa schreitet nur auf Kultskalen voran ohne Markierungsstein auf Stufe 10.",
       "scoringTile": {
-        "title": "Automa bevorzugt eine Skala deren Farbe dem Kult auf dem Wertungsplättchen entspricht."
+        "title": "Automa bevorzugt eine Skala deren <b>Farbe</b> dem Kult auf dem <b>Wertungsplättchen</b> entspricht."
       },
       "catchUp": {
-        "title": "Automa versucht aufzuholen:",
-        "otherwiseTitle": "Anstonsten veruscht Automa aufzuholen:",
+        "title": "Automa versucht <b>aufzuholen</b>:",
+        "otherwiseTitle": "Anstonsten versucht Automa aufzuholen:",
         "marketAt0": "Die Skala, auf der Automas Markierungsstein auf 0 steht.",
         "highestMarker": "Die Skala, auf der Automas Markierungsstein den geringsten Abstand zu deinem hat. Automa kann dabei auf gleicher, höherer oder niedriger Stufe sein als du.",
         "highestMarkerMultipleHumans": "Die Skala, auf der Automas Markierungsstein den kleinsten Abstand zu dem Markierungsstein auf der höchsten Stufe derselben Skala hat. Automas Markierungsstein kann dabei auf der gleichen, einer höheren oder niedrigeren Stufe stehen als der andere Markierungstein.",
