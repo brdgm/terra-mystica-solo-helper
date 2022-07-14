@@ -53,6 +53,11 @@
     "initialDwellingUnmarked": "Place an Automa Dwelling on a Home Terrain space with letter <b>{character}</b>.",
     "initialDwellingPlayerSecond": "Place your second Dwelling."
   },
+  "income": {
+    "title": "Income",
+    "turnInfo": "Round {round}",
+    "collect": "Collect new Workers, Coins, Priests ans Power."
+  },
   "roundTurn": {
     "turnInfo": "Round {round}, Turn {turn}",
     "titlePlayer": "Player | Player {player}",

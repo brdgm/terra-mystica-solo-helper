@@ -3,6 +3,7 @@ import Home from '@/views/Home.vue'
 import NotFound from '@/views/NotFound.vue'
 import SetupGame from '@/views/SetupGame.vue'
 import SetupGameAutoma from '@/views/SetupGameAutoma.vue'
+import Income from '@/views/Income.vue'
 import RoundTurn from '@/views/RoundTurn.vue'
 
 const LOCALSTORAGE_KEY = process.env.VUE_APP_LOCALSTORAGE_KEY_PREFIX + "route"
@@ -22,6 +23,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/setupGameAutoma',
     name: 'SetupGameAutoma',
     component: SetupGameAutoma
+  },
+  {
+    path: '/round/:round/income',
+    name: 'Income',
+    component: Income
   },
   {
     path: '/round/:round/turn/:turn',

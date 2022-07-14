@@ -53,6 +53,11 @@
     "initialDwellingUnmarked": "Setze ein Automa-Wohnhaus auf ein Heimandlandschafts-Feld mit dem Buchstaben <b>{character}</b>.",
     "initialDwellingPlayerSecond": "Setze dein zweites Wohnhaus ein."
   },
+  "income": {
+    "title": "Einkommen",
+    "turnInfo": "Runde {round}",
+    "collect": "Erhalte neue Arbeiter, Geldmünzen, Priester und Macht."
+  },
   "roundTurn": {
     "turnInfo": "Runde {round}, Zug {turn}",
     "titlePlayer": "Spieler | Spieler {player}",

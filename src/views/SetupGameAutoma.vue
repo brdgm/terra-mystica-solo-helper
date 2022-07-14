@@ -3,7 +3,7 @@
 
   <AutomaSetup/>
 
-  <router-link to="/round/1/turn/1" class="btn btn-primary btn-lg mt-4">
+  <router-link to="/round/1/income" class="btn btn-primary btn-lg mt-4">
     {{t('action.startGame')}}
   </router-link>
 
