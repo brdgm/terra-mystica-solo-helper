@@ -15,7 +15,7 @@
       "botCount": "Automa",
       "botCountItem": "{count} Automa | {count} Automas (Experimentell)",
       "botFaction": "Automa Volk | Automa {bot} Volk",
-      "twoPlayerBotFaction": "Beim Spiel mit zwei Spielern erlauben die offziellen Regeln nur die Wahl von <i>Die Unscheinbaren</i>."
+      "twoPlayerBotFaction": "Beim Spiel mit zwei Spielern erlauben die offiziellen Regeln nur die Wahl von <i>Die Unscheinbaren</i>."
     },
     "difficultyLevel": {
       "title": "Schwierigkeitsgrad",
@@ -45,12 +45,18 @@
     "step5f": "Wende die weiteren Aufbauregeln der <b>{faction}-Völkerkarte</b> an und mache dich mit den Sonderregeln vertraut.",
     "step5g": "Setze 1 ihrer Markierungssteine wie üblich auf Feld 20 der Punkteleiste.",
     "step5h-mots": "Lege alle Handelsmarker in Automas Farbe und ihre Werft in ihren Bereich.",
+    "step6": "Mische die {count} Rundenbonuskarten und lege sie aufgedeckt nebeneinander in einer Reihe aus. Automa erhält die Karte ganz links. Wähle dann regulär eine Karte für dich.",
     "initialDwelling": "Einsetzen der ersten Wohnhäuser",
     "initialDwellingIntro": "Automa setzt ihre beiden Wohnhäuser ein, nachdem du dein erstes Wohnhaus eingesetzt hast. Nutze dafür die <b>Spielplankarte</b>, die den gewählten Spielplan zeigt.",
     "initialDwellingPlayer": "Setze dein erstes Wohnhaus ein.",
-    "initialDwellingMarked": "Setze ein Automa-Wohnhaus auf ein Heimandlandschafts-Feld mit dem Buchstaben <b>{character}</b>, zusammen mit einem Machtchip.",
-    "initialDwellingUnmarked": "Setze ein Automa-Wohnhaus auf ein Heimandlandschafts-Feld mit dem Buchstaben <b>{character}</b>.",
+    "initialDwellingMarked": "Setze ein Automa-Wohnhaus auf ein Heimatlandschafts-Feld mit dem Buchstaben <b>{character}</b>, zusammen mit einem Machtchip.",
+    "initialDwellingUnmarked": "Setze ein Automa-Wohnhaus auf ein Heimatlandschafts-Feld mit dem Buchstaben <b>{character}</b>.",
     "initialDwellingPlayerSecond": "Setze dein zweites Wohnhaus ein."
+  },
+  "income": {
+    "title": "Einkommen",
+    "turnInfo": "Runde {round}",
+    "collect": "Erhalte neue Arbeiter, Geldmünzen, Priester und Macht."
   },
   "roundTurn": {
     "turnInfo": "Runde {round}, Zug {turn}",
@@ -116,15 +122,15 @@
       "motsPowerActionBoard": "Decke ein offenes Machtfeld auf dem Tableau mit Machtaktionen aus <i>Die Händler</i> ab."
     },
     "advanceCultTrack": {
-      "factionDruids": "<b>Aufsteigen auf einer Kultskala: Automa setzt keinen Prieser ein und steigt um 2 Stufen auf</b>.",
-      "factionPowerMongers": "<b>Dauerhafte Fähigkeit: Erhälst du durch ein Automa-Gebäude min. 2 Macht, steigt Automa ohne Priestereinsatz um 1 Stufe auf 1 Kultskala auf (Methode: Aufholen).</b>",
+      "factionDruids": "<b>Aufsteigen auf einer Kultskala: Automa setzt keinen Priester ein und steigt um 2 Stufen auf</b>.",
+      "factionPowerMongers": "<b>Dauerhafte Fähigkeit: Erhältst du durch ein Automa-Gebäude min. 2 Macht, steigt Automa ohne Priestereinsatz um 1 Stufe auf 1 Kultskala auf (Methode: Aufholen).</b>",
       "notMarker10": "Automa schreitet nur auf Kultskalen voran ohne Markierungsstein auf Stufe 10.",
       "scoringTile": {
-        "title": "Automa bevorzugt eine Skala deren Farbe dem Kult auf dem Wertungsplättchen entspricht."
+        "title": "Automa bevorzugt eine Skala deren <b>Farbe</b> dem Kult auf dem <b>Wertungsplättchen</b> entspricht."
       },
       "catchUp": {
-        "title": "Automa versucht aufzuholen:",
-        "otherwiseTitle": "Anstonsten veruscht Automa aufzuholen:",
+        "title": "Automa versucht <b>aufzuholen</b>:",
+        "otherwiseTitle": "Ansonsten versucht Automa aufzuholen:",
         "marketAt0": "Die Skala, auf der Automas Markierungsstein auf 0 steht.",
         "highestMarker": "Die Skala, auf der Automas Markierungsstein den geringsten Abstand zu deinem hat. Automa kann dabei auf gleicher, höherer oder niedriger Stufe sein als du.",
         "highestMarkerMultipleHumans": "Die Skala, auf der Automas Markierungsstein den kleinsten Abstand zu dem Markierungsstein auf der höchsten Stufe derselben Skala hat. Automas Markierungsstein kann dabei auf der gleichen, einer höheren oder niedrigeren Stufe stehen als der andere Markierungstein.",
@@ -138,7 +144,7 @@
     },
     "trade": {
       "selectStructure": {
-        "title": "Wähle Gebäude, direkt benachtbart zu einem Flussfeld, unter welchen noch kein Automa-Handelsmarker liegt:",
+        "title": "Wähle Gebäude, direkt benachbart zu einem Flussfeld, unter welchen noch kein Automa-Handelsmarker liegt:",
         "highestPower": "Gebäude mit der höchsten Machtstufe.",
         "directionalSelection": "Richtungsauswahl."
       },
@@ -200,7 +206,7 @@
   },
   "finalScoringTile": {
     "default": "Standard (Grundspiel)",
-    "greatest-distance": "Grösste Entfernung (Feuer & Eis)",
+    "greatest-distance": "Größte Entfernung (Feuer & Eis)",
     "stronghold-sanctuary": "Heiligtum und Festung (Feuer & Eis)",
     "outposts": "Außenposten (Feuer & Eis)",
     "settlements": "Ansiedlungen (Feuer & Eis)"

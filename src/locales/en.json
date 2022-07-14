@@ -45,12 +45,18 @@
     "step5f": "Follow the additional setup instructions on the <b>{faction} Automa Faction card</b> and familiarize yourself with the special rules.",
     "step5g": "Place a Marker of Automa’s color on space 20 of the Victory point track (as normal).",
     "step5h-mots": "Give her all Trade markers and the Shipyard in her color.",
+    "step6": "Shuffle the {count} Bonus cards and place them face-up in a horizontal line. Give Automa the first one. Choose your own Bonus card.",
     "initialDwelling": "Initial Dwelling Placement",
     "initialDwellingIntro": "Automa places her initial Dwellings after you place your first Dwelling. Select the Automa <b>Initial Dwelling map card</b> for the map you are using and refer to it as you:",
     "initialDwellingPlayer": "Place your first Dwelling.",
     "initialDwellingMarked": "Place an Automa Dwelling on a Home Terrain space with letter <b>{character}</b>, together with a power token.",
     "initialDwellingUnmarked": "Place an Automa Dwelling on a Home Terrain space with letter <b>{character}</b>.",
     "initialDwellingPlayerSecond": "Place your second Dwelling."
+  },
+  "income": {
+    "title": "Income",
+    "turnInfo": "Round {round}",
+    "collect": "Collect new Workers, Coins, Priests ans Power."
   },
   "roundTurn": {
     "turnInfo": "Round {round}, Turn {turn}",
@@ -120,10 +126,10 @@
       "factionPowerMongers": "<b>Ongoing Benefit: Whenever you gain 2 or more Power via structures, Automa advances 1 space on a Cult track (Cult Catch-up action without placing a Priest).</b>",
       "notMarker10": "Automa advances only on tracks without a Marker on space 10.",
       "scoringTile": {
-        "title": "Prefer cult track matching the color of the Automa icon on current Scoring tile."
+        "title": "Prefer cult track matching the <b>color</b> of the Automa icon on current <b>Scoring tile</b>."
       },
       "catchUp": {
-        "title": "Use Catch-Up selection:",
+        "title": "Use <b>Catch-Up</b> selection:",
         "otherwiseTitle": "Otherwise use Catch-Up selection:",
         "marketAt0": "The Cult track where Automa‘s Marker is at 0.",
         "highestMarker": "The Cult track where Automa‘s Marker is nearest to your Marker; it can be on the same space or above or below you.",
