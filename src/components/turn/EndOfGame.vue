@@ -5,13 +5,13 @@
       <span v-html="t('endOfGame.areaScoring')"></span>
       <ShipLevel :shipLevel="shipLevel"/>
     </li>
-    <ul v-if="isStrongholdSancturaryScoring || isSettlementsScoring">
+    <ul v-if="isStrongholdSancturaryScoring || isOutpostsScoring">
       <li class="fire-ice" v-if="isStrongholdSancturaryScoring">
         <Icon type="expansion" name="fire-and-ice" class="expansionIcon"/>
         <span v-html="t('endOfGame.areaScoringFireIceStrongholdSanctuary')"></span>
       </li>
-      <li class="fire-ice" v-if="isSettlementsScoring">
-        <Icon type="expansion" name="fire-and-ice" class="expansionIcon"/><span v-html="t('endOfGame.areaScoringFireIceSettlements')"></span>
+      <li class="fire-ice" v-if="isOutpostsScoring">
+        <Icon type="expansion" name="fire-and-ice" class="expansionIcon"/><span v-html="t('endOfGame.areaScoringFireIceOutposts')"></span>
       </li>
     </ul>
     <li v-if="isFactionWanderers"><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('endOfGame.factionWanderers')"></span></li>
@@ -51,8 +51,8 @@ export default defineComponent({
     isStrongholdSancturaryScoring() : boolean {
       return this.$store.state.setup.finalScoringTile == FinalScoringTile.STRONGHOLD_SANCTUARY
     },
-    isSettlementsScoring() : boolean {
-      return this.$store.state.setup.finalScoringTile == FinalScoringTile.SETTLEMENTS
+    isOutpostsScoring() : boolean {
+      return this.$store.state.setup.finalScoringTile == FinalScoringTile.OUTPOSTS
     },
     shipLevel() : number {
       const params = DifficultyLevelParameters.get(this.$store.state.setup.difficultyLevel, this.round)
