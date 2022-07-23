@@ -83,8 +83,8 @@
       "tiebreaker": {
         "title": "Feld auswählen:",
         "factionPowerMongers": "Größter <b>Machterhalt</b> für dich.",
-        "terrainPriority": "Landschaftspriorität.",
-        "terrainPriorityYourTerrainType": "Landschaftspriorität, verwende LTP-Karte <b>deiner</b> Heimatlandschaft.",
+        "terrainPriority": "Landschaftspriorität <b>{terrainPriority}</b>.",
+        "terrainPriorityYourTerrainType": "Landschaftspriorität <b>{terrainPriority}</b>, verwende LTP-Karte <b>deiner</b> Heimatlandschaft.",
         "structureClosest": "Felder, die deinen Gebäuden am <b>nächsten</b> sind.",
         "structureFurthest": "Felder, die am weitesten von Automa-Gebäuden <b>entfernt</b> sind.",
         "directionalSelection": "Richtungsauswahl."
