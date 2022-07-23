@@ -16,17 +16,17 @@
         <ol type="a">
           <template v-if="isKuddlers">
             <li><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.structureClosest')"></span></li>
-            <li><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriorityYourTerrainType')"></span></li>
+            <li><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriorityYourTerrainType',{terrainPriority:botAction.terrainPriority})"></span></li>
             <li v-html="t('botAction.transformAndBuild.tiebreaker.directionalSelection')"></li>
           </template>
           <template v-else-if="isMimics">
-            <li><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriorityYourTerrainType')"></span></li>
+            <li><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriorityYourTerrainType',{terrainPriority:botAction.terrainPriority})"></span></li>
             <li><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.structureClosest')"></span></li>
             <li v-html="t('botAction.transformAndBuild.tiebreaker.directionalSelection')"></li>
           </template>
           <template v-else>
             <li v-if="isPowerMongers"><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.factionPowerMongers')"></span></li>
-            <li v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriority')"></li>
+            <li v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriority',{terrainPriority:botAction.terrainPriority})"></li>
             <li v-if="useSpaceFurthestAway" class="fire-ice"><Icon type="expansion" name="fire-and-ice" class="expansionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.structureFurthest')"></span></li>
             <li v-else v-html="t('botAction.transformAndBuild.tiebreaker.structureClosest')"></li>
             <li v-html="t('botAction.transformAndBuild.tiebreaker.directionalSelection')"></li>

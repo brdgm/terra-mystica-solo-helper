@@ -16,29 +16,40 @@
       <span v-html="t('setupGameAutoma.step2')"></span>
     </li>
     <li v-html="t('setupGameAutoma.step3')"></li>
-    <li v-html="t('setupGameAutoma.step4')"></li>
     <li>
-      <span v-html="t('setupGameAutoma.step5')"></span>
+      <span v-html="t('setupGameAutoma.step4')"></span>
       <ol type="a">
-        <li v-html="t('setupGameAutoma.step5a')"></li>
-        <li v-html="t('setupGameAutoma.step5b')"></li>
+        <li v-html="t('setupGameAutoma.step4a')"></li>
+        <li v-html="t('setupGameAutoma.step4b')"></li>
         <li class="mots" v-if="hasMerchantsOfTheSeas">
           <Icon type="expansion" name="merchants-of-the-seas" class="expansionIcon"/>
-          <span v-html="t('setupGameAutoma.step5c-mots')"></span>
+          <span v-html="t('setupGameAutoma.step4c-mots')"></span>
         </li>
-        <li v-html="t('setupGameAutoma.step5d')"></li>
-        <li v-html="t('setupGameAutoma.step5e')"></li>
-        <li v-if="isFactionSymbionts" v-html="t('setupGameAutoma.step5f',{faction:t('botFaction.symbionts')})"></li>
-        <li v-if="isFactionBlight" v-html="t('setupGameAutoma.step5f',{faction:t('botFaction.blight')})"></li>
-        <li v-if="isFactionGognomes" v-html="t('setupGameAutoma.step5f',{faction:t('botFaction.gognomes')})"></li>
-        <li v-html="t('setupGameAutoma.step5g')"></li>
+        <li v-html="t('setupGameAutoma.step4d')"></li>
+        <li>
+          <span v-html="t('setupGameAutoma.step4e')"></span>
+          <ul>
+            <li v-for="faction in factions" :key="faction">
+              <b>{{t(`botFaction.${faction}`)}}</b>:
+              <span v-for="(bonus,index) in getCultTrackBonus(faction)" :key="index">
+                <template v-if="index > 0">, </template>
+                <Icon type="cult-track" :name="bonus.cultTrack" class="cultTrackIcon"/>
+                {{bonus.advanceSteps}}
+              </span>
+            </li>
+          </ul>
+        </li>
+        <li v-if="isFactionSymbionts" v-html="t('setupGameAutoma.step4f',{faction:t('botFaction.symbionts')})"></li>
+        <li v-if="isFactionBlight" v-html="t('setupGameAutoma.step4f',{faction:t('botFaction.blight')})"></li>
+        <li v-if="isFactionGognomes" v-html="t('setupGameAutoma.step4f',{faction:t('botFaction.gognomes')})"></li>
+        <li v-html="t('setupGameAutoma.step4g')"></li>
         <li class="mots" v-if="hasMerchantsOfTheSeas">
           <Icon type="expansion" name="merchants-of-the-seas" class="expansionIcon"/>
-          <span v-html="t('setupGameAutoma.step5h-mots')"></span>
+          <span v-html="t('setupGameAutoma.step4h-mots')"></span>
         </li>
       </ol>
     </li>
-    <li v-html="t('setupGameAutoma.step6',{count:bonusCardCount})"></li>
+    <li v-html="t('setupGameAutoma.step5',{count:bonusCardCount})"></li>
   </ol>
 
   <h4>{{t('setupGameAutoma.initialDwelling')}}</h4>
@@ -64,6 +75,8 @@ import rollDice from 'brdgm-commons/src/util/random/rollDice'
 import Expansion from '@/services/enum/Expansion'
 import Icon from '../structure/Icon.vue'
 import BotFaction from '@/services/enum/BotFaction'
+import { CultTrackBonusSteps } from '@/services/CultTrackBonus'
+import CultTrackBonuses from '@/services/CultTrackBonuses'
 
 export default defineComponent({
   name: 'AutomaSetup',
@@ -94,6 +107,14 @@ export default defineComponent({
     },
     isFactionGognomes() : boolean {
       return this.$store.state.setup.playerSetup.botFaction.includes(BotFaction.GOGNOMES)
+    },
+    factions() : BotFaction[] {
+      return this.$store.state.setup.playerSetup.botFaction
+    }
+  },
+  methods: {
+    getCultTrackBonus(botFaction : BotFaction) : CultTrackBonusSteps[] {
+      return CultTrackBonuses.get(botFaction)
     }
   }
 })
@@ -107,7 +128,7 @@ li {
     margin-top: 0rem;
   }
 }
-.expansionIcon, .structureIcon {
+.expansionIcon, .structureIcon, .cultTrackIcon {
   height: 1.5rem;
 }
 .mots {
