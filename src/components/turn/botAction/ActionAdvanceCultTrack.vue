@@ -1,15 +1,15 @@
 <template>
   <div class="actionCol">
-    <Icon v-if="isDruids || isPowerMongers" type="action" name="advance-cult-track-no-priest" class="actionIcon"/>
-    <Icon v-else type="action" :name="botAction.action" class="actionIcon"/>
+    <AppIcon v-if="isDruids || isPowerMongers" type="action" name="advance-cult-track-no-priest" class="actionIcon"/>
+    <AppIcon v-else type="action" :name="botAction.action" class="actionIcon"/>
   </div>
   <div class="actionCol">
     <SupportInfo :bot-action="botAction" :directional-selection="true" :cult-track-selection="true"/>
   </div>
   <div class="actionCol text-muted small">
     <ol>
-      <li v-if="isDruids"><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.advanceCultTrack.factionDruids')"></span></li>
-      <li v-if="isPowerMongers"><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.advanceCultTrack.factionPowerMongers')"></span></li>
+      <li v-if="isDruids"><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.advanceCultTrack.factionDruids')"></span></li>
+      <li v-if="isPowerMongers"><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.advanceCultTrack.factionPowerMongers')"></span></li>
       <li v-html="t('botAction.advanceCultTrack.notMarker10')"></li>
       <AdvanceCultTrackTrackSelection :bot-action="botAction"/>
       <li v-html="t('botAction.advanceCultTrack.execute.title')"></li>
@@ -25,16 +25,16 @@
 import { defineComponent, PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 import BotAction from '@/services/BotAction'
-import Icon from '@/components/structure/Icon.vue'
+import AppIcon from '@/components/structure/AppIcon.vue'
 import SupportInfo from '../supportInfo/SupportInfo.vue'
 import AdvanceCultTrackTrackSelection from './AdvanceCultTrackTrackSelection.vue'
 import BotFaction from '@/services/enum/BotFaction'
 
 export default defineComponent({
-  name: 'AdvanceCultTrack',
+  name: 'ActionAdvanceCultTrack',
   inheritAttrs: false,
   components: {
-    Icon,
+    AppIcon,
     SupportInfo,
     AdvanceCultTrackTrackSelection
   },

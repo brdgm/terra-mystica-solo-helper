@@ -43,7 +43,7 @@ import Expansion from '@/services/enum/Expansion'
 import FinalScoringTile from '@/services/enum/FinalScoringTile'
 
 export default defineComponent({
-  name: 'Expansions',
+  name: 'ExpansionsSetup',
   setup() {
     const { t } = useI18n()
     useStore()

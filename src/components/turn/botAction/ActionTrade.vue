@@ -1,6 +1,6 @@
 <template>
   <div class="actionCol">
-    <Icon type="action" :name="botAction.action" class="actionIcon"/>
+    <AppIcon type="action" :name="botAction.action" class="actionIcon"/>
   </div>
   <div class="actionCol">
     <SupportInfo :bot-action="botAction" :directional-selection="true"/>
@@ -26,14 +26,14 @@
 import { defineComponent, PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 import BotAction from '@/services/BotAction'
-import Icon from '@/components/structure/Icon.vue'
+import AppIcon from '@/components/structure/AppIcon.vue'
 import SupportInfo from '../supportInfo/SupportInfo.vue'
 
 export default defineComponent({
-  name: 'Trade',
+  name: 'ActionTrade',
   inheritAttrs: false,
   components: {
-    Icon,
+    AppIcon,
     SupportInfo
   },
   setup() {

@@ -3,15 +3,15 @@
   <ol>
     <li>
       <span v-html="t('botPass.scoringTile')"></span>
-      <Icon name="scoring-tile-cult-color" class="scoringTile"/>
+      <AppIcon name="scoring-tile-cult-color" class="scoringTile"/>
     </li>
     <li v-if="isFactionRacelings && isStartPlayer">
-      <Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botPass.scoringTileFactionRacelings')"></span>
-      <Icon name="scoring-tile-cult-color" class="scoringTile"/>
+      <AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botPass.scoringTileFactionRacelings')"></span>
+      <AppIcon name="scoring-tile-cult-color" class="scoringTile"/>
     </li>
     <li>
       <span v-html="t('botPass.bonusCard')"></span>
-      <Icon type="bonus-card-selection" :name="bonusCardSelection" class="bonusCardSelection"/>
+      <AppIcon type="bonus-card-selection" :name="bonusCardSelection" class="bonusCardSelection"/>
     </li>
     <li v-html="t('botPass.bonusCardGold')"></li>
   </ol>
@@ -21,7 +21,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
-import Icon from '@/components/structure/Icon.vue'
+import AppIcon from '@/components/structure/AppIcon.vue'
 import NavigationState from '@/util/NavigationState'
 import BonusCardSelection from '@/services/enum/BonusCardSelection'
 import BotFaction from '@/services/enum/BotFaction'
@@ -29,7 +29,7 @@ import BotFaction from '@/services/enum/BotFaction'
 export default defineComponent({
   name: 'BotPass',
   components: {
-    Icon
+    AppIcon
   },
   setup() {
     const { t } = useI18n()

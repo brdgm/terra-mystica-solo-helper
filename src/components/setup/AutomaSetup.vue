@@ -3,16 +3,16 @@
   <p v-html="t('setupGameAutoma.generalSetupIntro')"></p>
   <ol>
     <li>
-      <Icon name="scoring-tile-setup" class="scoring-tile-icon"/>
+      <AppIcon name="scoring-tile-setup" class="scoring-tile-icon"/>
       <span v-html="t('setupGameAutoma.step1')"></span>
       <div class="mots" v-if="hasMerchantsOfTheSeas">
-        <Icon type="expansion" name="merchants-of-the-seas" class="expansionIcon"/>
+        <AppIcon type="expansion" name="merchants-of-the-seas" class="expansionIcon"/>
         <span v-html="t('setupGameAutoma.step1-mots')"></span>
-        <Icon name="scoring-tile-mots-icon" class="expansionIcon"/>
+        <AppIcon name="scoring-tile-mots-icon" class="expansionIcon"/>
       </div>
     </li>
     <li>
-      <Icon name="scoring-tile-game-end-token" class="scoring-tile-icon"/>
+      <AppIcon name="scoring-tile-game-end-token" class="scoring-tile-icon"/>
       <span v-html="t('setupGameAutoma.step2')"></span>
     </li>
     <li v-html="t('setupGameAutoma.step3')"></li>
@@ -22,7 +22,7 @@
         <li v-html="t('setupGameAutoma.step4a')"></li>
         <li v-html="t('setupGameAutoma.step4b')"></li>
         <li class="mots" v-if="hasMerchantsOfTheSeas">
-          <Icon type="expansion" name="merchants-of-the-seas" class="expansionIcon"/>
+          <AppIcon type="expansion" name="merchants-of-the-seas" class="expansionIcon"/>
           <span v-html="t('setupGameAutoma.step4c-mots')"></span>
         </li>
         <li v-html="t('setupGameAutoma.step4d')"></li>
@@ -33,7 +33,7 @@
               <b>{{t(`botFaction.${faction}`)}}</b>:
               <span v-for="(bonus,index) in getCultTrackBonus(faction)" :key="index">
                 <template v-if="index > 0">, </template>
-                <Icon type="cult-track" :name="bonus.cultTrack" class="cultTrackIcon"/>
+                <AppIcon type="cult-track" :name="bonus.cultTrack" class="cultTrackIcon"/>
                 {{bonus.advanceSteps}}
               </span>
             </li>
@@ -44,7 +44,7 @@
         <li v-if="isFactionGognomes" v-html="t('setupGameAutoma.step4f',{faction:t('botFaction.gognomes')})"></li>
         <li v-html="t('setupGameAutoma.step4g')"></li>
         <li class="mots" v-if="hasMerchantsOfTheSeas">
-          <Icon type="expansion" name="merchants-of-the-seas" class="expansionIcon"/>
+          <AppIcon type="expansion" name="merchants-of-the-seas" class="expansionIcon"/>
           <span v-html="t('setupGameAutoma.step4h-mots')"></span>
         </li>
       </ol>
@@ -57,10 +57,10 @@
   <ol>
     <li v-html="t('setupGameAutoma.initialDwellingPlayer')"></li>
     <li>
-      <Icon type="structure" name="marked" class="structureIcon"/>&nbsp;<span v-html="t('setupGameAutoma.initialDwellingMarked', {character:randomCard.initialDwellingMarked})"></span>
+      <AppIcon type="structure" name="marked" class="structureIcon"/>&nbsp;<span v-html="t('setupGameAutoma.initialDwellingMarked', {character:randomCard.initialDwellingMarked})"></span>
     </li>
     <li>
-      <Icon type="structure" name="unmarked" class="structureIcon"/>&nbsp;<span v-html="t('setupGameAutoma.initialDwellingUnmarked', {character:randomCard.initialDwellingUnmarked})"></span>
+      <AppIcon type="structure" name="unmarked" class="structureIcon"/>&nbsp;<span v-html="t('setupGameAutoma.initialDwellingUnmarked', {character:randomCard.initialDwellingUnmarked})"></span>
     </li>
     <li v-html="t('setupGameAutoma.initialDwellingPlayerSecond')"></li>
   </ol>
@@ -73,7 +73,7 @@ import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import rollDice from 'brdgm-commons/src/util/random/rollDice'
 import Expansion from '@/services/enum/Expansion'
-import Icon from '../structure/Icon.vue'
+import AppIcon from '../structure/AppIcon.vue'
 import BotFaction from '@/services/enum/BotFaction'
 import { CultTrackBonusSteps } from '@/services/CultTrackBonus'
 import CultTrackBonuses from '@/services/CultTrackBonuses'
@@ -81,7 +81,7 @@ import CultTrackBonuses from '@/services/CultTrackBonuses'
 export default defineComponent({
   name: 'AutomaSetup',
   components: {
-    Icon
+    AppIcon
   },
   setup() {
     const { t } = useI18n()

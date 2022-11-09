@@ -7,15 +7,15 @@
     </li>
     <ul v-if="isStrongholdSancturaryScoring || isOutpostsScoring">
       <li class="fire-ice" v-if="isStrongholdSancturaryScoring">
-        <Icon type="expansion" name="fire-and-ice" class="expansionIcon"/>
+        <AppIcon type="expansion" name="fire-and-ice" class="expansionIcon"/>
         <span v-html="t('endOfGame.areaScoringFireIceStrongholdSanctuary')"></span>
       </li>
       <li class="fire-ice" v-if="isOutpostsScoring">
-        <Icon type="expansion" name="fire-and-ice" class="expansionIcon"/><span v-html="t('endOfGame.areaScoringFireIceOutposts')"></span>
+        <AppIcon type="expansion" name="fire-and-ice" class="expansionIcon"/><span v-html="t('endOfGame.areaScoringFireIceOutposts')"></span>
       </li>
     </ul>
-    <li v-if="isFactionWanderers"><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('endOfGame.factionWanderers')"></span></li>
-    <li v-if="isFactionGognomes"><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('endOfGame.factionGognomes')"></span></li>
+    <li v-if="isFactionWanderers"><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('endOfGame.factionWanderers')"></span></li>
+    <li v-if="isFactionGognomes"><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('endOfGame.factionGognomes')"></span></li>
     <li v-html="t('endOfGame.resourceScoring')"></li>
   </ol>
 </template>
@@ -27,13 +27,13 @@ import FinalScoringTile from '@/services/enum/FinalScoringTile'
 import { useStore } from '@/store'
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
-import Icon from '../structure/Icon.vue'
+import AppIcon from '../structure/AppIcon.vue'
 import ShipLevel from './supportInfo/ShipLevel.vue'
 
 export default defineComponent({
   name: "EndOfGame",
   components: {
-    Icon,
+    AppIcon,
     ShipLevel
   },
   setup() {

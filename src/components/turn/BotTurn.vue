@@ -10,7 +10,7 @@
     <template v-for="(botAction, index) of botActions" :key="index">
       <hr v-if="index > 0" class="actionSeparator"/>
       <div class="actionRow">
-        <component :is="botAction.action" :botAction="botAction" :navigationState="navigationState"/>
+        <component :is="`action-${botAction.action}`" :botAction="botAction" :navigationState="navigationState"/>
       </div>
     </template>
   </div>
@@ -29,29 +29,29 @@ import BotFaction from '@/services/enum/BotFaction'
 import CardDeck from '@/services/CardDeck'
 import BotActions from '@/services/BotActions'
 import BotAction from '@/services/BotAction'
-import AdvanceCultTrack from './botAction/AdvanceCultTrack.vue'
-import BlockPowerAction from './botAction/BlockPowerAction.vue'
-import GainVictoryPoints from './botAction/GainVictoryPoints.vue'
-import TakeFavorTile from './botAction/TakeFavorTile.vue'
-import Trade from './botAction/Trade.vue'
-import TransformAndBuild from './botAction/TransformAndBuild.vue'
-import Upgrade from './botAction/Upgrade.vue'
-import FactionSymbiontsPlaceCube from './botAction/FactionSymbiontsPlaceCube.vue'
-import FactionBlightTransformFallowLand from './botAction/FactionBlightTransformFallowLand.vue'
+import ActionAdvanceCultTrack from './botAction/ActionAdvanceCultTrack.vue'
+import ActionBlockPowerAction from './botAction/ActionBlockPowerAction.vue'
+import ActionGainVictoryPoints from './botAction/ActionGainVictoryPoints.vue'
+import ActionTakeFavorTile from './botAction/ActionTakeFavorTile.vue'
+import ActionTrade from './botAction/ActionTrade.vue'
+import ActionTransformAndBuild from './botAction/ActionTransformAndBuild.vue'
+import ActionUpgrade from './botAction/ActionUpgrade.vue'
+import ActionFactionSymbiontsPlaceCube from './botAction/ActionFactionSymbiontsPlaceCube.vue'
+import ActionFactionBlightTransformFallowLand from './botAction/ActionFactionBlightTransformFallowLand.vue'
 import BotPass from './BotPass.vue'
 
 export default defineComponent({
   name: 'BotTurn',
   components: {
-    AdvanceCultTrack,
-    BlockPowerAction,
-    GainVictoryPoints,
-    TakeFavorTile,
-    Trade,
-    TransformAndBuild,
-    Upgrade,
-    FactionSymbiontsPlaceCube,
-    FactionBlightTransformFallowLand,
+    ActionAdvanceCultTrack,
+    ActionBlockPowerAction,
+    ActionGainVictoryPoints,
+    ActionTakeFavorTile,
+    ActionTrade,
+    ActionTransformAndBuild,
+    ActionUpgrade,
+    ActionFactionSymbiontsPlaceCube,
+    ActionFactionBlightTransformFallowLand,
     BotPass
   },
   setup() {

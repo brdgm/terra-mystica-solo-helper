@@ -1,19 +1,19 @@
 <template>
   <div>
     <div class="count" :class="{leftUp: isLeftUp, rightDown: !isLeftUp}">{{count}}</div>
-    <Icon type="directional-selection" :name="type" class="icon"/>
+    <AppIcon type="directional-selection" :name="type" class="icon"/>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import DirectionalSelection from '@/services/enum/DirectionalSelection'
-import Icon from '@/components/structure/Icon.vue'
+import AppIcon from '@/components/structure/AppIcon.vue'
 
 export default defineComponent({
   name: 'DirectionalSelection',
   components: {
-    Icon
+    AppIcon
   },
   props: {
     type: {

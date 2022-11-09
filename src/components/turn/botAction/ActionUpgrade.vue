@@ -1,6 +1,6 @@
 <template>
   <div class="actionCol">
-    <Icon type="action" :name="botAction.action" class="actionIcon"/>
+    <AppIcon type="action" :name="botAction.action" class="actionIcon"/>
   </div>
   <div class="actionCol">
     <SupportInfo :bot-action="botAction" :directional-selection="true"/>
@@ -17,7 +17,7 @@
       <ol type="a">
         <li v-html="t('botAction.upgrade.execute.highestPowerStructure')"></li>
         <li class="mots" v-if="hasMerchantsOfTheSeas">
-          <Icon type="expansion" name="merchants-of-the-seas" class="expansionIcon"/><span v-html="t('botAction.upgrade.execute.motsShipyardPreferred')"></span>
+          <AppIcon type="expansion" name="merchants-of-the-seas" class="expansionIcon"/><span v-html="t('botAction.upgrade.execute.motsShipyardPreferred')"></span>
         </li>
       </ol>
     </ol>
@@ -28,7 +28,7 @@
 import { defineComponent, PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 import BotAction from '@/services/BotAction'
-import Icon from '@/components/structure/Icon.vue'
+import AppIcon from '@/components/structure/AppIcon.vue'
 import SupportInfo from '../supportInfo/SupportInfo.vue'
 import { useStore } from '@/store'
 import Expansion from '@/services/enum/Expansion'
@@ -36,10 +36,10 @@ import BotFaction from '@/services/enum/BotFaction'
 import NavigationState from '@/util/NavigationState'
 
 export default defineComponent({
-  name: 'Upgrade',
+  name: 'ActionUpgrade',
   inheritAttrs: false,
   components: {
-    Icon,
+    AppIcon,
     SupportInfo
   },
   setup() {

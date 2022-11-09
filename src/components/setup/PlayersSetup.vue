@@ -46,7 +46,7 @@ import { useStore } from '@/store'
 import BotFaction from '@/services/enum/BotFaction'
 
 export default defineComponent({
-  name: 'Players',
+  name: 'PlayersSetup',
   setup() {
     const { t } = useI18n()
     useStore()

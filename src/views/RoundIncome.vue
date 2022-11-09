@@ -21,7 +21,7 @@ import { useStore } from '@/store'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
 
 export default defineComponent({
-  name: 'RoundTurn',
+  name: 'RoundIncome',
   components: {
     FooterButtons
   },

@@ -2,7 +2,7 @@
   <template v-if="!isUpgrade">
     <div class="actionCol">
       <div class="shipLevel">{{botAction.shipLevel}}</div>
-      <Icon type="action" :name="botAction.action" class="actionIcon"/>
+      <AppIcon type="action" :name="botAction.action" class="actionIcon"/>
     </div>
     <div class="actionCol">
       <SupportInfo :bot-action="botAction" :structure="true" :terrain-priority="true" :directional-selection="true"/>
@@ -10,24 +10,24 @@
     <div class="actionCol text-muted small">
       <button type="button" class="btn btn-outline-secondary btn-sm" @click="isUpgrade=true">{{t('botAction.transformAndBuild.noDwelling')}}</button>
       <ol class="mt-2">
-        <li v-if="isWanderers"><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.validSpaces.factionWanderers')"></span></li>
+        <li v-if="isWanderers"><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.validSpaces.factionWanderers')"></span></li>
         <li v-else v-html="t(`botAction.transformAndBuild.validSpaces.${botAction.structure}`)"></li>
         <li v-html="t('botAction.transformAndBuild.tiebreaker.title')"></li>
         <ol type="a">
           <template v-if="isKuddlers">
-            <li><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.structureClosest')"></span></li>
-            <li><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriorityYourTerrainType',{terrainPriority:botAction.terrainPriority})"></span></li>
+            <li><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.structureClosest')"></span></li>
+            <li><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriorityYourTerrainType',{terrainPriority:botAction.terrainPriority})"></span></li>
             <li v-html="t('botAction.transformAndBuild.tiebreaker.directionalSelection')"></li>
           </template>
           <template v-else-if="isMimics">
-            <li><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriorityYourTerrainType',{terrainPriority:botAction.terrainPriority})"></span></li>
-            <li><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.structureClosest')"></span></li>
+            <li><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriorityYourTerrainType',{terrainPriority:botAction.terrainPriority})"></span></li>
+            <li><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.structureClosest')"></span></li>
             <li v-html="t('botAction.transformAndBuild.tiebreaker.directionalSelection')"></li>
           </template>
           <template v-else>
-            <li v-if="isPowerMongers"><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.factionPowerMongers')"></span></li>
+            <li v-if="isPowerMongers"><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.factionPowerMongers')"></span></li>
             <li v-html="t('botAction.transformAndBuild.tiebreaker.terrainPriority',{terrainPriority:botAction.terrainPriority})"></li>
-            <li v-if="useSpaceFurthestAway" class="fire-ice"><Icon type="expansion" name="fire-and-ice" class="expansionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.structureFurthest')"></span></li>
+            <li v-if="useSpaceFurthestAway" class="fire-ice"><AppIcon type="expansion" name="fire-and-ice" class="expansionIcon"/><span v-html="t('botAction.transformAndBuild.tiebreaker.structureFurthest')"></span></li>
             <li v-else v-html="t('botAction.transformAndBuild.tiebreaker.structureClosest')"></li>
             <li v-html="t('botAction.transformAndBuild.tiebreaker.directionalSelection')"></li>
           </template>
@@ -68,9 +68,9 @@
 import { defineComponent, PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 import BotAction from '@/services/BotAction'
-import Icon from '@/components/structure/Icon.vue'
+import AppIcon from '@/components/structure/AppIcon.vue'
 import SupportInfo from '../supportInfo/SupportInfo.vue'
-import Upgrade from './Upgrade.vue'
+import Upgrade from './ActionUpgrade.vue'
 import Action from '@/services/enum/Action'
 import { useStore } from '@/store'
 import FinalScoringTile from '@/services/enum/FinalScoringTile'
@@ -79,10 +79,10 @@ import BotFaction from '@/services/enum/BotFaction'
 import Structure from '@/services/enum/Structure'
 
 export default defineComponent({
-  name: 'TransformAndBuild',
+  name: 'ActionTransformAndBuild',
   inheritAttrs: false,
   components: {
-    Icon,
+    AppIcon,
     SupportInfo,
     Upgrade
   },

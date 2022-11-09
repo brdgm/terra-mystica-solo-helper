@@ -1,17 +1,17 @@
 <template>
   <div>
-    <Icon type="structure" :name="type" class="icon"/>
+    <AppIcon type="structure" :name="type" class="icon"/>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Icon from '@/components/structure/Icon.vue'
+import AppIcon from '@/components/structure/AppIcon.vue'
 
 export default defineComponent({
-  name: 'Structure',
+  name: 'StructureSelection',
   components: {
-    Icon
+    AppIcon
   },
   props: {
     type: {

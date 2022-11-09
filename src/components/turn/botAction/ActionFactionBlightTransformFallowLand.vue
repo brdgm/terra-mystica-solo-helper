@@ -1,13 +1,13 @@
 <template>
   <div class="actionCol">
-    <Icon type="action" :name="botAction.action" class="actionIcon"/>
+    <AppIcon type="action" :name="botAction.action" class="actionIcon"/>
   </div>
   <div class="actionCol">
     <SupportInfo :bot-action="botAction" :directional-selection="true"/>
   </div>
   <div class="actionCol text-muted small">
     <ol class="mt-2">
-      <li><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t(`botAction.factionBlightTransformFallowLand.transform`)"></span></li>
+      <li><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t(`botAction.factionBlightTransformFallowLand.transform`)"></span></li>
       <li v-html="t('botAction.transformAndBuild.tiebreaker.title')"></li>
       <ol type="a">
         <li v-html="t('botAction.transformAndBuild.tiebreaker.structureClosest')"></li>
@@ -21,15 +21,15 @@
 import { defineComponent, PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 import BotAction from '@/services/BotAction'
-import Icon from '@/components/structure/Icon.vue'
+import AppIcon from '@/components/structure/AppIcon.vue'
 import SupportInfo from '../supportInfo/SupportInfo.vue'
 import { useStore } from '@/store'
 
 export default defineComponent({
-  name: 'FactionBlightTransformFallowLand',
+  name: 'ActionFactionBlightTransformFallowLand',
   inheritAttrs: false,
   components: {
-    Icon,
+    AppIcon,
     SupportInfo
   },
   setup() {
