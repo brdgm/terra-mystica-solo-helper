@@ -1,18 +1,18 @@
 <template>
   <div>
     <div class="letter">{{type}}</div>
-    <Icon name="terrain-priority" class="icon"/>
+    <AppIcon name="terrain-priority" class="icon"/>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Icon from '@/components/structure/Icon.vue'
+import AppIcon from '@/components/structure/AppIcon.vue'
 
 export default defineComponent({
   name: 'TerrainPriority',
   components: {
-    Icon
+    AppIcon
   },
   props: {
     type: {

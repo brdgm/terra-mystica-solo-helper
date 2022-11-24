@@ -1,6 +1,6 @@
 <template>
   <div class="supportInfo">
-    <Structure v-if="structure" :type="botAction.structure!"/>
+    <StructureSelection v-if="structure" :type="botAction.structure!"/>
     <TerrainPriority v-if="terrainPriority" :type="botAction.terrainPriority!"/>
     <DirectionalSelection v-if="directionalSelection" :type="botAction.directionalSelection!" :count="botAction.directionalSelectionCount!"/>
     <CultTrackSelection v-if="cultTrackSelection" :type="botAction.cultTrackSelection!"/>
@@ -10,7 +10,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 import BotAction from '@/services/BotAction'
-import Structure from '@/components/turn/supportInfo/Structure.vue'
+import StructureSelection from '@/components/turn/supportInfo/StructureSelection.vue'
 import DirectionalSelection from '@/components/turn/supportInfo/DirectionalSelection.vue'
 import TerrainPriority from '@/components/turn/supportInfo/TerrainPriority.vue'
 import CultTrackSelection from '@/components/turn/supportInfo/CultTrackSelection.vue'
@@ -18,7 +18,7 @@ import CultTrackSelection from '@/components/turn/supportInfo/CultTrackSelection
 export default defineComponent({
   name: 'SupportInfo',
   components: {
-    Structure,
+    StructureSelection,
     DirectionalSelection,
     TerrainPriority,
     CultTrackSelection

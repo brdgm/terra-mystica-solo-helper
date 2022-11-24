@@ -1,7 +1,7 @@
 <template>
   <div class="actionCol">
     <div class="count">{{botAction.victoryPoints}}</div>
-    <Icon name="gain-victory-point" class="actionIcon"/>
+    <AppIcon name="gain-victory-point" class="actionIcon"/>
   </div>
   <div class="actionCol"></div>
   <div class="actionCol text-muted small">
@@ -13,13 +13,13 @@
 import { defineComponent, PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 import BotAction from '@/services/BotAction'
-import Icon from '@/components/structure/Icon.vue'
+import AppIcon from '@/components/structure/AppIcon.vue'
 
 export default defineComponent({
-  name: 'GainVictoryPoints',
+  name: 'ActionGainVictoryPoints',
   inheritAttrs: false,
   components: {
-    Icon
+    AppIcon
   },
   setup() {
     const { t } = useI18n()

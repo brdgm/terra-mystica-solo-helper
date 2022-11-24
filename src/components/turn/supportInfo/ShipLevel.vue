@@ -1,18 +1,18 @@
 <template>
   <div>
     <div class="shipLevel">{{shipLevel}}</div>
-    <Icon name="ship-level" class="icon"/>
+    <AppIcon name="ship-level" class="icon"/>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Icon from '@/components/structure/Icon.vue'
+import AppIcon from '@/components/structure/AppIcon.vue'
 
 export default defineComponent({
   name: 'ShipLevel',
   components: {
-    Icon
+    AppIcon
   },
   props: {
     shipLevel: {

@@ -1,6 +1,6 @@
 <template>
   <div class="actionCol">
-    <Icon type="action" :name="botAction.action" class="actionIcon"/>
+    <AppIcon type="action" :name="botAction.action" class="actionIcon"/>
   </div>
   <div class="actionCol">
     <SupportInfo :bot-action="botAction" :terrain-priority="true" :directional-selection="true"/>
@@ -15,7 +15,7 @@
       </ol>
       <li v-html="t('botAction.transformAndBuild.execute.title')"></li>
       <ol type="a">
-        <li><Icon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t(`botAction.factionSymbiontsPlaceCube.placeCube`)"></span></li>
+        <li><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t(`botAction.factionSymbiontsPlaceCube.placeCube`)"></span></li>
       </ol>
     </ol>
   </div>
@@ -25,15 +25,15 @@
 import { defineComponent, PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 import BotAction from '@/services/BotAction'
-import Icon from '@/components/structure/Icon.vue'
+import AppIcon from '@/components/structure/AppIcon.vue'
 import SupportInfo from '../supportInfo/SupportInfo.vue'
 import { useStore } from '@/store'
 
 export default defineComponent({
-  name: 'FactionSymbiontsPlaceCube',
+  name: 'ActionFactionSymbiontsPlaceCube',
   inheritAttrs: false,
   components: {
-    Icon,
+    AppIcon,
     SupportInfo
   },
   setup() {
