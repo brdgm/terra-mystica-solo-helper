@@ -9,24 +9,16 @@
     {{t('action.pass')}}
   </button>
 
-  <div class="modal" id="passModal" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">{{t('action.pass')}}</h5>
-          <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p v-html="t('playerTurn.passConfirm')"></p>
-          <p v-html="t('playerTurn.passInfo')"></p>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-danger" @click="pass" data-bs-dismiss="modal">{{t('action.pass')}}</button>
-          <button class="btn btn-secondary" data-bs-dismiss="modal">{{t('action.cancel')}}</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  <ModalDialog id="passModal" :title="t('action.pass')">
+    <template #body>
+      <p v-html="t('playerTurn.passConfirm')"></p>
+      <p v-html="t('playerTurn.passInfo')"></p>
+    </template>
+    <template #footer>
+      <button class="btn btn-danger" @click="pass" data-bs-dismiss="modal">{{t('action.pass')}}</button>
+      <button class="btn btn-secondary" data-bs-dismiss="modal">{{t('action.cancel')}}</button>
+    </template>
+  </ModalDialog>
 
 </template>
 
@@ -36,9 +28,13 @@ import { useI18n } from 'vue-i18n'
 import { useStore } from '@/store'
 import NavigationState from '@/util/NavigationState'
 import { useRoute } from 'vue-router'
+import ModalDialog from 'brdgm-commons/src/components/structure/ModalDialog.vue'
 
 export default defineComponent({
   name: 'PlayerTurn',
+  components: {
+    ModalDialog
+  },
   setup() {
     const { t } = useI18n()
     useStore()
