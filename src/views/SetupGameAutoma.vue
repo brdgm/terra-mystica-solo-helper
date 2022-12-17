@@ -3,9 +3,9 @@
 
   <AutomaSetup/>
 
-  <router-link to="/round/1/income" class="btn btn-primary btn-lg mt-4">
+  <button class="btn btn-primary btn-lg mt-4" @click="startGame">
     {{t('action.startGame')}}
-  </router-link>
+  </button>
 
   <FooterButtons backButtonRouteTo="/setupGame"  endGameButtonType="abortGame"/>
 </template>
@@ -25,6 +25,12 @@ export default defineComponent({
   setup() {
     const { t } = useI18n()
     return { t }
+  },
+  methods: {
+    startGame() : void {
+      this.$store.commit('resetGame')
+      this.$router.push('/round/1/income')
+    }
   }
 })
 </script>

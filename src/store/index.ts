@@ -109,7 +109,7 @@ export const store = createStore<State>({
       round.turns[roundTurn.turn - 1] = roundTurn
       state.rounds[roundTurn.round - 1] = round
     },
-    endGame(state : State) {
+    resetGame(state : State) {
       state.rounds = []
     },
     zoomFontSize(state : State, baseFontSize: number) {

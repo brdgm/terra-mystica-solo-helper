@@ -41,23 +41,13 @@
       </ol>
     </div>
 
-    <div class="modal" tabindex="-1" id="modalReaching">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">{{t('botAction.transformAndBuild.reaching.title')}}</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" :aria-label="t('action.close')"></button>
-          </div>
-          <div class="modal-body">
-            <p v-html="t('botAction.transformAndBuild.reaching.text1')"></p>
-            <p v-html="t('botAction.transformAndBuild.reaching.text2')"></p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{t('action.close')}}</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <ModalDialog id="modalReaching" :title="t('botAction.transformAndBuild.reaching.title')">
+      <template #body>
+        <p v-html="t('botAction.transformAndBuild.reaching.text1')"></p>
+        <p v-html="t('botAction.transformAndBuild.reaching.text2')"></p>
+      </template>
+    </ModalDialog>
+
   </template>
   <template v-else>
     <Upgrade :bot-action="upgradeBotAction" :navigation-state="navigationState"/>
@@ -71,6 +61,7 @@ import BotAction from '@/services/BotAction'
 import AppIcon from '@/components/structure/AppIcon.vue'
 import SupportInfo from '../supportInfo/SupportInfo.vue'
 import Upgrade from './ActionUpgrade.vue'
+import ModalDialog from 'brdgm-commons/src/components/structure/ModalDialog.vue'
 import Action from '@/services/enum/Action'
 import { useStore } from '@/store'
 import FinalScoringTile from '@/services/enum/FinalScoringTile'
@@ -84,7 +75,8 @@ export default defineComponent({
   components: {
     AppIcon,
     SupportInfo,
-    Upgrade
+    Upgrade,
+    ModalDialog
   },
   setup() {
     const { t } = useI18n()
