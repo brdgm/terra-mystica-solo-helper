@@ -31,7 +31,7 @@ import AppIcon from '../structure/AppIcon.vue'
 import ShipLevel from './supportInfo/ShipLevel.vue'
 
 export default defineComponent({
-  name: "EndOfGame",
+  name: 'EndOfGame',
   components: {
     AppIcon,
     ShipLevel

@@ -1,4 +1,4 @@
-import { RoundTurn } from "@/store"
+import { RoundTurn } from '@/store'
 
 export default class Player {
   private _player?: number

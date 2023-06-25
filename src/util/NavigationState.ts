@@ -1,13 +1,13 @@
-import * as _ from "lodash"
-import BotFaction from "@/services/enum/BotFaction"
-import DifficultyLevel from "@/services/enum/DifficultyLevel"
-import PlayerOrder from "@/services/PlayerOrder"
-import { Round, RoundTurn, State } from "@/store"
-import { RouteLocation } from "vue-router"
-import { Store } from "vuex"
-import CardDeck from "@/services/CardDeck"
-import Player from "@/services/Player"
-import Expansion from "@/services/enum/Expansion"
+import * as _ from 'lodash'
+import BotFaction from '@/services/enum/BotFaction'
+import DifficultyLevel from '@/services/enum/DifficultyLevel'
+import PlayerOrder from '@/services/PlayerOrder'
+import { Round, RoundTurn, State } from '@/store'
+import { RouteLocation } from 'vue-router'
+import { Store } from 'vuex'
+import CardDeck from '@/services/CardDeck'
+import Player from '@/services/Player'
+import Expansion from '@/services/enum/Expansion'
 
 export default class NavigationState {
 
