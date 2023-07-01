@@ -1,5 +1,5 @@
-import { RoundTurn } from "@/store"
-import Player from "./Player"
+import { RoundTurn } from '@/store'
+import Player from './Player'
 
 /**
  * Determines next player and start player based on player order and the current round's turn history.

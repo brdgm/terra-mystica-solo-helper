@@ -3,7 +3,7 @@ import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import Expansion from '@/services/enum/Expansion'
 import { InjectionKey } from 'vue'
 import { createStore, useStore as baseUseStore, Store } from 'vuex'
-import toggleArrayItem from "brdgm-commons/src/util/array/toggleArrayItem"
+import toggleArrayItem from 'brdgm-commons/src/util/array/toggleArrayItem'
 import FinalScoringTile from '@/services/enum/FinalScoringTile'
 
 const LOCALSTORAGE_KEY = process.env.VUE_APP_LOCALSTORAGE_KEY_PREFIX + "store"

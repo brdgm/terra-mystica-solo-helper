@@ -1,11 +1,11 @@
-import BotAction from "./BotAction"
-import Card from "./Card"
-import { DifficultyLevelParameterRound } from "./DifficultyLevelParameter"
-import DifficultyLevelParameters from "./DifficultyLevelParameters"
-import Action from "./enum/Action"
-import BotFaction from "./enum/BotFaction"
-import CultTrackSelection from "./enum/CultTrackSelection"
-import DifficultyLevel from "./enum/DifficultyLevel"
+import BotAction from './BotAction'
+import Card from './Card'
+import { DifficultyLevelParameterRound } from './DifficultyLevelParameter'
+import DifficultyLevelParameters from './DifficultyLevelParameters'
+import Action from './enum/Action'
+import BotFaction from './enum/BotFaction'
+import CultTrackSelection from './enum/CultTrackSelection'
+import DifficultyLevel from './enum/DifficultyLevel'
 
 /**
  * Determines actions and parameterization based on current action and support card.
