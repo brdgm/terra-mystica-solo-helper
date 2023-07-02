@@ -6,8 +6,9 @@ import SetupGameAutoma from '@/views/SetupGameAutoma.vue'
 import RoundIncome from '@/views/RoundIncome.vue'
 import RoundTurn from '@/views/RoundTurn.vue'
 import createRouter from 'brdgm-commons/src/util/router/createRouter'
+import { name } from '@/../package.json'
 
-const LOCALSTORAGE_KEY = process.env.VUE_APP_LOCALSTORAGE_KEY_PREFIX + "route"
+const LOCALSTORAGE_KEY = `${name}.route`
 
 const routes: Array<RouteRecordRaw> = [
   {
