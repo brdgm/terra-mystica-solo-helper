@@ -234,7 +234,6 @@ const cards = [
     merchantsOfTheSeas: true,
     actions: [
       Action.BLOCK_POWER_ACTION,
-      Action.BLOCK_POWER_ACTION,
       Action.TRADE
     ],
     tradeMinRound: 5,

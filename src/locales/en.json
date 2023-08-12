@@ -86,7 +86,7 @@
         "terrainPriority": "Automa Terrain Priority <b>{terrainPriority}</b>.",
         "terrainPriorityYourTerrainType": "Terrain Priority <b>{terrainPriority}</b> with ATP card of <b>your</b> terrain type.",
         "structureClosest": "Space <b>closest</b> to any of your Structures.",
-        "structureFurthest": "Space <b>furthest away</b> from any of your Structures.",
+        "structureFurthest": "Space <b>furthest away</b> from any Automa Structures.",
         "directionalSelection": "Directional Selection."
       },
       "execute": {
