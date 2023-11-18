@@ -147,7 +147,8 @@ export default defineComponent({
   color: #a1350e;
 }
 :deep(a) {
-  text-decoration: underline dotted;
+  text-decoration: underline;
+  text-decoration-style: dotted;
   color: #000;
 }
 .shipLevel {
