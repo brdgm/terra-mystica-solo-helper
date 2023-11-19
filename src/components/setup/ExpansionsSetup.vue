@@ -6,7 +6,7 @@
       <div class="form-check form-switch">
         <input class="form-check-input" type="checkbox" id="expansionFireAndIce" :checked="hasFireAndIce" @input="toggleFireAndIce">
         <label class="form-check-label" for="expansionFireAndIce">
-          <img src="@/assets/icons/expansion/fire-and-ice.png" class="icon"/>
+          <img src="@/assets/icons/expansion/fire-and-ice.png" class="icon" alt=""/>
           {{t('expansion.fire-and-ice')}}
         </label>
       </div>
@@ -17,7 +17,7 @@
       <div class="form-check form-switch">
         <input class="form-check-input" type="checkbox" id="expansionMerchantsOfTheSeas" :checked="hasMerchantsOfTheSeas" @input="toggleMerchantsOfTheSeas">
         <label class="form-check-label" for="expansionMerchantsOfTheSeas">
-          <img src="@/assets/icons/expansion/merchants-of-the-seas.png" class="icon"/>
+          <img src="@/assets/icons/expansion/merchants-of-the-seas.png" class="icon" alt=""/>
           {{t('expansion.merchants-of-the-seas')}}
         </label>
       </div>
