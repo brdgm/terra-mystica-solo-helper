@@ -52,24 +52,24 @@ export default class BotActions {
 
     // apply defaults from support card
     result.forEach(botAction => {
-      botAction.shipLevel = botAction.shipLevel || actionCard.shipLevel || this._dlParams.shipLevel
-      botAction.tradeMinRound = botAction.tradeMinRound || actionCard.tradeMinRound
-      botAction.victoryPointsDifficultyLevel = botAction.victoryPointsDifficultyLevel || actionCard.victoryPointsDifficultyLevel
-      botAction.victoryPoints = botAction.victoryPoints || actionCard.victoryPoints 
+      botAction.shipLevel = botAction.shipLevel ?? actionCard.shipLevel ?? this._dlParams.shipLevel
+      botAction.tradeMinRound = botAction.tradeMinRound ?? actionCard.tradeMinRound
+      botAction.victoryPointsDifficultyLevel = botAction.victoryPointsDifficultyLevel ?? actionCard.victoryPointsDifficultyLevel
+      botAction.victoryPoints = botAction.victoryPoints ?? actionCard.victoryPoints 
       if (!botAction.victoryPoints && botAction.victoryPointsDifficultyLevel) {
         botAction.victoryPoints = this._dlParams.victoryPoints
         botAction.victoryPointsDifficultyLevel = undefined
       }
-      botAction.structure = botAction.structure || supportCard.structure
-      botAction.terrainPriority = botAction.terrainPriority || supportCard.terrainPriority
-      botAction.directionalSelection = botAction.directionalSelection || supportCard.directionalSelection
-      botAction.directionalSelectionCount = botAction.directionalSelectionCount || supportCard.directionalSelectionCount
-      botAction.cultTrackSelection = botAction.cultTrackSelection || supportCard.cultTrackSelection
+      botAction.structure = botAction.structure ?? supportCard.structure
+      botAction.terrainPriority = botAction.terrainPriority ?? supportCard.terrainPriority
+      botAction.directionalSelection = botAction.directionalSelection ?? supportCard.directionalSelection
+      botAction.directionalSelectionCount = botAction.directionalSelectionCount ?? supportCard.directionalSelectionCount
+      botAction.cultTrackSelection = botAction.cultTrackSelection ?? supportCard.cultTrackSelection
     })
 
     // filter out actions not relevant for current round
     return result.filter(botAction => (botAction.action != Action.TAKE_FAVOR_TILE || round >= 5)
-        && (botAction.action != Action.TRADE || round >= (botAction.tradeMinRound || 0))
+        && (botAction.action != Action.TRADE || round >= (botAction.tradeMinRound ?? 0))
         && (botAction.action != Action.GAIN_VICTORY_POINTS || (botAction.victoryPoints && botAction.victoryPoints > 0)))
   }
 
