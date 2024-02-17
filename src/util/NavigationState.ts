@@ -1,4 +1,4 @@
-import * as _ from 'lodash'
+import { cloneDeep } from 'lodash'
 import BotFaction from '@/services/enum/BotFaction'
 import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import PlayerOrder from '@/services/PlayerOrder'
@@ -35,7 +35,7 @@ export default class NavigationState {
     this.playerOrder = new PlayerOrder(roundData.turns.slice(0, this.turn), setup.playerSetup.playerCount, setup.playerSetup.botCount)
     this.anyonePassed = this.playerOrder.hasAnyonePassed()
 
-    this.roundTurn = _.cloneDeep(this.getRoundTurn(roundData, this.turn, store))
+    this.roundTurn = cloneDeep(this.getRoundTurn(roundData, this.turn, store))
     if (this.roundTurn?.bot) {
       this.botFaction = setup.playerSetup.botFaction[this.roundTurn?.bot - 1]
     }

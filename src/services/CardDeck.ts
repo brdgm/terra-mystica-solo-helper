@@ -1,5 +1,5 @@
 import { CardDeckPersistence } from '@/store'
-import * as _ from 'lodash'
+import { shuffle } from 'lodash'
 import Card from './Card'
 import Cards from './Cards'
 import DifficultyLevel from './enum/DifficultyLevel'
@@ -91,7 +91,7 @@ export default class CardDeck {
       this._discard.push(Cards.get(CardDeck.CARD_MOTS_SPECIAL))
     }
     // shuffle discard as new deck
-    this._deck = _.shuffle(this._discard)
+    this._deck = shuffle(this._discard)
     this._discard = []
   }
 
@@ -118,8 +118,8 @@ export default class CardDeck {
     }
 
     // shuffle decks
-    deck = _.shuffle(deck)
-    reserve = _.shuffle(reserve)
+    deck = shuffle(deck)
+    reserve = shuffle(reserve)
 
     // move card *3 on top of reserve deck for easiest level
     if (difficultyLevel == DifficultyLevel.AUTOMALEIN) {

@@ -15,7 +15,7 @@
   </div>  
   <div class="row">
     <div class="col-11 offset-1">
-      <img src="@/assets/icons/difficulty-level.png" class="difficultyLevelIcon" v-for="level in difficultyLevel" :key="level"/>
+      <img src="@/assets/icons/difficulty-level.png" class="difficultyLevelIcon" v-for="level in difficultyLevel" :key="level" alt=""/>
       &nbsp;<i>{{t('difficultyLevel.' + difficultyLevel)}}</i>
     </div>
   </div>

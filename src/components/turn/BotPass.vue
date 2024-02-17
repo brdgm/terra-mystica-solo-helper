@@ -49,7 +49,7 @@ export default defineComponent({
       return this.navigationState.botFaction == BotFaction.RACELINGS
     },
     isStartPlayer(): boolean {
-      return this.navigationState.roundTurn?.startPlayer || false
+      return this.navigationState.roundTurn?.startPlayer ?? false
     }
   }
 })

@@ -6,7 +6,7 @@
   <h1>
     <template v-if="roundTurn?.player">{{t('roundTurn.titlePlayer', {player:roundTurn?.player}, playerCount)}}</template>
     <template v-if="roundTurn?.bot">{{t('roundTurn.titleBot', {bot:roundTurn?.bot, faction:t('botFaction.'+botFaction)}, botCount)}}</template>
-    <img v-if="startPlayer" src="@/assets/icons/start-player-token.png" class="startPlayerIcon"/>
+    <img v-if="startPlayer" src="@/assets/icons/start-player-token.png" class="startPlayerIcon" alt=""/>
     <template v-if="endOfGame">{{t('endOfGame.title')}}</template>
     <template v-else-if="endOfRound">{{t('endOfRound.title')}}</template>
   </h1>
