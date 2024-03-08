@@ -51,6 +51,7 @@
     "initialDwellingMarked": "Setze ein Automa-Wohnhaus auf ein Heimatlandschafts-Feld mit dem Buchstaben <b>{character}</b>, zusammen mit einem Machtchip.",
     "initialDwellingUnmarked": "Setze ein Automa-Wohnhaus auf ein Heimatlandschafts-Feld mit dem Buchstaben <b>{character}</b>.",
     "initialDwellingPlayerSecond": "Setze dein zweites Wohnhaus ein.",
+    "initialDwellingDockMarker": "Setze deinen Hafenmarker auf das Feld eines Wohngebäudes, welches an ein Flussfeld angrenzt.",
     "bonusCards": "Rundenbonuskarten",
     "bonusCardsTake": "Mische die {count} Rundenbonuskarten und lege sie aufgedeckt nebeneinander in einer Reihe aus. Automa erhält die Karte ganz links. Wähle dann regulär eine Karte für dich.",
     "bonusCardsCoins": "Legt auf die Rundenbonuskarten, die übrig geblieben sind, je eine Geldmünze aus dem allgemeinen Materialvorrat."

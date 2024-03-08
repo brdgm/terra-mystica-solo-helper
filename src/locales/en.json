@@ -51,6 +51,7 @@
     "initialDwellingMarked": "Place an Automa Dwelling on a Home Terrain space with letter <b>{character}</b>, together with a power token.",
     "initialDwellingUnmarked": "Place an Automa Dwelling on a Home Terrain space with letter <b>{character}</b>.",
     "initialDwellingPlayerSecond": "Place your second Dwelling.",
+    "initialDwellingDockMarker": "Place you Dock Maker on a riverside dwelling.",
     "bonusCards": "Bonus Cards",
     "bonusCardsTake": "Shuffle the {count} Bonus cards and place them face-up in a horizontal line. Give Automa the first one. Choose your own Bonus card.",
     "bonusCardsCoins": "Place 1 Coin from the general supply on each of the leftover Bonus cards."
