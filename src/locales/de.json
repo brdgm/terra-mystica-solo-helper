@@ -177,7 +177,7 @@
   "endOfRound": {
     "title": "Rundenende",
     "turnInfo": "Runde {round}",
-    "cultBonuses": "Der Spieler erhält den <b>Kultbonus</b>.",
+    "cultBonuses": "Du erhältst den <b>Kultbonus</b>.",
     "returnActionTokens": "Aktionsmarken zurücknehmen.",
     "bonusCardsCoin": "Lege auf die drei übrig gebliebenen Rundenbonuskarten je <b>1 Geldmünze</b>.",
     "removeScoringTile": "Entferne das aktuelle Wertungsplättchen aus dem Spiel."

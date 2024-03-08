@@ -177,7 +177,7 @@
   "endOfRound": {
     "title": "End of Round",
     "turnInfo": "Round {round}",
-    "cultBonuses": "Player gains <b>Cult Bonuses</b>.",
+    "cultBonuses": "You gain the <b>Cult Bonus</b>.",
     "returnActionTokens": "Return action tokens.",
     "bonusCardsCoin": "Put <b>1 Coin</b> on each of the three leftover Bonus Cards.",
     "removeScoringTile": "Remove current scoring tile from board."
