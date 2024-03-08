@@ -24,7 +24,8 @@
     },
     "expansions": {
       "title": "Erweiterungen",
-      "finalScoringTile": "Endwertungskärtchen"
+      "finalScoringTile": "Endwertungskärtchen",
+      "motsScoringTile": "Das Endwertungsplättchen von <i>Die Händler</i> kann nicht verwendet werden."
     }
   }, 
   "setupGameAutoma": {
@@ -44,13 +45,16 @@
     "step4f": "Wende die weiteren Aufbauregeln der <b>{faction}-Völkerkarte</b> an und mache dich mit den Sonderregeln vertraut.",
     "step4g": "Setze 1 ihrer Markierungssteine wie üblich auf Feld 20 der Punkteleiste.",
     "step4h-mots": "Lege alle Handelsmarker in Automas Farbe und ihre Werft in ihren Bereich.",
-    "step5": "Mische die {count} Rundenbonuskarten und lege sie aufgedeckt nebeneinander in einer Reihe aus. Automa erhält die Karte ganz links. Wähle dann regulär eine Karte für dich.",
     "initialDwelling": "Einsetzen der ersten Wohnhäuser",
     "initialDwellingIntro": "Automa setzt ihre beiden Wohnhäuser ein, nachdem du dein erstes Wohnhaus eingesetzt hast. Nutze dafür die <b>Spielplankarte</b>, die den gewählten Spielplan zeigt.",
     "initialDwellingPlayer": "Setze dein erstes Wohnhaus ein.",
     "initialDwellingMarked": "Setze ein Automa-Wohnhaus auf ein Heimatlandschafts-Feld mit dem Buchstaben <b>{character}</b>, zusammen mit einem Machtchip.",
     "initialDwellingUnmarked": "Setze ein Automa-Wohnhaus auf ein Heimatlandschafts-Feld mit dem Buchstaben <b>{character}</b>.",
-    "initialDwellingPlayerSecond": "Setze dein zweites Wohnhaus ein."
+    "initialDwellingPlayerSecond": "Setze dein zweites Wohnhaus ein.",
+    "initialDwellingDockMarker": "Setze deinen Hafenmarker auf das Feld eines Wohngebäudes, welches an ein Flussfeld angrenzt.",
+    "bonusCards": "Rundenbonuskarten",
+    "bonusCardsTake": "Mische die {count} Rundenbonuskarten und lege sie aufgedeckt nebeneinander in einer Reihe aus. Automa erhält die Karte ganz links. Wähle dann regulär eine Karte für dich.",
+    "bonusCardsCoins": "Legt auf die Rundenbonuskarten, die übrig geblieben sind, je eine Geldmünze aus dem allgemeinen Materialvorrat."
   },
   "income": {
     "title": "Einkommen",
@@ -177,7 +181,7 @@
   "endOfRound": {
     "title": "Rundenende",
     "turnInfo": "Runde {round}",
-    "cultBonuses": "Der Spieler erhält den <b>Kultbonus</b>.",
+    "cultBonuses": "Du erhältst den <b>Kultbonus</b>.",
     "returnActionTokens": "Aktionsmarken zurücknehmen.",
     "bonusCardsCoin": "Lege auf die drei übrig gebliebenen Rundenbonuskarten je <b>1 Geldmünze</b>.",
     "removeScoringTile": "Entferne das aktuelle Wertungsplättchen aus dem Spiel."
@@ -215,7 +219,7 @@
     "kuddlers": "Kuschler",
     "druids": "Druiden",
     "racelings": "Sprinter",
-    "wanderers": "Wanderers",
+    "wanderers": "Wanderer",
     "mimics": "Die Nachahmer",
     "powermongers": "Machthändler",
     "symbionts": "Symbionten",

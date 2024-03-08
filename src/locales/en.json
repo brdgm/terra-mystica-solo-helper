@@ -24,7 +24,8 @@
     },
     "expansions": {
       "title": "Expansions",
-      "finalScoringTile": "Final Scoring Tile"
+      "finalScoringTile": "Final Scoring Tile",
+      "motsScoringTile": "The <i>Most Trade Markers</i> final scoring tile cannot be used."
     }
   }, 
   "setupGameAutoma": {
@@ -44,13 +45,16 @@
     "step4f": "Follow the additional setup instructions on the <b>{faction} Automa Faction card</b> and familiarize yourself with the special rules.",
     "step4g": "Place a Marker of Automa’s color on space 20 of the Victory point track (as normal).",
     "step4h-mots": "Give her all Trade markers and the Shipyard in her color.",
-    "step5": "Shuffle the {count} Bonus cards and place them face-up in a horizontal line. Give Automa the first one. Choose your own Bonus card.",
     "initialDwelling": "Initial Dwelling Placement",
     "initialDwellingIntro": "Automa places her initial Dwellings after you place your first Dwelling. Select the Automa <b>Initial Dwelling map card</b> for the map you are using and refer to it as you:",
     "initialDwellingPlayer": "Place your first Dwelling.",
     "initialDwellingMarked": "Place an Automa Dwelling on a Home Terrain space with letter <b>{character}</b>, together with a power token.",
     "initialDwellingUnmarked": "Place an Automa Dwelling on a Home Terrain space with letter <b>{character}</b>.",
-    "initialDwellingPlayerSecond": "Place your second Dwelling."
+    "initialDwellingPlayerSecond": "Place your second Dwelling.",
+    "initialDwellingDockMarker": "Place you Dock Maker on a riverside dwelling.",
+    "bonusCards": "Bonus Cards",
+    "bonusCardsTake": "Shuffle the {count} Bonus cards and place them face-up in a horizontal line. Give Automa the first one. Choose your own Bonus card.",
+    "bonusCardsCoins": "Place 1 Coin from the general supply on each of the leftover Bonus cards."
   },
   "income": {
     "title": "Income",
@@ -177,7 +181,7 @@
   "endOfRound": {
     "title": "End of Round",
     "turnInfo": "Round {round}",
-    "cultBonuses": "Player gains <b>Cult Bonuses</b>.",
+    "cultBonuses": "You gain the <b>Cult Bonus</b>.",
     "returnActionTokens": "Return action tokens.",
     "bonusCardsCoin": "Put <b>1 Coin</b> on each of the three leftover Bonus Cards.",
     "removeScoringTile": "Remove current scoring tile from board."

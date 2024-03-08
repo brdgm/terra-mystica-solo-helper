@@ -31,6 +31,7 @@
       <select class="form-select" id="finalScoringTile" v-model="finalScoringTile">
         <option v-for="finalScoringTile of finalScoringTiles" :key="finalScoringTile" :value="finalScoringTile">{{t(`finalScoringTile.${finalScoringTile}`)}}</option>
       </select>
+      <p v-if="hasMerchantsOfTheSeas" class="small muted mt-2 ms-1" v-html="t('setup.expansions.motsScoringTile')"></p>
     </div>
   </div>
 </template>

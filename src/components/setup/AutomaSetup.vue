@@ -49,7 +49,6 @@
         </li>
       </ol>
     </li>
-    <li v-html="t('setupGameAutoma.step5',{count:bonusCardCount})"></li>
   </ol>
 
   <h4>{{t('setupGameAutoma.initialDwelling')}}</h4>
@@ -63,7 +62,17 @@
       <AppIcon type="structure" name="unmarked" class="structureIcon"/>&nbsp;<span v-html="t('setupGameAutoma.initialDwellingUnmarked', {character:randomCard.initialDwellingUnmarked})"></span>
     </li>
     <li v-html="t('setupGameAutoma.initialDwellingPlayerSecond')"></li>
+    <li class="mots" v-if="hasMerchantsOfTheSeas">
+      <AppIcon type="expansion" name="merchants-of-the-seas" class="expansionIcon"/>
+      <span v-html="t('setupGameAutoma.initialDwellingDockMarker')"></span>
+    </li>
   </ol>
+
+  <h4>{{t('setupGameAutoma.bonusCards')}}</h4>
+  <ul>
+    <li v-html="t('setupGameAutoma.bonusCardsTake',{count:bonusCardCount})"></li>
+    <li v-html="t('setupGameAutoma.bonusCardsCoins')"></li>
+  </ul>
 </template>
 
 <script lang="ts">
