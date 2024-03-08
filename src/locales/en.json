@@ -24,7 +24,8 @@
     },
     "expansions": {
       "title": "Expansions",
-      "finalScoringTile": "Final Scoring Tile"
+      "finalScoringTile": "Final Scoring Tile",
+      "motsScoringTile": "The <i>Most Trade Markers</i> final scoring tile cannot be used."
     }
   }, 
   "setupGameAutoma": {

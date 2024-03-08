@@ -24,7 +24,8 @@
     },
     "expansions": {
       "title": "Erweiterungen",
-      "finalScoringTile": "Endwertungskärtchen"
+      "finalScoringTile": "Endwertungskärtchen",
+      "motsScoringTile": "Das Endwertungsplättchen von <i>Die Händler</i> kann nicht verwendet werden."
     }
   }, 
   "setupGameAutoma": {
