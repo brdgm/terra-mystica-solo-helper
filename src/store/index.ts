@@ -108,6 +108,8 @@ export const store = createStore<State>({
         }
       }
       round.turns[roundTurn.turn - 1] = roundTurn
+      // delete all "future" turns
+      round.turns = round.turns.slice(0, roundTurn.turn)
       state.rounds[roundTurn.round - 1] = round
     },
     resetGame(state : State) {
