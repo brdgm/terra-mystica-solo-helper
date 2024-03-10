@@ -164,7 +164,7 @@
     },
     "factionSymbiontsPlaceCube": {
       "validSpaces": "Valid Spaces: All Terrain spaces directly adjacent to any of your structures.",
-      "symbiontYouthATP": "Symbiont <b>youth</b> ATP card.",
+      "symbiontYouthATP": "Terrain Priority <b>{terrainPriority}</b> with Symbiont <b>youth</b> ATP card.",
       "placeCube": "Place a <b>worker cube</b> on the selected Terrain space."
     },
     "factionBlightTransformFallowLand": {

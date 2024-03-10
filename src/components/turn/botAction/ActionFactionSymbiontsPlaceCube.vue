@@ -10,7 +10,7 @@
       <li v-html="t('botAction.factionSymbiontsPlaceCube.validSpaces')"></li>
       <li v-html="t('botAction.transformAndBuild.tiebreaker.title')"></li>
       <ol type="a">
-        <li v-html="t('botAction.factionSymbiontsPlaceCube.symbiontYouthATP')"></li>
+        <li v-html="t('botAction.factionSymbiontsPlaceCube.symbiontYouthATP',{terrainPriority:botAction.terrainPriority})"></li>
         <li v-html="t('botAction.transformAndBuild.tiebreaker.directionalSelection')"></li>
       </ol>
       <li v-html="t('botAction.transformAndBuild.execute.title')"></li>
