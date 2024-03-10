@@ -42,6 +42,7 @@
     "step4c-mots": "Return 2 Automa Trading houses to the box. They will not be used.",
     "step4d": "Give her all Priests of her color.",
     "step4e": "Place her Markers on the Cult track. Advance on these tracks:",
+    "stepNone": "none",
     "step4f": "Follow the additional setup instructions on the <b>{faction} Automa Faction card</b> and familiarize yourself with the special rules.",
     "step4g": "Place a Marker of Automa’s color on space 20 of the Victory point track (as normal).",
     "step4h-mots": "Give her all Trade markers and the Shipyard in her color.",
@@ -164,7 +165,7 @@
     },
     "factionSymbiontsPlaceCube": {
       "validSpaces": "Valid Spaces: All Terrain spaces directly adjacent to any of your structures.",
-      "symbiontYouthATP": "Symbiont <b>youth</b> ATP card.",
+      "symbiontYouthATP": "Terrain Priority <b>{terrainPriority}</b> with Symbiont <b>youth</b> ATP card.",
       "placeCube": "Place a <b>worker cube</b> on the selected Terrain space."
     },
     "factionBlightTransformFallowLand": {
@@ -190,8 +191,8 @@
     "title": "End of Game",
     "cultScoring": "Automa gains victory points from <b>Cult scoring</b>.",
     "areaScoring": "Automa gains victory points from <b>Area scoring</b>.",
-    "areaScoringFireIceStrongholdSanctuary": "Stronghold and Sanctuary: Divide <i>Greatest Distance</i> by 2 and round up.",
-    "areaScoringFireIceOutposts": "Outposts: Subtract 2 from <i>Settlements</i>.",
+    "areaScoringFireIceStrongholdSanctuary": "Stronghold and Sanctuary for Automa: Divide <i>Greatest Distance</i> by 2 and round up.",
+    "areaScoringFireIceOutposts": "Outposts for Automa: Subtract 2 from <i>Settlements</i>.",
     "factionWanderers": "<b>Wanderers:</b> Gain 1 victory point per structure anywhere on the board.",
     "factionGognomes": "<b>Gognomes</b>: Ensure Gognomes got victory points for their achievements.",
     "resourceScoring": "Automa doesn't get any points from Resource scoring."
