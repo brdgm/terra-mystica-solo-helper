@@ -191,8 +191,8 @@
     "title": "Spielende",
     "cultScoring": "Automa erhält Punkte durch die <b>Kultwertung</b>.",
     "areaScoring": "Automa erhält Punkte durch die <b>Gebietswertung</b>.",
-    "areaScoringFireIceStrongholdSanctuary": "Heiligtum und Festung: Ermittle die <i>Größte Entfernung</i> und teile die Zahl durch 2 (aufgerundet).",
-    "areaScoringFireIceOutposts": "Außenposten: Ermittle die Anzahl an <i>Ansiedlungen</i> und ziehe 2 vom Ergebnis ab.",
+    "areaScoringFireIceStrongholdSanctuary": "Heiligtum und Festung für Automa: Ermittle die <i>Größte Entfernung</i> und teile die Zahl durch 2 (aufgerundet).",
+    "areaScoringFireIceOutposts": "Außenposten für Automa: Ermittle die Anzahl an <i>Ansiedlungen</i> und ziehe 2 vom Ergebnis ab.",
     "factionWanderers": "<b>Wanderer:</b> Erhalte 1 Punkt für jedes eigene Gebäude auf dem Spielplan.",
     "factionGognomes": "<b>Gognome</b>: Stelle sicher, dass die Gognome die Punkte für ihre Aufgaben erhalten haben.",
     "resourceScoring": "Automa erhält keine Punkte durch die Ressourcenwertung."

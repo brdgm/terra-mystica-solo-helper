@@ -1,6 +1,5 @@
 <template>
   <ol>
-    <li v-html="t('endOfGame.cultScoring')"></li>
     <li>
       <span v-html="t('endOfGame.areaScoring')"></span>
       <ShipLevel :shipLevel="shipLevel"/>
@@ -14,6 +13,7 @@
         <AppIcon type="expansion" name="fire-and-ice" class="expansionIcon"/><span v-html="t('endOfGame.areaScoringFireIceOutposts')"></span>
       </li>
     </ul>
+    <li v-html="t('endOfGame.cultScoring')"></li>
     <li v-if="isFactionWanderers"><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('endOfGame.factionWanderers')"></span></li>
     <li v-if="isFactionGognomes"><AppIcon type="action" name="faction-action" class="factionActionIcon"/><span v-html="t('endOfGame.factionGognomes')"></span></li>
     <li v-html="t('endOfGame.resourceScoring')"></li>

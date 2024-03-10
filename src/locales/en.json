@@ -191,8 +191,8 @@
     "title": "End of Game",
     "cultScoring": "Automa gains victory points from <b>Cult scoring</b>.",
     "areaScoring": "Automa gains victory points from <b>Area scoring</b>.",
-    "areaScoringFireIceStrongholdSanctuary": "Stronghold and Sanctuary: Divide <i>Greatest Distance</i> by 2 and round up.",
-    "areaScoringFireIceOutposts": "Outposts: Subtract 2 from <i>Settlements</i>.",
+    "areaScoringFireIceStrongholdSanctuary": "Stronghold and Sanctuary for Automa: Divide <i>Greatest Distance</i> by 2 and round up.",
+    "areaScoringFireIceOutposts": "Outposts for Automa: Subtract 2 from <i>Settlements</i>.",
     "factionWanderers": "<b>Wanderers:</b> Gain 1 victory point per structure anywhere on the board.",
     "factionGognomes": "<b>Gognomes</b>: Ensure Gognomes got victory points for their achievements.",
     "resourceScoring": "Automa doesn't get any points from Resource scoring."
