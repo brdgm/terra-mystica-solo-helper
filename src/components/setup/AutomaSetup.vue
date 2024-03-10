@@ -36,6 +36,7 @@
                 <AppIcon type="cult-track" :name="bonus.cultTrack" class="cultTrackIcon"/>
                 {{bonus.advanceSteps}}
               </span>
+              <span v-empty v-html="t('setupGameAutoma.stepNone')"></span>
             </li>
           </ul>
         </li>

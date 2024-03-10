@@ -42,6 +42,7 @@
     "step4c-mots": "Return 2 Automa Trading houses to the box. They will not be used.",
     "step4d": "Give her all Priests of her color.",
     "step4e": "Place her Markers on the Cult track. Advance on these tracks:",
+    "stepNone": "none",
     "step4f": "Follow the additional setup instructions on the <b>{faction} Automa Faction card</b> and familiarize yourself with the special rules.",
     "step4g": "Place a Marker of Automa’s color on space 20 of the Victory point track (as normal).",
     "step4h-mots": "Give her all Trade markers and the Shipyard in her color.",
