@@ -40,7 +40,7 @@ export default class BotActions {
 
     // ongoing benefit for powermongers
     if (botFaction == BotFaction.POWERMONGERS) {
-      const benefitApplyIndex = result.findIndex(botAction => botAction.action == Action.TRANSFORM_AND_BUILD || botAction.action == Action.UPGRADE)
+      const benefitApplyIndex = result.findIndex(botAction => botAction.action == Action.TRANSFORM_AND_BUILD || botAction.action == Action.UPGRADE || botAction.action == Action.TRADE)
       if (benefitApplyIndex >= 0) {
         result = [
           ...result.slice(0, benefitApplyIndex+1),
