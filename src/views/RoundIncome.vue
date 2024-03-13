@@ -17,8 +17,8 @@
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
-import { useStore } from '@/store'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
+import { useStateStore } from '@/store/state'
 
 export default defineComponent({
   name: 'RoundIncome',
@@ -27,17 +27,17 @@ export default defineComponent({
   },
   setup() {
     const { t } = useI18n()
-    useStore()
+    const store = useStateStore()
     const route = useRoute()
 
     const round = parseInt(route.params['round'] as string)
 
-    return { t, round }
+    return { t, round, store }
   },
   computed: {
     backButtonRouteTo() : string {
       if (this.round > 1) {
-        const lastRound = this.$store.state.rounds[this.round-2]
+        const lastRound = this.store.rounds[this.round-2]
         if (lastRound && lastRound.turns) {
           return `/round/${this.round-1}/turn/${lastRound.turns.length+1}`
         }
