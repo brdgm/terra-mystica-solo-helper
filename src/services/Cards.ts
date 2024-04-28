@@ -1,12 +1,12 @@
-import findMandatory from 'brdgm-commons/src/util/map/findMandatory';
-import Card from './Card';
-import Action from './enum/Action';
-import BonusCardSelection from './enum/BonusCardSelection';
-import CultTrackSelection from './enum/CultTrackSelection';
-import DirectionalSelection from './enum/DirectionalSelection';
-import InitialDwelling from './enum/InitialDwelling';
-import Structure from './enum/Structure';
-import TerrainPriority from './enum/TerrainPriority';
+import findMandatory from 'brdgm-commons/src/util/map/findMandatory'
+import Card from './Card'
+import Action from './enum/Action'
+import BonusCardSelection from './enum/BonusCardSelection'
+import CultTrackSelection from './enum/CultTrackSelection'
+import DirectionalSelection from './enum/DirectionalSelection'
+import InitialDwelling from './enum/InitialDwelling'
+import Structure from './enum/Structure'
+import TerrainPriority from './enum/TerrainPriority'
 
 const cards = [
   {

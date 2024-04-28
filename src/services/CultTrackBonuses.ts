@@ -1,7 +1,7 @@
-import findMandatoryMap from 'brdgm-commons/src/util/map/findMandatory';
-import CultTrackBonus, { CultTrackBonusSteps } from './CultTrackBonus';
-import BotFaction from './enum/BotFaction';
-import CultTrack from './enum/CultTrack';
+import findMandatoryMap from 'brdgm-commons/src/util/map/findMandatory'
+import CultTrackBonus, { CultTrackBonusSteps } from './CultTrackBonus'
+import BotFaction from './enum/BotFaction'
+import CultTrack from './enum/CultTrack'
 
 const items = [
   {
