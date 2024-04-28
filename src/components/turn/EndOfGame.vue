@@ -24,7 +24,7 @@
 import DifficultyLevelParameters from '@/services/DifficultyLevelParameters'
 import BotFaction from '@/services/enum/BotFaction'
 import FinalScoringTile from '@/services/enum/FinalScoringTile'
-import { useStore } from '@/store'
+import { useStateStore } from '@/store/state'
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import AppIcon from '../structure/AppIcon.vue'
@@ -38,8 +38,8 @@ export default defineComponent({
   },
   setup() {
     const { t } = useI18n()
-    useStore()
-    return { t }
+    const state = useStateStore()
+    return { t, state }
   },
   props: {
     round : {
@@ -49,20 +49,20 @@ export default defineComponent({
   },
   computed: {
     isStrongholdSancturaryScoring() : boolean {
-      return this.$store.state.setup.finalScoringTile == FinalScoringTile.STRONGHOLD_SANCTUARY
+      return this.state.setup.finalScoringTile == FinalScoringTile.STRONGHOLD_SANCTUARY
     },
     isOutpostsScoring() : boolean {
-      return this.$store.state.setup.finalScoringTile == FinalScoringTile.OUTPOSTS
+      return this.state.setup.finalScoringTile == FinalScoringTile.OUTPOSTS
     },
     shipLevel() : number {
-      const params = DifficultyLevelParameters.get(this.$store.state.setup.difficultyLevel, this.round)
+      const params = DifficultyLevelParameters.get(this.state.setup.difficultyLevel, this.round)
       return params.shipLevel
     },
     isFactionWanderers() : boolean {
-      return this.$store.state.setup.playerSetup.botFaction.includes(BotFaction.WANDERERS)
+      return this.state.setup.playerSetup.botFaction.includes(BotFaction.WANDERERS)
     },
     isFactionGognomes() : boolean {
-      return this.$store.state.setup.playerSetup.botFaction.includes(BotFaction.GOGNOMES)
+      return this.state.setup.playerSetup.botFaction.includes(BotFaction.GOGNOMES)
     }
   }
 })

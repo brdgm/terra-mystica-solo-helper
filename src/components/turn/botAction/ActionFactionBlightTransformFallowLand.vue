@@ -23,7 +23,6 @@ import { useI18n } from 'vue-i18n'
 import BotAction from '@/services/BotAction'
 import AppIcon from '@/components/structure/AppIcon.vue'
 import SupportInfo from '../supportInfo/SupportInfo.vue'
-import { useStore } from '@/store'
 
 export default defineComponent({
   name: 'ActionFactionBlightTransformFallowLand',
@@ -34,7 +33,6 @@ export default defineComponent({
   },
   setup() {
     const { t } = useI18n()
-    useStore()
     return { t }
   },
   props: {

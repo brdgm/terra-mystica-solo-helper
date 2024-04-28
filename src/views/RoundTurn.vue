@@ -23,7 +23,6 @@
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
-import { useStore } from '@/store'
 import NavigationState from '@/util/NavigationState'
 import PlayerTurn from '@/components/turn/PlayerTurn.vue'
 import BotTurn from '@/components/turn/BotTurn.vue'
@@ -42,16 +41,10 @@ export default defineComponent({
   },
   setup() {
     const { t } = useI18n()
-    const store = useStore()
     const route = useRoute()
 
-    const navigationState = new NavigationState(route, store)
-    const playerCount = navigationState.playerCount
-    const botCount = navigationState.botCount
-    const round = navigationState.round
-    const turn = navigationState.turn
-    const roundTurn = navigationState.roundTurn
-    const botFaction = navigationState.botFaction
+    const navigationState = new NavigationState(route)
+    const { playerCount, botCount, round, turn, roundTurn, botFaction } = navigationState
     const startPlayer = navigationState.roundTurn?.startPlayer
 
     return { t, navigationState, playerCount, botCount, round, turn, roundTurn, botFaction, startPlayer }

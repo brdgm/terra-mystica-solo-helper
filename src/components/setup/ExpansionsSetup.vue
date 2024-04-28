@@ -37,9 +37,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useStore } from '@/store'
+import { useStateStore } from '@/store/state'
 import Expansion from '@/services/enum/Expansion'
 import FinalScoringTile from '@/services/enum/FinalScoringTile'
 
@@ -47,20 +47,18 @@ export default defineComponent({
   name: 'ExpansionsSetup',
   setup() {
     const { t } = useI18n()
-    useStore()
-    return { t }
-  },
-  data() {
-    return {
-      finalScoringTile: this.$store.state.setup.finalScoringTile
-    }
+    const state = useStateStore()
+
+    const finalScoringTile = ref(state.setup.finalScoringTile)
+
+    return { t, state, finalScoringTile }
   },
   computed: {
     hasFireAndIce() : boolean {
-      return this.$store.state.setup.expansions.includes(Expansion.FIRE_AND_ICE)
+      return this.state.setup.expansions.includes(Expansion.FIRE_AND_ICE)
     },
     hasMerchantsOfTheSeas() : boolean {
-      return this.$store.state.setup.expansions.includes(Expansion.MERCHANTS_OF_THE_SEAS)
+      return this.state.setup.expansions.includes(Expansion.MERCHANTS_OF_THE_SEAS)
     },
     finalScoringTiles() : FinalScoringTile[] {
       return Object.values(FinalScoringTile)
@@ -68,16 +66,16 @@ export default defineComponent({
   },
   watch: {
     finalScoringTile() {
-      this.$store.commit('setupFinalScoringTile', this.finalScoringTile)
+      this.state.setup.finalScoringTile = this.finalScoringTile
     }
   },
   methods: {
     toggleFireAndIce() {
-      this.$store.commit('setupToggleExpansionFireAndIce')
-      this.finalScoringTile = this.$store.state.setup.finalScoringTile
+      this.state.setupToggleExpansionFireAndIce()
+      this.finalScoringTile = this.state.setup.finalScoringTile
     },
     toggleMerchantsOfTheSeas() {
-      this.$store.commit('setupToggleExpansionMerchantsOfTheSeas')
+      this.state.setupToggleExpansionMerchantsOfTheSeas()
     }
   }
 })

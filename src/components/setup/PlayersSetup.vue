@@ -40,23 +40,25 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useStore } from '@/store'
+import { useStateStore } from '@/store/state'
 import BotFaction from '@/services/enum/BotFaction'
 
 export default defineComponent({
   name: 'PlayersSetup',
   setup() {
     const { t } = useI18n()
-    useStore()
-    return { t }
+    const state = useStateStore()
+
+    const playerCount = ref(state.setup.playerSetup.playerCount)
+    const botCount = ref(state.setup.playerSetup.botCount)
+    const botFaction = ref(state.setup.playerSetup.botFaction)
+
+    return { t, state, playerCount, botCount, botFaction }
   },
   data() {
     return {
-      playerCount: this.$store.state.setup.playerSetup.playerCount,
-      botCount: this.$store.state.setup.playerSetup.botCount,
-      botFaction: this.$store.state.setup.playerSetup.botFaction,
       factions: Object.values(BotFaction)
     }
   },
@@ -96,11 +98,11 @@ export default defineComponent({
           this.botFaction[bot-1] = BotFaction.SIMPLETONS
         }
       }
-      this.$store.commit('setupPlayer', {
+      this.state.setup.playerSetup = {
         playerCount: this.playerCount,
         botCount: this.botCount,
         botFaction: this.botFaction
-      })
+      }
     }
   }
 })
