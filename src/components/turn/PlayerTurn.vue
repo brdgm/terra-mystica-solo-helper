@@ -63,7 +63,7 @@ export default defineComponent({
     pass() : void {
       const roundTurn = this.navigationState.roundTurn
       if (!roundTurn) {
-        return;
+        return
       }
       roundTurn.pass = true
       if (!this.navigationState.anyonePassed) {
