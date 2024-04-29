@@ -30,7 +30,7 @@ import { useI18n } from 'vue-i18n'
 import BotAction from '@/services/BotAction'
 import AppIcon from '@/components/structure/AppIcon.vue'
 import SupportInfo from '../supportInfo/SupportInfo.vue'
-import { useStore } from '@/store'
+import { useStateStore } from '@/store/state'
 import Expansion from '@/services/enum/Expansion'
 import BotFaction from '@/services/enum/BotFaction'
 import NavigationState from '@/util/NavigationState'
@@ -44,8 +44,8 @@ export default defineComponent({
   },
   setup() {
     const { t } = useI18n()
-    useStore()
-    return { t }
+    const state = useStateStore()
+    return { t, state }
   },
   props: {
     botAction: {
@@ -59,7 +59,7 @@ export default defineComponent({
   },
   computed: {
     hasMerchantsOfTheSeas(): boolean {
-      return this.$store.state.setup.expansions.includes(Expansion.MERCHANTS_OF_THE_SEAS)
+      return this.state.setup.expansions.includes(Expansion.MERCHANTS_OF_THE_SEAS)
     },
     botFaction() : BotFaction|undefined {
       return this.navigationState.botFaction

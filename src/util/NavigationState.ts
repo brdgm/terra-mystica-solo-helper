@@ -2,15 +2,15 @@ import { cloneDeep } from 'lodash'
 import BotFaction from '@/services/enum/BotFaction'
 import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import PlayerOrder from '@/services/PlayerOrder'
-import { Round, RoundTurn, State } from '@/store'
+import { Round, RoundTurn, useStateStore } from '@/store/state'
 import { RouteLocation } from 'vue-router'
-import { Store } from 'vuex'
 import CardDeck from '@/services/CardDeck'
 import Player from '@/services/Player'
 import Expansion from '@/services/enum/Expansion'
 
 export default class NavigationState {
 
+  readonly state
   readonly difficultyLevel : DifficultyLevel
   readonly playerCount : number
   readonly botCount : number
@@ -22,8 +22,9 @@ export default class NavigationState {
   readonly botFaction? : BotFaction
   readonly cardDeck? : CardDeck
 
-  constructor(route : RouteLocation, store : Store<State>) {    
-    const setup = store.state.setup
+  constructor(route : RouteLocation) {    
+    this.state = useStateStore()
+    const setup = this.state.setup
     this.difficultyLevel = setup.difficultyLevel
     this.playerCount = setup.playerSetup.playerCount
     this.botCount = setup.playerSetup.botCount
@@ -31,11 +32,11 @@ export default class NavigationState {
     this.round = parseInt(route.params['round'] as string)
     this.turn = parseInt(route.params['turn'] as string)
 
-    const roundData = this.getRound(this.round, store)
+    const roundData = this.getRound(this.round)
     this.playerOrder = new PlayerOrder(roundData.turns.slice(0, this.turn), setup.playerSetup.playerCount, setup.playerSetup.botCount)
     this.anyonePassed = this.playerOrder.hasAnyonePassed()
 
-    this.roundTurn = cloneDeep(this.getRoundTurn(roundData, this.turn, store))
+    this.roundTurn = cloneDeep(this.getRoundTurn(roundData, this.turn))
     if (this.roundTurn?.bot) {
       this.botFaction = setup.playerSetup.botFaction[this.roundTurn?.bot - 1]
     }
@@ -44,8 +45,8 @@ export default class NavigationState {
     }
   }
 
-  private getRound(round : number, store : Store<State>) : Round {
-    let roundData = store.state.rounds[round - 1]
+  private getRound(round : number) : Round {
+    let roundData = this.state.rounds[round - 1]
     if (!roundData) {
       roundData = {
         round: round,
@@ -55,15 +56,15 @@ export default class NavigationState {
     return roundData
   }
 
-  private getRoundTurn(roundData : Round, turn : number, store : Store<State>) : RoundTurn|undefined {
+  private getRoundTurn(roundData : Round, turn : number) : RoundTurn|undefined {
     let turnData : |RoundTurn|undefined = roundData.turns[turn - 1]
     if (!turnData) {
-      turnData = this.createNextRoundTurn(roundData.round, turn, store)
+      turnData = this.createNextRoundTurn(roundData.round, turn)
     }
     return turnData
   }
 
-  private createNextRoundTurn(round : number, turn : number, store : Store<State>) : RoundTurn|undefined {
+  private createNextRoundTurn(round : number, turn : number) : RoundTurn|undefined {
     let nextPlayer
     let startPlayer = false
     // if this is 1st turn detect start player for new game, or from previous round
@@ -72,7 +73,7 @@ export default class NavigationState {
         nextPlayer = this.playerOrder.getStartPlayer()
       }
       else {
-        const previousRound = store.state.rounds[round-2]
+        const previousRound = this.state.rounds[round-2]
         if (previousRound) {
           const playerOrderPreviousRound = new PlayerOrder(previousRound.turns, this.playerCount, this.botCount)
           nextPlayer = playerOrderPreviousRound.getStartPlayer()
@@ -91,7 +92,7 @@ export default class NavigationState {
         turnData.startPlayer = startPlayer
       }
       if (turnData.bot) {
-        const cardDeck = this.createCardDeck(round, nextPlayer, store);
+        const cardDeck = this.createCardDeck(round, nextPlayer)
         if (cardDeck.isPass()) {
           turnData.pass = true
           if (!this.playerOrder.hasAnyonePassed()) {
@@ -100,13 +101,13 @@ export default class NavigationState {
         }
         turnData.cardDeck = cardDeck.toPersistence()
       }
-      store.commit('roundTurn', turnData)
+      this.state.roundTurn(turnData)
       return turnData
     }
     return undefined
   }
 
-  private createCardDeck(round : number, player : Player, store : Store<State>) : CardDeck {
+  private createCardDeck(round : number, player : Player) : CardDeck {
     let cardDeck
 
     // get card deck from last turn in current round and draw a new card
@@ -118,9 +119,9 @@ export default class NavigationState {
     }
 
     // get card deck from previous round and prepare for new round
-    const hasMerchantsOfTheSeas = store.state.setup.expansions.includes(Expansion.MERCHANTS_OF_THE_SEAS)
+    const hasMerchantsOfTheSeas = this.state.setup.expansions.includes(Expansion.MERCHANTS_OF_THE_SEAS)
     if (round > 1) {
-      const previousRound = store.state.rounds[round-2]
+      const previousRound = this.state.rounds[round-2]
       if (previousRound) {
         const playerOrderPreviousRound = new PlayerOrder(previousRound.turns, this.playerCount, this.botCount)
         turnData = playerOrderPreviousRound.getLastTurn(player)
@@ -134,7 +135,7 @@ export default class NavigationState {
     }
 
     // prepare new card deck
-    cardDeck = CardDeck.new(store.state.setup.difficultyLevel, hasMerchantsOfTheSeas)
+    cardDeck = CardDeck.new(this.state.setup.difficultyLevel, hasMerchantsOfTheSeas)
     cardDeck.draw()
     return cardDeck
   }

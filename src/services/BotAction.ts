@@ -1,9 +1,9 @@
-import Action from './enum/Action';
-import BotFaction from './enum/BotFaction';
-import CultTrackSelection from './enum/CultTrackSelection';
-import DirectionalSelection from './enum/DirectionalSelection';
-import Structure from './enum/Structure';
-import TerrainPriority from './enum/TerrainPriority';
+import Action from './enum/Action'
+import BotFaction from './enum/BotFaction'
+import CultTrackSelection from './enum/CultTrackSelection'
+import DirectionalSelection from './enum/DirectionalSelection'
+import Structure from './enum/Structure'
+import TerrainPriority from './enum/TerrainPriority'
 
 /**
  * Aggregated bot action

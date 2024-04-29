@@ -19,15 +19,15 @@ import { defineComponent, PropType } from 'vue'
 import { useI18n } from 'vue-i18n'
 import BotAction from '@/services/BotAction'
 import CultTrackSelection from '@/services/enum/CultTrackSelection'
-import { useStore } from '@/store'
+import { useStateStore } from '@/store/state'
 
 export default defineComponent({
   name: 'AdvanceCultTrackTrackSelection',
   inheritAttrs: false,
   setup() {
     const { t } = useI18n()
-    useStore()
-    return { t }
+    const state = useStateStore()
+    return { t, state }
   },
   props: {
     botAction: {
@@ -40,7 +40,7 @@ export default defineComponent({
       return this.botAction.cultTrackSelection == CultTrackSelection.SCORING_TILE
     },
     isMultipleHumanPlayers() : boolean {
-      return this.$store.state.setup.playerSetup.playerCount > 1
+      return this.state.setup.playerSetup.playerCount > 1
     }
   }
 })

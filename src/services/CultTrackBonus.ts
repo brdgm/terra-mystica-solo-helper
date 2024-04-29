@@ -1,5 +1,5 @@
-import BotFaction from './enum/BotFaction';
-import CultTrack from './enum/CultTrack';
+import BotFaction from './enum/BotFaction'
+import CultTrack from './enum/CultTrack'
 
 /**
  * Cult track bonus on game start.

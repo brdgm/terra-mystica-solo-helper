@@ -1,7 +1,7 @@
-import findMandatoryArray from 'brdgm-commons/src/util/array/findMandatory';
-import findMandatoryMap from 'brdgm-commons/src/util/map/findMandatory';
-import DifficultyLevelParameter, { DifficultyLevelParameterRound } from './DifficultyLevelParameter';
-import DifficultyLevel from './enum/DifficultyLevel';
+import findMandatoryArray from 'brdgm-commons/src/util/array/findMandatory'
+import findMandatoryMap from 'brdgm-commons/src/util/map/findMandatory'
+import DifficultyLevelParameter, { DifficultyLevelParameterRound } from './DifficultyLevelParameter'
+import DifficultyLevel from './enum/DifficultyLevel'
 
 const items = [
   {
