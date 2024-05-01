@@ -2,7 +2,7 @@ import BotFaction from '@/services/enum/BotFaction'
 import DifficultyLevel from '@/services/enum/DifficultyLevel'
 import Expansion from '@/services/enum/Expansion'
 import { defineStore } from 'pinia'
-import toggleArrayItem from 'brdgm-commons/src/util/array/toggleArrayItem'
+import toggleArrayItem from '@brdgm/brdgm-commons/src/util/array/toggleArrayItem'
 import FinalScoringTile from '@/services/enum/FinalScoringTile'
 import { name } from '@/../package.json'
 
