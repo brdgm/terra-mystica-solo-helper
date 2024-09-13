@@ -79,10 +79,10 @@
     "transformAndBuild": {
       "noDwelling": "No dwelling left",
       "validSpaces": {
-        "marked": "Withing Range of any marked Structure",
-        "marked-reaching": "Withing Range of any marked Structure (with <a href='#modalReaching' data-bs-toggle='modal'>Reaching</a>)",
-        "unmarked": "Withing Range of any unmarked Structure",
-        "unmarked-reaching": "Withing Range of any unmarked Structure (with <a href='#modalReaching' data-bs-toggle='modal'>Reaching</a>)",
+        "marked": "Within Range of any marked Structure",
+        "marked-reaching": "Within Range of any marked Structure (with <a href='#modalReaching' data-bs-toggle='modal'>Reaching</a>)",
+        "unmarked": "Within Range of any unmarked Structure",
+        "unmarked-reaching": "Within Range of any unmarked Structure (with <a href='#modalReaching' data-bs-toggle='modal'>Reaching</a>)",
         "factionWanderers": "<b>Ignore range restrictions.</b>"
       },
       "tiebreaker": {
