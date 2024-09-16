@@ -25,10 +25,10 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useStore } from '@/store'
+import { useStateStore } from '@/store/state'
 import NavigationState from '@/util/NavigationState'
 import { useRoute } from 'vue-router'
-import ModalDialog from 'brdgm-commons/src/components/structure/ModalDialog.vue'
+import ModalDialog from '@brdgm/brdgm-commons/src/components/structure/ModalDialog.vue'
 
 export default defineComponent({
   name: 'PlayerTurn',
@@ -37,9 +37,9 @@ export default defineComponent({
   },
   setup() {
     const { t } = useI18n()
-    useStore()
+    const state = useStateStore()
     useRoute()
-    return { t }
+    return { t, state }
   },
   props: {
     navigationState: {
@@ -63,13 +63,13 @@ export default defineComponent({
     pass() : void {
       const roundTurn = this.navigationState.roundTurn
       if (!roundTurn) {
-        return;
+        return
       }
       roundTurn.pass = true
       if (!this.navigationState.anyonePassed) {
         roundTurn.startPlayer = true
       }
-      this.$store.commit('roundTurn', roundTurn)
+      this.state.roundTurn(roundTurn)
       this.$router.push(this.nextButtonRouteTo)
     }
   }

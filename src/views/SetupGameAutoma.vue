@@ -7,7 +7,7 @@
     {{t('action.startGame')}}
   </button>
 
-  <FooterButtons backButtonRouteTo="/setupGame"  endGameButtonType="abortGame"/>
+  <FooterButtons backButtonRouteTo="/setupGame" endGameButtonType="abortGame"/>
 </template>
 
 <script lang="ts">
@@ -15,6 +15,7 @@ import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
 import FooterButtons from '@/components/structure/FooterButtons.vue'
 import AutomaSetup from '@/components/setup/AutomaSetup.vue'
+import { useStateStore } from '@/store/state'
 
 export default defineComponent({
   name: 'SetupGameAutoma',
@@ -24,11 +25,12 @@ export default defineComponent({
   },
   setup() {
     const { t } = useI18n()
-    return { t }
+    const state = useStateStore()
+    return { t, state }
   },
   methods: {
     startGame() : void {
-      this.$store.commit('resetGame')
+      this.state.resetGame()
       this.$router.push('/round/1/income')
     }
   }

@@ -1,4 +1,4 @@
-import { RoundTurn } from '@/store'
+import { RoundTurn } from '@/store/state'
 import Player from './Player'
 
 /**

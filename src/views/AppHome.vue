@@ -21,7 +21,7 @@
 
   <p class="disclaimer">
     This is not an official Feuerland/Capstone product and has no affiliation with <a href="https://www.feuerland-spiele.de/" target="_blank" rel="noopener">Feuerland Spiele</a> or <a href="https://capstone-games.com/" target="_blank" rel="noopener">Capstone Games</a>.
-    All art in this app is from <a href="https://www.feuerland-spiele.de/spiele/terra_mystica.php" target="_blank" rel="noopener">Terra Mystica</a>.
+    All art in this app is from <a href="https://www.feuerland-spiele.de/spiele/terra-mystica/" target="_blank" rel="noopener">Terra Mystica</a>.
     See <a href="#" data-bs-toggle="modal" data-bs-target="#creditsModal">{{t('footer.credits')}}</a>.
     <a href="https://ko-fi.com/brdgm_me" target="_blank" rel="noopener"><img class="kofi-button" src="@/assets/kofi_button_dark.png" alt="Support me on Ko-fi"/></a>
   </p>

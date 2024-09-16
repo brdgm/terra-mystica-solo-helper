@@ -165,7 +165,7 @@
     },
     "factionSymbiontsPlaceCube": {
       "validSpaces": "Mögliche Optionen: Alle Felder direkt benachbart zu deinen Gebäuden.",
-      "symbiontYouthATP": "Landschaftsprioriät <b>{terrainPriority}</b>. Nutze die LTP-Karte der <b>Jugend</b>.",
+      "symbiontYouthATP": "Landschaftspriorität <b>{terrainPriority}</b>. Nutze die LTP-Karte der <b>Jugend</b>.",
       "placeCube": "Setze 1 <b>Arbeiterklötzchen</b> auf das gewählte Feld."
     },
     "factionBlightTransformFallowLand": {

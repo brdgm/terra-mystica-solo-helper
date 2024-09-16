@@ -36,7 +36,7 @@
                 <AppIcon type="cult-track" :name="bonus.cultTrack" class="cultTrackIcon"/>
                 {{bonus.advanceSteps}}
               </span>
-              <span v-empty v-html="t('setupGameAutoma.stepNone')"></span>
+              <span v-if="getCultTrackBonus(faction).length == 0" v-html="t('setupGameAutoma.stepNone')"></span>
             </li>
           </ul>
         </li>
@@ -81,12 +81,13 @@ import Card from '@/services/Card'
 import Cards from '@/services/Cards'
 import { defineComponent } from 'vue'
 import { useI18n } from 'vue-i18n'
-import rollDice from 'brdgm-commons/src/util/random/rollDice'
+import rollDice from '@brdgm/brdgm-commons/src/util/random/rollDice'
 import Expansion from '@/services/enum/Expansion'
 import AppIcon from '../structure/AppIcon.vue'
 import BotFaction from '@/services/enum/BotFaction'
 import { CultTrackBonusSteps } from '@/services/CultTrackBonus'
 import CultTrackBonuses from '@/services/CultTrackBonuses'
+import { useStateStore } from '@/store/state'
 
 export default defineComponent({
   name: 'AutomaSetup',
@@ -95,14 +96,15 @@ export default defineComponent({
   },
   setup() {
     const { t } = useI18n()
-    return { t }
+    const state = useStateStore()
+    return { t, state }
   },
   computed: {
     hasMerchantsOfTheSeas() : boolean {
-      return this.$store.state.setup.expansions.includes(Expansion.MERCHANTS_OF_THE_SEAS)
+      return this.state.setup.expansions.includes(Expansion.MERCHANTS_OF_THE_SEAS)
     },
     bonusCardCount() : number {
-      return this.$store.state.setup.playerSetup.botCount + this.$store.state.setup.playerSetup.playerCount + 3
+      return this.state.setup.playerSetup.botCount + this.state.setup.playerSetup.playerCount + 3
     },
     randomCard(): Card {
       const allCards = Cards.getAll()
@@ -110,16 +112,16 @@ export default defineComponent({
       return allCards[index - 1]
     },    
     isFactionSymbionts() : boolean {
-      return this.$store.state.setup.playerSetup.botFaction.includes(BotFaction.SYMBIONTS)
+      return this.state.setup.playerSetup.botFaction.includes(BotFaction.SYMBIONTS)
     },
     isFactionBlight() : boolean {
-      return this.$store.state.setup.playerSetup.botFaction.includes(BotFaction.BLIGHT)
+      return this.state.setup.playerSetup.botFaction.includes(BotFaction.BLIGHT)
     },
     isFactionGognomes() : boolean {
-      return this.$store.state.setup.playerSetup.botFaction.includes(BotFaction.GOGNOMES)
+      return this.state.setup.playerSetup.botFaction.includes(BotFaction.GOGNOMES)
     },
     factions() : BotFaction[] {
-      return this.$store.state.setup.playerSetup.botFaction
+      return this.state.setup.playerSetup.botFaction
     }
   },
   methods: {
