@@ -70,7 +70,8 @@
   "playerTurn": {
     "text": "Bitte führe deinen Zug durch - oder passe.",
     "passConfirm": "Möchtest du passen?",
-    "passInfo": "Erhalte Siegpunkte von deiner Rundenbonuskarte (falls vorhanden) und nimm eine neue Rundenbonuskarte."
+    "passInfo": "Erhalte Siegpunkte von deiner Rundenbonuskarte (falls vorhanden) und nimm eine neue Rundenbonuskarte.",
+    "passInfoRound6": "Erhalte Siegpunkte von deiner Rundenbonuskarte (falls vorhanden), nimm <b>keine</b> neue Rundenbonuskarte."
   },
   "botAction": {
     "gainVictoryPoints": {

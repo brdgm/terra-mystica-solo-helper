@@ -70,7 +70,8 @@
   "playerTurn": {
     "text": "Please make your turn - or pass.",
     "passConfirm": "Do you want to pass?",
-    "passInfo": "Collect your round bonus victory points (if any) and take a new Bonus card."
+    "passInfo": "Collect your round bonus victory points (if any) and take a new Bonus card.",
+    "passInfoRound6": "Collect your round bonus victory points (if any), <b>do not</b> take a new Bonus card."
   },
   "botAction": {
     "gainVictoryPoints": {
