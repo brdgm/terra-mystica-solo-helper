@@ -75,7 +75,9 @@ const items = [
 ]
 
 const itemsMap = new Map<BotFaction,CultTrackBonus>()
-items.forEach(item => itemsMap.set(item.botFaction, item))
+for (const item of items) {
+  itemsMap.set(item.botFaction, item)
+}
 
 export default {
 
