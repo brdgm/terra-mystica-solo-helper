@@ -1,0 +1,257 @@
+{
+  "gameTitle": "테라 미스티카",
+  "home": {
+    "title": "테라 미스티카 솔로 도우미",
+    "play1": "<a href='https://boardgamegeek.com/boardgame/120677/terra-mystica' target='_blank' rel='noopener'><b>테라 미스티카</b></a>의 오토마 솔로 모드를 플레이하세요. <i>Fire & Ice</i>와 <i>Merchants of the Seas</i> 확장판이 지원됩니다.",
+    "play2": "솔로 모드를 플레이하려면 기본 게임과 <a href='https://boardgamegeek.com/boardgameexpansion/349169/terra-mystica-automa-solo-box' target='_blank' rel='noopener'><b>오토마 솔로 박스</b></a>가 필요합니다. 이 도우미 앱은 오토마 카드를 대체합니다.",
+    "feedback": "토론 및 피드백:"
+  },
+  "setup": {
+    "title": "게임 설정",
+    "players": {
+      "title": "플레이어",
+      "playerCount": "인간 플레이어",
+      "playerCountItem": "플레이어 {count}명 | 플레이어 {count}명",
+      "botCount": "오토마",
+      "botCountItem": "오토마 {count}개 | 오토마 {count}개 (실험적)",
+      "botFaction": "오토마 종족 | 오토마 {bot} 종족",
+      "twoPlayerBotFaction": "2인 플레이 시 공식 규칙상 <i>The Simpletons</i>만 사용할 수 있습니다."
+    },
+    "difficultyLevel": {
+      "title": "난이도",
+      "easy": "쉬움",
+      "hard": "어려움"
+    },
+    "expansions": {
+      "title": "확장판",
+      "finalScoringTile": "최종 점수 타일",
+      "motsScoringTile": "<i>Most Trade Markers</i> 최종 점수 타일은 사용할 수 없습니다."
+    }
+  }, 
+  "setupGameAutoma": {
+    "title": "오토마 설정",
+    "generalSetup": "일반 설정",
+    "generalSetupIntro": "다음 변경사항과 함께 일반적으로 게임을 설정하세요:",
+    "step1": "게임의 것 대신 양면 오토마 점수 타일을 사용하세요. 해당 라운드를 나타내는 면이 위로 오도록 놓으세요. 기본 게임과 마찬가지로 왼쪽에 삽 모양이 있는 점수 타일은 5라운드나 6라운드에 놓을 수 없습니다.",
+    "step1-mots": "대신 양면 <i>Merchants of the Seas</i> 오토마 점수 타일을 사용하세요.",
+    "step2": "평상시처럼 새 게임 종료 토큰을 놓되 6라운드 점수 타일의 우상단 1/4만 덮으세요.",
+    "step3": "여러분과 다른 홈 지형 유형(색상)을 선택하고 오토마에게 해당하는 오토마 지형 우선순위(ATP) 카드를 주세요. ATP의 지형 유형은 상단과 하단 막대 및 가장 왼쪽 원으로 표시됩니다.",
+    "step4": "오토마는 일반적인 종족 설정 절차를 건너뛰고 대신:",
+    "step4a": "해당 색상의 모든 구조물을 주세요.",
+    "step4b": "오토마 주거지 2개를 상자로 반납하세요. 사용하지 않습니다.",
+    "step4c-mots": "오토마 교역소 2개를 상자로 반납하세요. 사용하지 않습니다.",
+    "step4d": "해당 색상의 모든 사제를 주세요.",
+    "step4e": "교단 트랙에 마커를 놓으세요. 다음 트랙에서 전진하세요:",
+    "stepNone": "없음",
+    "step4f": "<b>{faction} 오토마 종족 카드</b>의 추가 설정 지침을 따르고 특수 규칙을 숙지하세요.",
+    "step4g": "승점 트랙의 20칸에 오토마 색상의 마커를 놓으세요(일반적으로).",
+    "step4h-mots": "해당 색상의 모든 교역 마커와 조선소를 주세요.",
+    "initialDwelling": "초기 주거지 배치",
+    "initialDwellingIntro": "오토마는 여러분이 첫 번째 주거지를 놓은 후 초기 주거지를 놓습니다. 사용 중인 맵의 오토마 <b>초기 주거지 맵 카드</b>를 선택하고 다음을 참조하세요:",
+    "initialDwellingPlayer": "첫 번째 주거지를 놓으세요.",
+    "initialDwellingMarked": "문자 <b>{character}</b>가 있는 홈 지형 공간에 파워 토큰과 함께 오토마 주거지를 놓으세요.",
+    "initialDwellingUnmarked": "문자 <b>{character}</b>가 있는 홈 지형 공간에 오토마 주거지를 놓으세요.",
+    "initialDwellingPlayerSecond": "두 번째 주거지를 놓으세요.",
+    "initialDwellingDockMarker": "강변 주거지에 도크 마커를 놓으세요.",
+    "bonusCards": "보너스 카드",
+    "bonusCardsTake": "{count}장의 보너스 카드를 섞어 수평으로 놓으세요. 오토마에게 첫 번째 것을 주세요. 자신의 보너스 카드를 선택하세요.",
+    "bonusCardsCoins": "남은 각 보너스 카드에 일반 공급처에서 코인 1개씩 놓으세요."
+  },
+  "income": {
+    "title": "수입",
+    "turnInfo": "{round}라운드",
+    "collect": "새로운 일꾼, 코인, 사제, 파워를 받으세요."
+  },
+  "roundTurn": {
+    "turnInfo": "{round}라운드, {turn}턴",
+    "titlePlayer": "플레이어 | 플레이어 {player}",
+    "titleBot": "오토마: {faction} | 오토마 {bot}: {faction}"
+  },
+  "playerTurn": {
+    "text": "턴을 진행하거나 패스하세요.",
+    "passConfirm": "패스하시겠습니까?",
+    "passInfo": "라운드 보너스 승점을 받고(있다면) 새 보너스 카드를 가져가세요.",
+    "passInfoRound6": "라운드 보너스 승점을 받되(있다면) 새 보너스 카드는 가져가지 <b>마세요</b>."
+  },
+  "botAction": {
+    "gainVictoryPoints": {
+      "text": "오토마가 승점 {count}점을 얻습니다. | 오토마가 승점 {count}점을 얻습니다."
+    },
+    "transformAndBuild": {
+      "noDwelling": "남은 주거지 없음",
+      "validSpaces": {
+        "marked": "표시된 구조물 범위 내",
+        "marked-reaching": "표시된 구조물 범위 내 (<a href='#modalReaching' data-bs-toggle='modal'>도달</a> 포함)",
+        "unmarked": "표시되지 않은 구조물 범위 내",
+        "unmarked-reaching": "표시되지 않은 구조물 범위 내 (<a href='#modalReaching' data-bs-toggle='modal'>도달</a> 포함)",
+        "factionWanderers": "<b>범위 제한을 무시합니다.</b>"
+      },
+      "tiebreaker": {
+        "title": "공간 선택:",
+        "factionPowerMongers": "여러분에게 <b>가장 많은 파워</b>를 주는 것.",
+        "terrainPriority": "오토마 지형 우선순위 <b>{terrainPriority}</b>.",
+        "terrainPriorityYourTerrainType": "<b>여러분</b> 지형 유형의 ATP 카드로 지형 우선순위 <b>{terrainPriority}</b>.",
+        "structureClosest": "여러분 구조물 중 하나에 <b>가장 가까운</b> 공간.",
+        "structureFurthest": "오토마 구조물에서 <b>가장 멀리 떨어진</b> 공간.",
+        "directionalSelection": "방향 선택."
+      },
+      "execute": {
+        "title": "실행:",
+        "homeTerrainTile": "오토마 홈 지형 타일을 놓으세요(지형 변환이 필요했다면).",
+        "dwelling": "오토마 주거지를 놓으세요.",
+        "marked": "해당 공간에 파워 토큰을 놓아 새 주거지를 표시하세요."
+      },
+      "reaching": {
+        "title": "도달",
+        "text1": "표시된 구조물 중 어느 것도 표시되지 않은 구조물에 인접하지 않은 경우(직접 또는 간접적으로), 유효한 공간은 <i>표시된 구조물과 표시되지 않은 구조물</i> 사이의 현재 <i>최단 거리</i>를 줄일 수 있는 공간으로만 추가로 제한됩니다.",
+        "text2": "거리를 줄일 수 있는 공간이 없다면, 이전에 식별된 모든 공간이 유효하게 남습니다."
+      }
+    },
+    "upgrade": {
+      "tiebreaker": {
+        "title": "구조물 선택:",
+        "tradingHouse": "오토마에게 교역소가 있다면: 여러분 구조물 중 하나에 인접한 오토마 주거지. 그렇지 않다면, 오토마가 업그레이드할 수 있는 아무 구조물.",
+        "littlePower": "여러분에게 가능한 한 적은 파워를 주는 것.",
+        "directionalSelection": "방향 선택."
+      },
+      "execute": {
+        "title": "실행:",
+        "highestPowerStructure": "선택된 구조물을 합법적으로 업그레이드할 수 있는 가장 높은 파워 값 구조물로 교체하세요.",
+        "motsShipyardPreferred": "요새와 조선소 사이에 동점이 있다면 오토마는 조선소를 건설합니다."
+      }
+    },
+    "blockPowerAction": {
+      "gameBoard": "게임 보드의 덮이지 않은 파워 행동 하나를 막으세요",
+      "directionalSelection": "방향 선택.",
+      "gameBoardExecute": "실행: 선택된 파워 행동에 행동 토큰을 놓으세요. 오토마는 이것으로부터 아무 이득도 얻지 않습니다.",
+      "motsPowerActionBoard": "상인 파워 행동 보드의 덮이지 않은 파워 행동 하나를 막으세요."
+    },
+    "advanceCultTrack": {
+      "factionDruids": "<b>오토마는 단일 트랙에서 2칸 전진합니다(사제 놓지 않음)</b>.",
+      "factionPowerMongers": "<b>지속 효과: 구조물을 통해 파워 2 이상을 얻을 때마다 오토마는 교단 트랙에서 1칸 전진합니다(사제 놓지 않는 교단 따라잡기 행동).</b>",
+      "notMarker10": "오토마는 10칸에 마커가 없는 트랙에서만 전진합니다.",
+      "scoringTile": {
+        "title": "현재 <b>점수 타일</b>의 오토마 아이콘 <b>색상</b>과 일치하는 교단 트랙을 선호합니다."
+      },
+      "catchUp": {
+        "title": "<b>따라잡기</b> 선택을 사용하세요:",
+        "otherwiseTitle": "그렇지 않다면 따라잡기 선택을 사용하세요:",
+        "marketAt0": "오토마의 마커가 0에 있는 교단 트랙.",
+        "highestMarker": "오토마의 마커가 여러분의 마커에 가장 가까운 교단 트랙; 같은 공간이거나 위아래에 있을 수 있습니다.",
+        "highestMarkerMultipleHumans": "오토마의 마커가 가장 높은 마커에 가장 가까운 교단 트랙; 같은 공간이거나 다른 마커 위아래에 있을 수 있습니다.",
+        "directionalSelection": "방향 선택."
+      },
+      "execute": {
+        "title": "실행:",
+        "placePriest": "선택된 트랙 아래의 가장 높은 번호의 사제 공간에 사용 가능한 오토마 사제를 놓고 해당 칸수만큼 오토마의 마커를 전진시키세요.",
+        "noPriest": "오토마에게 사용 가능한 사제가 더 없거나 트랙 아래에 빈 사제 공간이 없다면, 사제를 놓지 않고 해당 트랙에서 오토마의 마커를 1칸 전진시키세요."
+      }
+    },
+    "trade": {
+      "selectStructure": {
+        "title": "오토마의 교역 토큰이 없는 강 공간에 인접한 구조물을 선택하세요:",
+        "highestPower": "가장 높은 파워 값을 가진 구조물.",
+        "directionalSelection": "방향 선택."
+      },
+      "execute": {
+        "title": "실행:",
+        "placeMarker": "선택된 구조물 아래에 오토마의 교역 마커 하나를 놓으세요.",
+        "victoryPoints": "오토마는 선택된 구조물의 파워 값과 같은 승점을 얻습니다.",
+        "gainPower": "여러분은 평상시처럼 교역으로 파워를 얻을 수 있습니다."
+      }
+    },
+    "takeFavorTile": {
+      "selectCultFavorTile": "10칸에 마커가 없는 교단 트랙의 +3 교단 호의 타일 중 하나를 가져가세요.",
+      "execute": "실행: 선택된 타일을 오토마에게 주고 타일에 표시된 트랙에서 오토마의 마커를 3칸 증가시키세요."
+    },
+    "factionSymbiontsPlaceCube": {
+      "validSpaces": "유효한 공간: 여러분 구조물 중 하나에 직접 인접한 모든 지형 공간.",
+      "symbiontYouthATP": "공생체 <b>청소년</b> ATP 카드로 지형 우선순위 <b>{terrainPriority}</b>.",
+      "placeCube": "선택된 지형 공간에 <b>일꾼 큐브</b>를 놓으세요."
+    },
+    "factionBlightTransformFallowLand": {
+      "transform": "<b>황무지</b>를 <b>병든 땅으로 두 번</b> 지형 변환합니다."
+    }
+  },
+  "botPass": {
+    "title": "오토마가 <i>패스</i>합니다.",
+    "scoringTile": "오토마는 현재 점수 타일의 우하단에 표시된 <b>고정 승점</b>을 얻습니다.",
+    "scoringTileFactionRacelings": "레이슬링: 오토마가 이 라운드에 먼저 패스했으므로 현재 점수 타일의 <b>고정 승점</b>을 <b>다시</b> 얻습니다.",
+    "bonusCard": "오토마가 <b>보너스 카드</b>를 가져갑니다:",
+    "bonusCardGold": "보너스 카드에 코인이 있다면 일반 공급처로 반환하세요."
+  },
+  "endOfRound": {
+    "title": "라운드 종료",
+    "turnInfo": "{round}라운드",
+    "cultBonuses": "여러분이 <b>교단 보너스</b>를 얻습니다.",
+    "returnActionTokens": "행동 토큰을 반환하세요.",
+    "bonusCardsCoin": "남은 3장의 보너스 카드 각각에 <b>코인 1개</b>를 놓으세요.",
+    "removeScoringTile": "현재 점수 타일을 보드에서 제거하세요."
+  },
+  "endOfGame": {
+    "title": "게임 종료",
+    "cultScoring": "오토마가 <b>교단 점수</b>에서 승점을 얻습니다.",
+    "areaScoring": "오토마가 <b>지역 점수</b>에서 승점을 얻습니다.",
+    "areaScoringFireIceStrongholdSanctuary": "오토마의 요새와 성소: <i>최대 거리</i>를 2로 나누고 올림합니다.",
+    "areaScoringFireIceOutposts": "오토마의 전초기지: <i>정착지</i>에서 2를 뺍니다.",
+    "factionWanderers": "<b>방랑자:</b> 보드 어디든 구조물당 승점 1점을 얻습니다.",
+    "factionGognomes": "<b>고그놈</b>: 고그놈이 업적으로 승점을 얻었는지 확인하세요.",
+    "resourceScoring": "오토마는 자원 점수에서 아무 점수도 얻지 않습니다."
+  },
+  "difficultyLevel": {
+    "1": "Automalein",
+    "2": "Automa",
+    "3": "Automächtig",
+    "4": "Ultoma",
+    "5": "Alptrauma"
+  },
+  "expansion": {
+    "fire-and-ice": "Fire & Ice",
+    "merchants-of-the-seas": "Merchants of the Seas"
+  },
+  "finalScoringTile": {
+    "default": "기본 (기본 게임)",
+    "greatest-distance": "최대 거리 (Fire & Ice)",
+    "stronghold-sanctuary": "요새와 성소 (Fire & Ice)",
+    "outposts": "전초기지 (Fire & Ice)",
+    "settlements": "정착지 (Fire & Ice)"
+  },
+  "botFaction": {
+    "simpletons": "The Simpletons",
+    "kuddlers": "The Kuddlers",
+    "druids": "Druids",
+    "racelings": "Racelings",
+    "wanderers": "Wanderers",
+    "mimics": "Mimics",
+    "powermongers": "Powermongers",
+    "symbionts": "Symbionts",
+    "blight": "The Blight",
+    "gognomes": "Gognomes"
+  },
+  "notfound": {
+    "title": "찾을 수 없음"
+  },
+  "action": {
+    "playGame": "게임 플레이",
+    "startGame": "게임 시작",
+    "next": "다음",
+    "nextRound": "다음 라운드",
+    "abortGame": "게임 중단",
+    "abortGameConfirm": "진행 중인 게임을 중단합니다 - 확실하신가요?",
+    "endGame": "게임 종료",
+    "endGameConfirm": "이 게임을 종료하고 홈 화면으로 돌아갑니다 - 확실하신가요?",
+    "cancel": "취소",
+    "backToHome": "홈으로 돌아가기",
+    "back": "뒤로",
+    "close": "닫기",
+    "reset": "재설정",
+    "pass": "패스"
+  },
+  "footer": {
+    "credits": "크레딧"
+  },
+  "serviceWorkerUpdatedRefresh": {
+    "title": "앱 새로고침",
+    "notice": "앱이 업데이트되었습니다 - 최신 버전을 사용하기 위해 새로고침하시겠습니까?"
+  }
+}
