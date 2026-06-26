@@ -161,7 +161,7 @@
       }
     },
     "takeFavorTile": {
-      "selectCultFavorTile": "Nimm ein Gunstplättchen, die einen Kult um 3 Stufen erhöhen und auf deren Kultskala sich kein Markierungsstein auf Stufe 10 befindet.",
+      "selectCultFavorTile": "Nimm ein Gunstplättchen, das einen Kult um 3 Stufen erhöht und auf dessen Kultskala sich kein Markierungsstein auf Stufe 10 befindet.",
       "execute": "Ausführung: Automa nimmt das ausgewählte Plättchen und steigt auf der entsprechenden Kultskala um 3 Felder auf."
     },
     "factionSymbiontsPlaceCube": {
@@ -176,7 +176,7 @@
   "botPass": {
     "title": "Automa <i>passt</i>.",
     "scoringTile": "Automa erhält die auf dem aktuellen Wertungsplättchen rechts unten <b>angegebenen Punkte</b>.",
-    "scoringTileFactionRacelings": "Sprinter: Automa hat als erste gepasst and erhält die auf dem aktuellen Wertungsplättchen rechts unten <b>angegebenen Punkte nochmals</b>.",
+    "scoringTileFactionRacelings": "Sprinter: Automa hat als erste gepasst und erhält die auf dem aktuellen Wertungsplättchen rechts unten <b>angegebenen Punkte nochmals</b>.",
     "bonusCard": "Automa nimmt eine <b>Rundenbonuskarte</b>:",
     "bonusCardGold": "Lege alle Geldmünzen von dieser Karte zurück in den allgemeinen Vorrat."
   },
