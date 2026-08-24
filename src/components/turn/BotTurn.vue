@@ -1,12 +1,12 @@
 <template>
-  <div v-if="cardDeck.actionCard && cardDeck.supportCard" class="fixed-bottom text-muted cardDebugInfo">
-    <span class="cardDebugInfoClickable" data-bs-toggle="modal" data-bs-target="#cardInfoModal">
-      {{cardDeck.actionCard?.id}} / {{cardDeck.supportCard?.id}}
-    </span>
-  </div>
-
-  <CardInfoModal v-if="cardDeck.actionCard && cardDeck.supportCard"
-      :action-card="cardDeck.actionCard" :support-card="cardDeck.supportCard"/>
+  <template v-if="cardDeck.actionCard && cardDeck.supportCard">
+    <div class="fixed-bottom text-muted cardDebugInfo">
+      <span class="cardDebugInfoClickable" data-bs-toggle="modal" data-bs-target="#cardInfoModal">
+        {{cardDeck.actionCard.id}} / {{cardDeck.supportCard.id}}
+      </span>
+    </div>
+    <CardInfoModal :action-card="cardDeck.actionCard" :support-card="cardDeck.supportCard"/>
+  </template>
 
   <template v-if="isPass">
     <BotPass :navigationState="navigationState"/>
