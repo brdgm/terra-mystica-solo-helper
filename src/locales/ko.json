@@ -67,6 +67,10 @@
     "titlePlayer": "플레이어 | 플레이어 {player}",
     "titleBot": "오토마: {faction} | 오토마 {bot}: {faction}"
   },
+  "cardInfo": {
+    "actionCard": "액션 카드",
+    "supportCard": "지원 카드"
+  },
   "playerTurn": {
     "text": "턴을 진행하거나 패스하세요.",
     "passConfirm": "패스하시겠습니까?",
