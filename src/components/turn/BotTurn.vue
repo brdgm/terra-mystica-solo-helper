@@ -115,8 +115,7 @@ export default defineComponent({
   }
 }
 .cardDebugInfo {
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
   font-size: 0.6rem;
   background-color: transparent;
   text-align: right;
